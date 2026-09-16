@@ -1,0 +1,38 @@
+id: squad-trafego-pago
+name: Squad Tráfego Pago e Performance
+version: 1.0.0
+description: Equipe completa para planejar, criar anúncios, estruturar campanhas de mídia paga e gerar relatórios de performance.
+
+agents:
+  - id: gestor-de-trafego
+    role: Estratégia de mídia, orçamento, públicos e otimização de campanhas
+  - id: especialista-ads
+    role: Criação de hooks, headlines, textos persuasivos e CTAs para anúncios
+  - id: copywriter-otear
+    role: Alinhamento de copy da campanha com a oferta e posicionamento
+  - id: analista-de-negocio
+    role: Definição de métricas de retorno (CPA, CAC, LTV) e viabilidade financeira
+  - id: revisor-de-qualidade
+    role: Revisão de conformidade com políticas de anúncios e links
+
+workflow:
+  - step: 1
+    action: Definir objetivo comercial, métricas-alvo e orçamento disponível
+    responsible: analista-de-negocio
+  - step: 2
+    action: Estruturar o plano de mídia, segmentação de públicos e posicionamentos
+    responsible: gestor-de-trafego
+  - step: 3
+    action: Criar variações de textos, headlines, hooks e CTAs para os anúncios
+    responsible: especialista-ads
+  - step: 4
+    action: Revisar consistência da promessa com a página/destino e políticas da plataforma
+    responsible: revisor-de-qualidade
+  - step: 5
+    action: Gerar checklist final de subida e plano de monitoramento de performance
+    responsible: gestor-de-trafego
+
+outputs:
+  - Plano de mídia estruturado com públicos e orçamento
+  - Pacote de criativos e textos prontos para veiculação
+  - Guia de acompanhamento de métricas e relatório de performance

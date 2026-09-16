@@ -8,7 +8,7 @@ tags: [otear-os, biblioteca]
 
 ## Principais Pastas
 
-- [[../MAPA DO OTEAR OS]]
+- [[MAPA DO OTEAR OS]]
 - `produto-otear-os/agentes-base`
 - `produto-otear-os/skills-base`
 - `produto-otear-os/squads-base`

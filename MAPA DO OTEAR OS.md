@@ -35,6 +35,7 @@ Este mapa mostra as capacidades prontas nesta entrega.
 | Squad Thumbnail YouTube | thumbnail de video |
 | Squad Melhoria de Processos | mapear, simplificar e melhorar processos |
 | Squad Criador de Agentes | criar agentes, skills e squads personalizados |
+| Squad Tráfego Pago | planejar, criar anúncios, gerenciar campanhas e relatórios de tráfego |
 
 ## Sistemas Prontos
 

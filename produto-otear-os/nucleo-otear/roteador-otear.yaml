@@ -71,6 +71,14 @@ rotas:
     otear: "Otear Identidade Visual"
     principal: "sistemas-completos/opensquad/squads/vyve-identidade-visual"
     apoio: "squads-base/squad-identidade-visual.yaml"
+  - capacidade: "trafego pago, meta ads, google ads e gestao de midia"
+    otear: "Otear Trafego Pago"
+    principal: "sistemas-completos/hermes-profile-agenciasemesforco/skills/productivity/meta-marketing-api-campaigns"
+    apoio: "squads-base/squad-trafego-pago.yaml"
+  - capacidade: "relatorios de trafego, performance de anuncios e prestacao de contas"
+    otear: "Otear Relatorios de Trafego"
+    principal: "sistemas-completos/hermes-profile-agenciasemesforco/skills/productivity/marketing-performance-reports"
+    apoio: "skills-base/relatorio-de-trafego.skill.md"
 
 motores_de_apoio:
   - "sistemas-completos/nirvana-agi-agentes: runtime e skills de apoio; nao e rota publica."
