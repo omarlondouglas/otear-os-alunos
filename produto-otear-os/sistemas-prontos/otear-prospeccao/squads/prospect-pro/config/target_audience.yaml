@@ -1,0 +1,53 @@
+target_audience:
+  version: "1.0"
+  service: "Marketing Digital"
+
+  ideal_client:
+    description: "Empresas locais que precisam de presença digital e gestão de redes sociais"
+
+    categories:
+      - restaurantes
+      - bares
+      - cafeterias
+      - salões de beleza
+      - barbearias
+      - clínicas
+      - dentistas
+      - academias
+      - pet shops
+      - lojas de roupas
+      - imobiliárias
+      - escritórios de advocacia
+      - contabilidade
+      - autoescolas
+      - escolas de idiomas
+      - estúdios de tatuagem
+      - floriculturas
+      - padarias
+      - pizzarias
+      - hamburgerias
+
+    signals_needs_marketing:
+      - "Sem website ou website desatualizado"
+      - "Sem presença no Instagram"
+      - "Instagram com poucos seguidores (<1000)"
+      - "Engagement rate baixo (<2%)"
+      - "Posts irregulares ou inexistentes"
+      - "Sem identidade visual consistente"
+      - "Poucas avaliações no Google (<10)"
+      - "Fotos amadoras no Google Maps"
+
+    exclusion_criteria:
+      - "Franquias grandes (marketing centralizado)"
+      - "Empresas já com agência contratada (verificar bio)"
+      - "Empresas fechadas ou temporariamente fechadas"
+      - "Rating abaixo de 2.0 (problemas maiores que marketing)"
+
+  locations:
+    default: "São Paulo, Brasil"
+    radius_km: 10
+
+  approach:
+    channel: "Instagram DM ou WhatsApp"
+    tone: "Consultivo, não vendedor"
+    first_contact: "Elogio genuíno + insight sobre o negócio"

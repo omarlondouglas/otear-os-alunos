@@ -1,0 +1,73 @@
+scoring:
+  version: "1.0"
+  maxScore: 20
+
+  criteria:
+    no_website:
+      points: 3
+      description: "Empresa sem website — precisa de presença digital"
+      check: "website is null or empty"
+
+    bad_website:
+      points: 4
+      threshold: 30
+      description: "Website com problemas reais de conversao, seguranca ou performance"
+      check: "website_audit.score >= threshold"
+
+    no_instagram:
+      points: 4
+      description: "Sem Instagram — oportunidade enorme de gestão de redes"
+      check: "instagram_handle is null"
+
+    low_engagement:
+      points: 3
+      threshold: 2.0
+      description: "Engagement rate abaixo de 2% — conteúdo não performa"
+      check: "engagement_rate < threshold"
+
+    irregular_posting:
+      points: 2
+      maxGapDays: 7
+      description: "Posts com gaps maiores que 7 dias — sem estratégia de conteúdo"
+      check: "avg_posting_gap > maxGapDays"
+
+    few_reviews:
+      points: 1
+      threshold: 10
+      description: "Menos de 10 reviews no Google — pouca visibilidade"
+      check: "google_reviews_count < threshold"
+
+    low_rating:
+      points: 1
+      threshold: 4.0
+      description: "Rating abaixo de 4.0 — precisa de gestão de reputação"
+      check: "google_rating < threshold"
+
+    no_professional_bio:
+      points: 1
+      description: "Bio do Instagram não profissional"
+      check: "instagram_bio is generic or empty"
+
+    no_bio_link:
+      points: 1
+      description: "Sem link na bio do Instagram — não converte seguidores"
+      check: "instagram_bio_link is null"
+
+  classification:
+    hot:
+      minScore: 8
+      label: "Hot"
+      description: "Lead quente — alta probabilidade de conversão"
+      priority: "Abordar imediatamente"
+
+    warm:
+      minScore: 5
+      label: "Warm"
+      description: "Lead morno — potencial com nurturing"
+      priority: "Abordar em 1-3 dias"
+
+    cold:
+      minScore: 0
+      label: "Cold"
+      description: "Lead frio — baixa prioridade"
+      priority: "Monitorar para futuro"

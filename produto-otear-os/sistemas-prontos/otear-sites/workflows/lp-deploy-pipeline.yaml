@@ -1,0 +1,122 @@
+﻿workflow_name: lp_deploy_pipeline
+description: "Pipeline de deploy pÃ³s-QA: Vercel (frontend) â†’ EasyPanel (backend condicional) â†’ DomÃ­nio â†’ Versionamento GitHub"
+
+agent_sequence:
+  - lp-deployer
+  - lp-versioner
+
+success_indicators:
+  - "Frontend live na Vercel com URL grÃ¡tis"
+  - "Backend live no EasyPanel (se condicional)"
+  - "DomÃ­nio do cliente configurado (se tiver)"
+  - "CÃ³digo versionado no GitHub com tag e release"
+
+workflow:
+  id: lp-deploy-pipeline
+  name: "LP Deploy Pipeline"
+  description: "Pipeline de deploy pÃ³s-QA: Vercel â†’ EasyPanel (condicional) â†’ DomÃ­nio â†’ GitHub"
+  type: pipeline
+
+  pre_conditions:
+    - "QA final report com PASS (score >= 8.0)"
+    - "Vercel CLI autenticada (vercel login)"
+    - "GitHub CLI autenticada (gh auth login)"
+    - "EasyPanel acessÃ­vel (somente se backend: true)"
+
+  sequence:
+    # Phase 8a â€” Deploy Frontend (SEMPRE)
+    - agent: lp-deployer
+      action: "deploy-vercel"
+      creates: "vercel-deploy"
+      description: "Conectar repo GitHub na Vercel, deploy automÃ¡tico do frontend"
+
+    # Phase 8b â€” Deploy Backend (CONDICIONAL: backend: true)
+    - agent: lp-deployer
+      action: "dockerize"
+      creates: "docker-config"
+      description: "Gerar Dockerfile backend + docker-compose (SOMENTE se backend: true)"
+      conditional: "backend: true"
+
+    - agent: lp-deployer
+      action: "deploy-easypanel"
+      creates: "backend-deploy"
+      description: "Deploy backend no EasyPanel da VPS (SOMENTE se backend: true)"
+      conditional: "backend: true"
+
+    # Phase 8c â€” DomÃ­nio (OPCIONAL)
+    - agent: lp-deployer
+      action: "setup-domain"
+      creates: "domain-config"
+      description: "Configurar domÃ­nio customizado do cliente (opcional â€” URL grÃ¡tis jÃ¡ funciona)"
+
+    # Phase 9 â€” Versioning (SEMPRE)
+    - agent: lp-versioner
+      action: "init-repo"
+      creates: "client-repo"
+      description: "Criar repositÃ³rio GitHub privado para o cliente"
+
+    - agent: lp-versioner
+      action: "export-client"
+      creates: "export-package"
+      description: "Exportar pacote completo para o repo do cliente"
+
+    - agent: lp-versioner
+      action: "save-version"
+      creates: "release-tag"
+      description: "Criar tag semÃ¢ntica e release no GitHub com metadados"
+
+  key_commands:
+    - "*deploy-landing-page"
+    - "*start-deploy"
+    - "*deploy-vercel"
+
+  trigger_threshold: 1
+  typical_duration: "10-25 minutes"
+
+  success_indicators:
+    - "Frontend live na Vercel: {cliente}-lp.vercel.app"
+    - "Backend live no EasyPanel (se condicional)"
+    - "DomÃ­nio do cliente com SSL (se configurado)"
+    - "CÃ³digo no GitHub com tag semÃ¢ntica e release"
+
+  transitions:
+    deploy_ready:
+      trigger: "QA final report with PASS (score >= 8.0)"
+      confidence: 0.92
+      greeting_message: "QA aprovada! Deployando frontend na Vercel..."
+      next_steps:
+        - command: "*deploy-vercel"
+          description: "Anchor conecta repo na Vercel e deploya o frontend"
+          priority: 1
+
+    frontend_deployed:
+      trigger: "Frontend live on Vercel with .vercel.app URL accessible"
+      confidence: 0.95
+      greeting_message: "Frontend live na Vercel! URL: {cliente}-lp.vercel.app"
+      next_steps:
+        - command: "*deploy-easypanel"
+          description: "Anchor deploya backend no EasyPanel (se condicional)"
+          priority: 1
+          conditional: "backend: true"
+        - command: "*setup-domain"
+          description: "Anchor configura domÃ­nio customizado (se cliente tiver)"
+          priority: 2
+
+    fully_deployed:
+      trigger: "All services deployed and accessible"
+      confidence: 0.90
+      greeting_message: "Deploy completo! Salvando no GitHub do cliente..."
+      next_steps:
+        - command: "*init-client-repo"
+          description: "Vault cria repo GitHub e versiona a entrega"
+          priority: 1
+
+    delivery_complete:
+      trigger: "Code versioned in client GitHub repo with semantic tag and release"
+      confidence: 0.95
+      greeting_message: "âœ… Entrega completa! LP live, versionada no GitHub."
+      next_steps:
+        - command: "*list-versions"
+          description: "Ver histÃ³rico de versÃµes do cliente"
+          priority: 2
+

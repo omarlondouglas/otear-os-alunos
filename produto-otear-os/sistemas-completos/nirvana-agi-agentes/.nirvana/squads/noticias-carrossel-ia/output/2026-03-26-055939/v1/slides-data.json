@@ -1,0 +1,86 @@
+{
+  "slides": [
+    {
+      "id": 1,
+      "theme": "black",
+      "imageFile": "img-slide-01.png",
+      "elements": [
+        { "type": "tag", "text": "NOTÍCIA" },
+        { "type": "headline", "text": "A IA agora <em>faz o trabalho</em> por você" },
+        { "type": "sub", "text": "Literalmente." },
+        { "type": "swipe" }
+      ]
+    },
+    {
+      "id": 2,
+      "theme": "light",
+      "imageFile": null,
+      "elements": [
+        { "type": "stat", "text": "70%" },
+        { "type": "sub", "text": "do seu tempo vai em tarefas repetitivas" },
+        { "type": "body", "text": "Copiar dado, colar no CRM, mandar mensagem, atualizar relatório. Todo dia. Enquanto isso, seus concorrentes já delegaram isso para a IA." }
+      ]
+    },
+    {
+      "id": 3,
+      "theme": "black",
+      "imageFile": "img-slide-03.png",
+      "elements": [
+        { "type": "tag", "text": "O PROBLEMA" },
+        { "type": "headline", "text": "A IA só <em>respondia</em>. Não fazia." },
+        { "type": "body", "text": "Chatbots e assistentes são úteis, mas você ainda precisa executar. A IA era conselheiro, nunca executor." }
+      ]
+    },
+    {
+      "id": 4,
+      "theme": "black",
+      "imageFile": "img-slide-04.png",
+      "elements": [
+        { "type": "headline", "text": "Isso <strong>acabou de mudar</strong>." },
+        { "type": "body", "text": "O Claude agora controla o seu computador. Abre apps, preenche formulários, organiza dados. Sem código. Sem API." }
+      ]
+    },
+    {
+      "id": 5,
+      "theme": "black",
+      "imageFile": "img-slide-05.png",
+      "elements": [
+        { "type": "tag", "text": "NA PRÁTICA" },
+        { "type": "headline", "text": "1 pessoa + agente = <em>trabalho de 3</em>" },
+        { "type": "body", "text": "O agente captura o lead do WhatsApp, preenche o CRM e agenda follow-up. Sozinho. Enquanto você fecha novos clientes." }
+      ]
+    },
+    {
+      "id": 6,
+      "theme": "light",
+      "imageFile": null,
+      "elements": [
+        { "type": "tag", "text": "AUTOMATIZE HOJE" },
+        { "type": "list", "items": [
+          "Organizar leads no CRM automaticamente",
+          "Montar relatórios semanais em segundos",
+          "Responder mensagens padrão no WhatsApp"
+        ] }
+      ]
+    },
+    {
+      "id": 7,
+      "theme": "black",
+      "imageFile": "img-slide-07.png",
+      "elements": [
+        { "type": "headline", "text": "Pare de <em>vender horas</em>." },
+        { "type": "sub", "text": "Venda resultados." },
+        { "type": "body", "text": "Quem adotar agentes IA primeiro vai dominar o mercado local de serviços digitais." }
+      ]
+    },
+    {
+      "id": 8,
+      "theme": "dark",
+      "imageFile": null,
+      "elements": [
+        { "type": "cta", "text": "Comenta \"AGENTE\" que te explico como começar. Sem código. Só resultado." },
+        { "type": "sub", "text": "Fonte: Anthropic (25/03/2026)" }
+      ]
+    }
+  ]
+}

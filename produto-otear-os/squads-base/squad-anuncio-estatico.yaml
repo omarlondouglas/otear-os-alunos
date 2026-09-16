@@ -1,0 +1,37 @@
+id: squad-anuncio-estatico
+name: Squad Anuncio Estatico
+version: 1.0.0
+purpose: Criar conceito, copy e direcao visual para anuncio estatico.
+
+agents:
+  - estrategista-de-oferta
+  - copywriter-otear
+  - arquiteto-de-design
+  - revisor-de-qualidade
+
+workflow:
+  - step: angulo
+    agent: estrategista-de-oferta
+    output: angulo_de_venda
+  - step: copy
+    agent: copywriter-otear
+    output: texto_do_anuncio
+  - step: visual
+    agent: arquiteto-de-design
+    output: direcao_visual
+  - step: revisao
+    agent: revisor-de-qualidade
+    output: anuncio_final
+
+outputs:
+  - headline
+  - texto_curto
+  - direcao_visual
+  - cta
+  - variacoes
+
+acceptance_criteria:
+  - O anuncio comunica uma ideia principal.
+  - O CTA esta claro.
+  - A direcao visual facilita a producao.
+

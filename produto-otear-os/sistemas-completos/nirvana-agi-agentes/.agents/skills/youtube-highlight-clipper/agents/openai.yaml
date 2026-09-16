@@ -1,0 +1,3 @@
+display_name: YouTube Highlight Clipper
+short_description: Finds high-retention short-form clips from long YouTube transcripts.
+default_prompt: Find the best short-form clips in this timestamped YouTube transcript and return strict JSON with titles, start/end seconds, hooks, and retention reasons.

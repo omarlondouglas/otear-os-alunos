@@ -1,0 +1,41 @@
+id: squad-capas-e-thumbnails
+name: Squad Capas e Thumbnails
+version: 1.0.0
+purpose: Criar conceitos de capas, thumbnails e primeiras telas com promessa visual forte.
+
+agents:
+  - diretor-de-capa
+  - copywriter-otear
+  - arquiteto-de-design
+  - gerador-de-imagens
+  - revisor-de-qualidade
+
+workflow:
+  - step: promessa
+    agent: diretor-de-capa
+    output: promessa_visual
+  - step: texto
+    agent: copywriter-otear
+    output: frases_curtas
+  - step: composicao
+    agent: arquiteto-de-design
+    output: composicao_visual
+  - step: imagem
+    agent: gerador-de-imagens
+    output: prompts
+  - step: revisao
+    agent: revisor-de-qualidade
+    output: capa_final
+
+outputs:
+  - conceito
+  - texto_curto
+  - composicao
+  - prompt_visual
+  - variações
+
+acceptance_criteria:
+  - A capa comunica antes da leitura.
+  - O texto e curto.
+  - A promessa gera clique.
+

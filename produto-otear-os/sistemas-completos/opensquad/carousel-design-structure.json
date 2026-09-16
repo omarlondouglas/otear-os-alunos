@@ -1,0 +1,119 @@
+{
+  "version": "1.0.0",
+  "totalSlides": 8,
+  "slides": [
+    {
+      "id": 1,
+      "type": "cover",
+      "theme": "dark",
+      "headline": "100 agentes de IA por funcionário. A Nvidia prevê isso em 10 anos. Sua agência está pronta?",
+      "supportText": null,
+      "stat": null,
+      "highlightWords": [
+        "100 agentes de IA",
+        "10 anos",
+        "pronta"
+      ],
+      "imageFile": null,
+      "branding": "@marlonlima.ia"
+    },
+    {
+      "id": 2,
+      "type": "standard",
+      "theme": "light",
+      "headline": "Quem é Jensen Huang e por que ouvir sobre IA dele?",
+      "supportText": "Fundador e CEO da Nvidia. Empresa que domina chips de IA globalmente. Não é especulação — é roadmap de quem fabrica a infraestrutura. Quando Jensen fala sobre futuro do trabalho, mercado inteiro escuta.",
+      "stat": null,
+      "highlightWords": [
+        "Jensen Huang",
+        "Nvidia",
+        "infraestrutura"
+      ],
+      "imageFile": null
+    },
+    {
+      "id": 3,
+      "type": "standard",
+      "theme": "accent",
+      "headline": "Por que isso importa para sua agência digital?",
+      "supportText": "Agora você não precisa de 50 pessoas. Uma equipe de 2-3 sócios + 10-20 agentes de IA bem configurados produz no mesmo volume. Menos folha, mesma (ou maior) qualidade, ciclos mais rápidos. Isso é força multiplicadora na prática.",
+      "stat": "2-3 sócios + 10-20 agentes",
+      "highlightWords": [
+        "força multiplicadora",
+        "mesma qualidade",
+        "ciclos mais rápidos"
+      ],
+      "imageFile": null
+    },
+    {
+      "id": 4,
+      "type": "standard",
+      "theme": "dark",
+      "headline": "O Problema: crescimento tradicional é caro, lento e cansativo.",
+      "supportText": "Contratar mais pessoas = mais folha, mais reuniões, mais coordenação. Cada novo colaborador leva meses para produzir. Escalar fica inviável. Seu concorrente que não pivotar vai ficar para trás em velocidade e lucratividade.",
+      "stat": null,
+      "highlightWords": [
+        "caro, lento e cansativo",
+        "inviável",
+        "ficar para trás"
+      ],
+      "imageFile": null
+    },
+    {
+      "id": 5,
+      "type": "standard",
+      "theme": "accent",
+      "headline": "A Solução: agentes de IA como força multiplicadora real.",
+      "supportText": "Agentes de IA executam tarefas repetitivas 24/7. Copywriting, design layout, análise de dados, pesquisa, edição. Seu time humano fica livre para estratégia, criatividade de alto nível e relacionamento com clientes. Resultado: mais projetos, mesma equipe.",
+      "stat": "24/7",
+      "highlightWords": [
+        "agentes de IA",
+        "força multiplicadora",
+        "estratégia e criatividade"
+      ],
+      "imageFile": null
+    },
+    {
+      "id": 6,
+      "type": "standard",
+      "theme": "light",
+      "headline": "Exemplos práticos: onde agentes de IA já trabalham em agências.",
+      "supportText": "Copywriting: gerar 50 variações de anúncio em 2 minutos. Design: criar mockups de carrossel automático. Análise: processar métricas de 100 campanhas por hora. Pesquisa: compilar briefings de concorrentes em 15 minutos. Tudo rodando enquanto você dorme.",
+      "stat": "50 variações em 2 minutos",
+      "highlightWords": [
+        "Copywriting",
+        "Design automático",
+        "Análise em tempo real"
+      ],
+      "imageFile": null
+    },
+    {
+      "id": 7,
+      "type": "standard",
+      "theme": "accent",
+      "headline": "O que você deveria estar fazendo AGORA.",
+      "supportText": "1. Identificar 3 tarefas repetitivas na sua agência. 2. Testar um agente de IA neles (Claude, Cursor, n8n). 3. Medir tempo economizado. 4. Documentar o workflow. 5. Treinar time. Não espere 10 anos — comece hoje. Concorrente que começou em 2025 já está 2 anos à frente.",
+      "stat": "5 passos para começar",
+      "highlightWords": [
+        "AGORA",
+        "Claude, Cursor, n8n",
+        "2 anos à frente"
+      ],
+      "imageFile": null
+    },
+    {
+      "id": 8,
+      "type": "cta",
+      "theme": "dark",
+      "headline": "Sua agência já está usando agentes de IA?",
+      "supportText": "Salve este carrossel. Comente qual é seu primeiro caso de uso. Compartilhe com sócios que precisam ver isso. Vamos construir agências do futuro juntos. A pergunta não é mais 'se' — é 'quando' você começa.",
+      "stat": null,
+      "highlightWords": [
+        "salve e comente",
+        "agências do futuro",
+        "quando você começa"
+      ],
+      "imageFile": null
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+name: "YouTube Thumbnail Creation Pipeline"
+squad: yt-thumbnails
+
+steps:
+  - step-01-research-focus
+  - step-02-research
+  - step-03-generate-concepts
+  - step-04-select-concept
+  - step-05-create-prompts
+  - step-06-approve-prompts
+  - step-07-review
+  - step-08-final-approval
+
+checkpoints:
+  - step-01-research-focus
+  - step-04-select-concept
+  - step-06-approve-prompts
+  - step-08-final-approval
+
+on_reject:
+  step-07-review: step-05-create-prompts

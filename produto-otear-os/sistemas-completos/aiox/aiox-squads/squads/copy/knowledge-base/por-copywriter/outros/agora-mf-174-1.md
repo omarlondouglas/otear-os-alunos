@@ -1,0 +1,59 @@
+---
+copywriter: "Agora (uncredited)"
+source_format: "pdf"
+original_type: "sales-letter"
+tags:
+  - "agora"
+  - "swipe"
+quality_score: 5
+extracted_date: "2026-04-09"
+source_file: "174-1.pdf"
+---
+
+# Far removed from the impersonal and  over-priced world of the 'tourist'...lies  another world...  It
+
+> (26746 chars, 20p)
+
+## Lead
+
+```
+Far removed from the impersonal and 
+over-priced world of the 'tourist'...lies 
+another world... 
+It's a world of class and culture...of figs 
+and fine wine...of Moors and ancient 
+Greeks...of cobbled kingdoms and lost 
+cities...of ancient crafts and skills...of 
+value and integrity...  
+This is the world  not of the 'tourist'  but of the 
+'traveler'...  
+And you can access this world for much less than you 
+Page 1 of 20
+4/7/2005
+http://www.agora-inc.com/reports/REMY/WREME4P2/home.cfm
+might think by paying heed to the well-kept secrets of 
+one of the world's oldest, most dependable and above all 
+most unusual travel companions...  
+This 'travel companion' has transformed the vacations of 
+the super rich for 38 years now. It's even been hailed by 
+the likes of National Geographic and Condé Nast 
+Traveler...yet you've probably never heard of it...until 
+now...  
+   
+   
+Dear Traveler,  
+     I'd like to introduce you to an old friend...who, quite simply, could change the 
+way you travel
+```
+
+## Corpo
+
+```
+ious)...we don't accept any advertising in our 
+publication. At Passport Newsletter we aren't concerned with being 'politically 
+correct'...or stepping on people's toes...or 'making enemies' in the travel industry. 
+If we don't like a place...a restaurant...a chef...a shop...a hotel, we admit it. We 
+hold no allegiance to anyone...only to you and our other Passport Travelers...  
+     For example, we recently told our fellow Passport Travelers about an upscale 
+cruise line that's no longer worth
+```

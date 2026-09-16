@@ -1,0 +1,97 @@
+{
+  "name": "O Tear - Warmup Scheduler",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 10 * * *"
+            }
+          ]
+        }
+      },
+      "id": "daily-trigger",
+      "name": "Diário 10h",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "={{$env.OTEAR_BACKEND_URL}}/api/numbers?status=warming_up",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-Api-Key",
+              "value": "={{$env.OTEAR_API_KEY}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "fetch-warming",
+      "name": "Buscar em Warmup",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [470, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{$env.OTEAR_BACKEND_URL}}/api/numbers/{{ $json.id }}/advance-warmup",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-Api-Key",
+              "value": "={{$env.OTEAR_API_KEY}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "advance-warmup",
+      "name": "Avançar Warmup",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [690, 300]
+    }
+  ],
+  "connections": {
+    "Diário 10h": {
+      "main": [
+        [
+          {
+            "node": "Buscar em Warmup",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Buscar em Warmup": {
+      "main": [
+        [
+          {
+            "node": "Avançar Warmup",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "America/Sao_Paulo"
+  },
+  "tags": [
+    {
+      "name": "O Tear Prospecção"
+    }
+  ]
+}

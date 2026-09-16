@@ -1,0 +1,41 @@
+id: squad-conteudo-longo
+name: Squad Conteudo Longo
+version: 1.0.0
+purpose: Criar artigos, aulas, guias, newsletters longas e materiais densos.
+
+agents:
+  - pesquisador-de-mercado
+  - redator-longform
+  - copywriter-otear
+  - revisor-de-qualidade
+
+workflow:
+  - step: pesquisa
+    agent: pesquisador-de-mercado
+    output: pesquisa_e_fontes
+  - step: estrutura
+    agent: redator-longform
+    output: outline
+  - step: escrita
+    agent: redator-longform
+    output: texto_longo
+  - step: conversao
+    agent: copywriter-otear
+    output: aberturas_ctas_e_ganchos
+  - step: revisao
+    agent: revisor-de-qualidade
+    output: texto_final
+
+outputs:
+  - outline
+  - texto_longo
+  - resumo
+  - cta
+  - versao_final
+
+acceptance_criteria:
+  - O texto tem estrutura clara.
+  - O conteudo e util.
+  - A leitura flui.
+  - Existe proxima acao.
+

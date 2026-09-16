@@ -1,0 +1,32 @@
+# Build stage
+FROM node:20-alpine AS builder
+
+WORKDIR /app
+
+# Copy source code
+COPY frontend-react/ .
+
+# Install dependencies
+RUN npm install
+
+# Vite lê .env.production automaticamente durante o build
+
+# Build the app
+RUN chmod -R 777 node_modules && node node_modules/vite/bin/vite.js build
+
+# Production stage
+FROM nginx:alpine
+
+# Easypanel can override this at runtime. The official nginx entrypoint expands
+# variables from /etc/nginx/templates into /etc/nginx/conf.d on startup.
+ENV PUBLIC_API_URL=https://otear-back-agentes.4hixdb.easypanel.host
+COPY frontend-react/nginx.conf /etc/nginx/templates/default.conf.template
+
+# Copy built assets from builder
+COPY --from=builder /app/dist /usr/share/nginx/html
+
+# Expose port 80
+EXPOSE 80
+
+# Start nginx
+CMD ["nginx", "-g", "daemon off;"]

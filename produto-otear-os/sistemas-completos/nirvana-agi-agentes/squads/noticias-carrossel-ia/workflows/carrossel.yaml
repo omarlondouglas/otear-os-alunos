@@ -1,0 +1,35 @@
+workflow_name: carrossel
+description: "Pesquisa referencias e noticias, define estrategia, escreve copy, estrutura slides e prepara assets de um post carrossel para Instagram."
+
+agent_sequence:
+  - pesquisador
+  - estrategista
+  - redator
+  - designer
+  - curador-imagens
+  - conceituador-visual
+  - gerador-imagens
+  - image-patcher
+  - revisor
+  - publicador
+
+pipeline_ref: ../pipeline/pipeline.yaml
+
+inputs:
+  - name: tema
+    type: string
+    required: true
+    description: "Tema, noticia, nicho ou pauta que sera pesquisada e transformada em carrossel."
+
+outputs:
+  - research-brief.md
+  - strategy-brief.md
+  - carousel-content.md
+  - slides-data.json
+  - slides/
+
+success_indicators:
+  - "Fontes e referencias foram pesquisadas e sintetizadas."
+  - "O angulo editorial esta claro para o publico-alvo."
+  - "A copy do carrossel esta dividida em slides."
+  - "O pacote final inclui estrutura de slides e assets prontos para revisao/publicacao."

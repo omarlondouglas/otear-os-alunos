@@ -1,0 +1,26 @@
+id: otear-videos
+name: Otear Videos
+version: 1.0.0
+purpose: Transcrever videos enviados por link ou arquivo e preparar base para analise de roteiro.
+
+inputs:
+  - link_publico_de_video
+  - arquivo_de_video
+  - arquivo_de_audio
+
+outputs:
+  - transcricao_json
+  - transcricao_markdown
+  - base_para_resumo_e_roteiros
+
+use_when:
+  - transcrever video
+  - pegar transcricao de link
+  - analisar video de referencia
+  - melhorar roteiro com base em video
+  - transformar video em conteudo
+
+main_files:
+  - LEIA-ME-ALUNO.md
+  - scripts/transcrever_video.py
+

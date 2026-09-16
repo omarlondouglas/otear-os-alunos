@@ -1,0 +1,135 @@
+{
+  "name": "O Tear - Daily Report",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 19 * * *"
+            }
+          ]
+        }
+      },
+      "id": "daily-trigger",
+      "name": "Diário 19h",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "={{$env.OTEAR_BACKEND_URL}}/api/dashboard/daily-summary",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-Api-Key",
+              "value": "={{$env.OTEAR_API_KEY}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "fetch-summary",
+      "name": "Buscar Resumo",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [470, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const data = $input.first().json;\nconst msg = `📊 *O Tear — Resumo Diário*\\n\\n📅 ${data.date}\\n\\n✉️ Enviadas: ${data.sent}\\n📬 Entregues: ${data.delivered}\\n👁️ Lidas: ${data.read}\\n💬 Respostas: ${data.replied}\\n❌ Falhas: ${data.failed}\\n\\n🟢 Campanhas ativas: ${data.active_campaigns}\\n📱 Números ativos: ${data.active_numbers}\\n🚫 Opt-outs hoje: ${data.opt_outs}`;\n\nreturn [{ json: { message: msg } }];"
+      },
+      "id": "format-message",
+      "name": "Formatar Mensagem",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [690, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{$env.OTEAR_BACKEND_URL}}/api/messages/send-manual",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-Api-Key",
+              "value": "={{$env.OTEAR_API_KEY}}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "lead_id",
+              "value": "={{$env.ADMIN_LEAD_ID}}"
+            },
+            {
+              "name": "whatsapp_to",
+              "value": "={{$env.ADMIN_WHATSAPP}}"
+            },
+            {
+              "name": "message_body",
+              "value": "={{ $json.message }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "send-report",
+      "name": "Enviar Relatório",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [910, 300]
+    }
+  ],
+  "connections": {
+    "Diário 19h": {
+      "main": [
+        [
+          {
+            "node": "Buscar Resumo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Buscar Resumo": {
+      "main": [
+        [
+          {
+            "node": "Formatar Mensagem",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Formatar Mensagem": {
+      "main": [
+        [
+          {
+            "node": "Enviar Relatório",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "America/Sao_Paulo"
+  },
+  "tags": [
+    {
+      "name": "O Tear Prospecção"
+    }
+  ]
+}

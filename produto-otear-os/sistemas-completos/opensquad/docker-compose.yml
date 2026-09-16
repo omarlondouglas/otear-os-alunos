@@ -1,0 +1,75 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    environment:
+      - OPENSQUAD_ROOT=/opensquad
+      - DATA_ROOT=/opensquad/data
+      - REDIS_URL=redis://redis:6379
+      - NODE_ENV=production
+      - INSTAGRAM_USERNAME=${INSTAGRAM_USERNAME}
+      - INSTAGRAM_PASSWORD=${INSTAGRAM_PASSWORD}
+    volumes:
+      - squad-output:/opensquad/squads/noticias-carrossel-ia/output
+      - tenant-data:/opensquad/data
+      - claude-creds:/home/appuser/.claude
+    depends_on:
+      - redis
+    restart: unless-stopped
+
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    entrypoint: ["bash", "entrypoint-worker.sh"]
+    env_file:
+      - .env
+    environment:
+      - OPENSQUAD_ROOT=/opensquad
+      - DATA_ROOT=/opensquad/data
+      - REDIS_URL=redis://redis:6379
+      - WORKER_CONCURRENCY=1
+      - NODE_ENV=production
+    volumes:
+      - squad-output:/opensquad/squads/noticias-carrossel-ia/output
+      - tenant-data:/opensquad/data
+      - claude-creds:/home/appuser/.claude
+    depends_on:
+      - redis
+    restart: unless-stopped
+
+  ws-gateway:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    entrypoint: ["node", "ws-gateway.js"]
+    ports:
+      - "3001:3001"
+    env_file:
+      - .env
+    environment:
+      - REDIS_URL=redis://redis:6379
+      - WS_PORT=3001
+    depends_on:
+      - redis
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    command: redis-server --appendonly yes
+    restart: unless-stopped
+
+volumes:
+  squad-output:
+  tenant-data:
+  claude-creds:
+  redis-data:

@@ -1,0 +1,42 @@
+id: squad-sistema-app
+name: Squad Sistema e App
+version: 1.0.0
+purpose: Planejar e estruturar um aplicativo, sistema interno, automacao ou produto digital.
+
+agents:
+  - analista-de-negocio
+  - arquiteto-de-sistema
+  - arquiteto-de-design
+  - desenvolvedor-otear
+  - validador-tecnico
+
+workflow:
+  - step: requisitos
+    agent: analista-de-negocio
+    output: requisitos_e_escopo
+  - step: arquitetura
+    agent: arquiteto-de-sistema
+    output: arquitetura_do_sistema
+  - step: experiencia
+    agent: arquiteto-de-design
+    output: fluxo_e_interface
+  - step: implementacao
+    agent: desenvolvedor-otear
+    output: plano_tecnico
+  - step: validacao
+    agent: validador-tecnico
+    output: checklist_final
+
+outputs:
+  - briefing
+  - requisitos
+  - arquitetura
+  - fluxo_de_telas
+  - plano_de_implementacao
+  - checklist_tecnico
+
+acceptance_criteria:
+  - O sistema tem objetivo claro.
+  - Os modulos estao definidos.
+  - O plano pode orientar construcao.
+

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 1920px; height: 1080px; overflow: hidden;
+      font-family: 'Urbanist', sans-serif;
+      position: relative;
+    }
+
+    /* ---- Themes ---- */
+    body.theme-dark  { background: #0a0a0a; color: #FFFFFF; }
+    body.theme-light { background: #F5F5F0; color: #1A1A2E; }
+    body.theme-accent { background: #A3F12E; color: #0a0a0a; }
+    body.theme-black { background: #000000; color: #FFFFFF; }
+
+    /* ---- Image Layer ---- */
+    .img-layer {
+      position: absolute; inset: 0;
+      background-size: cover; background-position: center;
+    }
+    .img-layer::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.75) 100%);
+    }
+    body.no-overlay .img-layer::after { display: none; }
+
+    /* ---- Content ---- */
+    .content {
+      position: relative; z-index: 2;
+      width: 100%; height: 100%;
+      padding: 80px 140px;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: flex-start;
+      text-align: left;
+    }
+
+    /* ---- Handle / Branding ---- */
+    .handle {
+      font-size: 22px; font-weight: 600;
+      opacity: 0.45; letter-spacing: -0.01em;
+      margin-bottom: auto;
+      align-self: flex-end;
+    }
+    body.theme-light .handle { color: #555; }
+
+    /* ---- Tag / Label ---- */
+    .tag {
+      display: inline-block;
+      font-size: 20px; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 8px 18px; border-radius: 8px;
+      background: #A3F12E; color: #0a0a0a;
+      margin-bottom: 28px; align-self: flex-start;
+    }
+    body.theme-accent .tag { background: rgba(0,0,0,0.15); color: #0a0a0a; }
+    body.theme-light .tag  { background: #A3F12E; color: #0a0a0a; }
+
+    /* ---- Number / Stat ---- */
+    .stat {
+      font-size: 110px; font-weight: 800;
+      line-height: 0.9; letter-spacing: -0.04em;
+      color: #A3F12E;
+      margin-bottom: 16px;
+    }
+    body.theme-accent .stat { color: #0a0a0a; }
+    body.theme-light .stat { color: #A3F12E; }
+
+    /* ---- Headline ---- */
+    .headline {
+      font-size: 56px; font-weight: 800;
+      line-height: 1.1; letter-spacing: -0.03em;
+      margin-bottom: 40px;
+    }
+    .headline em { color: #A3F12E; font-style: normal; }
+    .headline strong { color: #4B8DF6; }
+    body.theme-accent .headline em { color: #0a0a0a; text-decoration: underline; }
+    body.theme-light .headline em { color: #A3F12E; }
+
+    /* ---- Subheadline ---- */
+    .sub {
+      font-size: 38px; font-weight: 700;
+      line-height: 1.2; letter-spacing: -0.02em;
+      margin-bottom: 20px;
+      opacity: 0.85;
+    }
+
+    /* ---- Body ---- */
+    .body-text {
+      font-size: 30px; font-weight: 400;
+      line-height: 1.55; letter-spacing: -0.01em;
+      opacity: 0.8;
+      flex: 1;
+    }
+    .body-text strong { font-weight: 700; opacity: 1; }
+
+    /* ---- List ---- */
+    .list { list-style: none; display: flex; flex-direction: column; gap: 36px; text-align: left; width: 100%; }
+    .list li {
+      font-size: 26px; font-weight: 400; line-height: 1.55;
+      padding-left: 40px; position: relative;
+      opacity: 0.85;
+    }
+    .list li::before {
+      content: '→'; color: #A3F12E; font-weight: 800; font-size: 26px;
+      position: absolute; left: 0; top: 0;
+    }
+    .list li strong {
+      font-weight: 800; font-size: 30px; display: block;
+      margin-bottom: 6px; opacity: 1; color: inherit;
+    }
+    body.theme-light .list li::before { color: #A3F12E; }
+    body.theme-light .list li strong { color: #1A1A2E; }
+    body.theme-accent .list li::before { color: #0a0a0a; font-weight: 800; }
+    body.theme-dark .list li strong { color: #FFFFFF; }
+
+    /* ---- CTA Box ---- */
+    .cta-box {
+      background: rgba(163,241,46,0.1);
+      border: 2px solid #A3F12E;
+      border-radius: 20px;
+      padding: 36px 44px;
+      font-size: 34px; font-weight: 700;
+      line-height: 1.3; letter-spacing: -0.01em;
+      text-align: center;
+    }
+    body.theme-accent .cta-box {
+      background: rgba(0,0,0,0.1);
+      border-color: rgba(0,0,0,0.3);
+    }
+
+    /* ---- Slide number ---- */
+    .slide-number {
+      position: absolute;
+      bottom: 40px; right: 100px;
+      font-size: 18px; font-weight: 600;
+      opacity: 0.3;
+    }
+
+    /* ---- Spacer ---- */
+    .spacer { height: 24px; }
+
+    /* ---- Two-column layout ---- */
+    .two-col {
+      display: flex; gap: 60px; flex: 1;
+    }
+    .two-col .col { flex: 1; display: flex; flex-direction: column; }
+  </style>
+</head>
+<body class="{{THEME}}{{IMG_CLASS}}">
+  {{IMG_LAYER}}
+  <div class="content">
+    {{BODY_HTML}}
+  </div>
+  <div class="slide-number">{{SLIDE_NUMBER}}</div>
+</body>
+</html>

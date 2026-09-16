@@ -1,0 +1,13 @@
+name: agencia-sem-esforco
+skills:
+- otear-content-os
+- content-agent-operations
+- obsidian
+- hormozi-marketing-mentor
+- opensquad-news-carousel
+- excalidraw
+description: 'Carrega o cockpit da Agência Sem Esforço: otear-os, Obsidian, Copy Squad/AIOX,
+  marketing Hormozi, carrosséis e diagramas.'
+instruction: Use Hermes Desktop como cockpit central. Usuário leigo pede resultado;
+  você consulta otear-os/Obsidian e aciona Nirvana, O Tear, OpenSquad, Copy Squad
+  ou Codex por trás. Sempre verificar arquivos/outputs antes de dizer que foi criado.

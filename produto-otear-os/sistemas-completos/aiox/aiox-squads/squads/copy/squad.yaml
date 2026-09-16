@@ -1,0 +1,115 @@
+squad:
+  name: copy
+  display_name: "Copy Squad"
+  description: "Elite copywriting squad — copy persuasiva baseada em frameworks de mestres lendários (Halbert, Schwartz, Ogilvy, Kennedy). Diagnóstico de dor, articulação de benefício, estilo como parâmetro."
+  icon: "✍️"
+  domain: copywriting
+  version: "1.0.0"
+
+agents:
+  - id: copy-chief
+    name: "Copy Chief"
+    file: agents/copy-chief.md
+    tier: 0
+    role: orchestrator
+    description: "Orquestrador — routing por canal, seleção de estilo, validação de briefing, coordenação do ciclo draft→review→entrega"
+
+  - id: ads-specialist
+    name: "Ads Specialist"
+    file: agents/ads-specialist.md
+    tier: 1
+    role: ads-copywriter
+    description: "Copy para Meta Ads, Google Ads, TikTok Ads e display — hooks, headlines, CTAs com frameworks de mestres"
+
+  - id: email-specialist
+    name: "Email Specialist"
+    file: agents/email-specialist.md
+    tier: 1
+    role: email-copywriter
+    description: "Sequences, broadcasts, nurture emails — progressão de consciência Schwartz, subject lines, storytelling"
+
+  - id: landing-specialist
+    name: "Landing Specialist"
+    file: agents/landing-specialist.md
+    tier: 1
+    role: landing-copywriter
+    description: "VSLs, sales pages, opt-in pages — estrutura longa, prova social, oferta irresistível"
+
+  - id: social-specialist
+    name: "Social Specialist"
+    file: agents/social-specialist.md
+    tier: 1
+    role: social-copywriter
+    description: "Posts, carrosséis, threads, scripts curtos — hooks nativos de plataforma, storytelling compacto"
+
+  - id: copy-reviewer
+    name: "Copy Reviewer"
+    file: agents/copy-reviewer.md
+    tier: 2
+    role: quality-gate
+    description: "Avaliação de qualidade — diagnóstico de dor, especificidade de benefício, framework identificável, ausência de tom genérico"
+
+workflows:
+  - id: wf-copy-generation
+    file: workflows/wf-copy-generation.yaml
+    description: "Ciclo completo: briefing → routing → geração → revisão → entrega"
+
+  - id: wf-extraction-pipeline
+    file: workflows/wf-extraction-pipeline.yaml
+    description: "Pipeline de extração: detecção → conversão → enriquecimento → validação → indexação"
+
+tasks:
+  - validate-briefing.md
+  - route-briefing.md
+  - generate-copy.md
+  - review-copy.md
+  - extract-content.md
+  - enrich-metadata.md
+  - validate-extraction.md
+  - update-index.md
+
+templates:
+  - briefing-tmpl.yaml
+  - copy-output-tmpl.md
+  - extraction-report-tmpl.md
+
+checklists:
+  - copy-quality-checklist.md
+  - extraction-quality-checklist.md
+  - smoke-tests.md
+
+data:
+  - routing-matrix.yaml
+  - copywriter-frameworks.md
+  - consciousness-levels.md
+  - briefing-schema.yaml
+  - copy-patterns.md
+
+pipeline:
+  - extract-pdf.md
+  - extract-video.md
+  - extract-image.md
+  - enrich.md
+  - validate.md
+
+keywords:
+  - copy
+  - copywriting
+  - persuasion
+  - ads
+  - email marketing
+  - landing page
+  - sales page
+  - VSL
+  - carrossel
+  - social media
+  - headline
+  - hook
+  - CTA
+  - Halbert
+  - Schwartz
+  - Ogilvy
+  - Kennedy
+  - swipe file
+  - knowledge base
+  - direct response

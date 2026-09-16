@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 1080px; height: 1440px; overflow: hidden;
+      font-family: 'Inter', sans-serif;
+      display: flex; flex-direction: column;
+      position: relative;
+    }
+    .bg-image {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      background: url('../images/img-slide-04.png') center/cover no-repeat;
+      z-index: 0;
+    }
+    .overlay {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(
+        to bottom,
+        rgba(232, 115, 74, 0.85) 0%,
+        rgba(232, 115, 74, 0.4) 40%,
+        rgba(232, 115, 74, 0.3) 60%,
+        rgba(232, 115, 74, 0.85) 100%
+      );
+      z-index: 1;
+    }
+    .content {
+      position: relative; z-index: 2;
+      display: flex; flex-direction: column;
+      height: 100%; padding: 72px;
+      justify-content: space-between;
+    }
+    .header {
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .handle { font-size: 24px; font-weight: 500; color: rgba(255,255,255,0.7); }
+    .main {
+      display: flex; flex-direction: column; gap: 40px;
+    }
+    .headline {
+      font-size: 50px; font-weight: 800; color: #FFFFFF;
+      line-height: 1.2;
+    }
+    .stat {
+      display: flex; flex-direction: column; gap: 12px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 16px;
+      padding: 40px;
+    }
+    .stat-number {
+      font-size: 96px; font-weight: 800; color: #FFD93D;
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 34px; font-weight: 600; color: #FFFFFF;
+      line-height: 1.3;
+    }
+    .body-text {
+      font-size: 34px; font-weight: 500; color: rgba(255,255,255,0.9);
+      line-height: 1.6;
+    }
+    .body-text .highlight { color: #FFD93D; font-weight: 700; }
+    .footer {
+      display: flex; justify-content: flex-end; align-items: center; gap: 8px;
+    }
+    .swipe { font-size: 24px; font-weight: 500; color: rgba(255,255,255,0.5); }
+    .swipe-arrow { font-size: 28px; color: #FFFFFF; }
+  </style>
+</head>
+<body>
+  <div class="bg-image"></div>
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="header">
+      <span class="handle">@marlonlima.ia</span>
+    </div>
+
+    <div class="main">
+      <h2 class="headline">Mas o mercado respondeu de um jeito que ninguém esperava</h2>
+      <div class="stat">
+        <span class="stat-number">70%</span>
+        <span class="stat-label">das empresas que escolhem IA pela primeira vez agora escolhem a Anthropic</span>
+      </div>
+      <p class="body-text">Um ano atrás, era 1 em cada 25. Hoje é <span class="highlight">1 em cada 4</span>. O "não" virou o maior <span class="highlight">argumento de venda</span>.</p>
+    </div>
+
+    <div class="footer">
+      <span class="swipe">Deslize</span>
+      <span class="swipe-arrow">→</span>
+    </div>
+  </div>
+</body>
+</html>

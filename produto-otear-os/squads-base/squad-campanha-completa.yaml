@@ -1,0 +1,38 @@
+id: squad-campanha-completa
+name: Squad Campanha Completa
+version: 1.0.0
+purpose: Criar uma campanha completa a partir de uma oferta.
+
+agents:
+  - estrategista-de-oferta
+  - copywriter-otear
+  - social-media-otear
+  - revisor-de-qualidade
+
+workflow:
+  - step: estrategia
+    agent: estrategista-de-oferta
+    output: promessa_e_oferta
+  - step: copy
+    agent: copywriter-otear
+    output: textos_de_venda
+  - step: social
+    agent: social-media-otear
+    output: posts_e_legendas
+  - step: revisao
+    agent: revisor-de-qualidade
+    output: entrega_final
+
+outputs:
+  - promessa
+  - angulos
+  - anuncios
+  - posts
+  - mensagens
+  - cta
+
+acceptance_criteria:
+  - A campanha tem oferta clara.
+  - A copy tem CTA.
+  - A entrega pode ser usada sem explicacao tecnica.
+

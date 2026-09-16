@@ -1,0 +1,88 @@
+workflow:
+  id: prospect-pipeline
+  name: "Prospect Pipeline"
+  version: "1.0.0"
+  description: "Pipeline completo de prospecção: busca → enriquecimento → análise → relatório"
+  type: pipeline
+
+metadata:
+  elicit:
+    - query: "Qual categoria de empresa? (ex: restaurantes)"
+    - location: "Qual localização? (ex: São Paulo)"
+    - limit: "Quantos leads buscar? (padrão: 20)"
+  confirmation_required: true
+
+execution_modes:
+  yolo:
+    description: "Executa tudo sem perguntar"
+    prompts: 0
+  interactive:
+    description: "Confirma entre cada fase"
+    prompts: 4
+    default: true
+
+phases:
+  - name: "Busca"
+    description: "Scraping do Google Maps"
+    agent: "pp-scout"
+    task: "scrape-google-maps"
+
+  - name: "Enriquecimento"
+    description: "Encontrar Instagram e scoring inicial"
+    agent: "pp-enricher"
+    task: "find-instagram-handles"
+
+  - name: "Análise"
+    description: "Analisar perfis Instagram"
+    agent: "pp-stalker"
+    task: "analyze-instagram"
+
+  - name: "Relatório"
+    description: "Gerar relatório de prospecção"
+    agent: "pp-reporter"
+    task: "generate-report"
+
+sequence:
+  - id: "scout-scrape"
+    step: 1
+    agent: "pp-scout"
+    action: "Executar scraping do Google Maps com {{query}} em {{location}}"
+    next: "enricher-enrich"
+
+  - id: "enricher-enrich"
+    step: 2
+    agent: "pp-enricher"
+    action: "Enriquecer leads com Instagram handles e scoring inicial"
+    next: "stalker-analyze"
+
+  - id: "stalker-analyze"
+    step: 3
+    agent: "pp-stalker"
+    action: "Analisar perfis Instagram dos leads enriquecidos"
+    next: "reporter-report"
+
+  - id: "reporter-report"
+    step: 4
+    agent: "pp-reporter"
+    action: "Gerar relatório final com classificação e scripts de abordagem"
+    next: "end"
+
+  - id: "end"
+    step: 5
+    type: "workflow_end"
+    action: "Pipeline concluído"
+
+flow_diagram: |
+  ```mermaid
+  graph LR
+    A[🔍 Scout] -->|leads brutos| B[💎 Enricher]
+    B -->|leads + Instagram| C[📸 Stalker]
+    C -->|leads analisados| D[📝 Reporter]
+    D -->|relatório| E[✅ Fim]
+  ```
+
+error_handling:
+  on_scout_fail: "Verificar conexão e configuração do Playwright"
+  on_enricher_fail: "Continuar sem Instagram handles encontrados"
+  on_stalker_fail: "Gerar relatório com dados parciais"
+  on_reporter_fail: "Salvar dados brutos em JSON"

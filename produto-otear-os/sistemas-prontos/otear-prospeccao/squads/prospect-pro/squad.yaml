@@ -1,0 +1,68 @@
+name: prospect-pro
+version: "1.0.0"
+description: "Squad de prospecção ativa para Marketing Digital. Busca empresas no Google Maps, enriquece com dados do Instagram, gera relatórios de prospecção com scoring e scripts de abordagem."
+author: "AIOS Framework"
+license: "MIT"
+slashPrefix: "/SQUADS:prospect-pro"
+
+aios:
+  minVersion: "3.0.0"
+
+components:
+  agents:
+    - pp-scout
+    - pp-enricher
+    - pp-stalker
+    - pp-reporter
+  tasks:
+    - scrape-google-maps
+    - find-instagram-handles
+    - score-leads
+    - analyze-instagram
+    - generate-report
+  workflows:
+    - prospect-pipeline
+  checklists:
+    - prospect-validation
+  templates:
+    - prospecting-report
+  tools: []
+  scripts:
+    - google_maps_scraper.py
+    - lead_enricher.py
+    - instagram_scraper.py
+    - report_generator.py
+    - prospect_pipeline.py
+
+config:
+  language: pt-BR
+  defaultLocation: "São Paulo, Brasil"
+  maxLeadsPerScrape: 50
+  scoring:
+    hotThreshold: 8
+    warmThreshold: 5
+
+dependencies:
+  python: ">=3.10"
+  node: []
+  squads: []
+
+packages:
+  - playwright>=1.40.0
+  - fastapi>=0.104.0
+  - uvicorn>=0.24.0
+  - pydantic>=2.5.0
+  - pyyaml>=6.0
+  - python-dateutil>=2.8.0
+
+collaboration:
+  pattern: pipeline
+  flow: "@scout → @enricher → @stalker → @reporter"
+
+tags:
+  - prospecting
+  - scraping
+  - google-maps
+  - instagram
+  - lead-generation
+  - marketing-digital

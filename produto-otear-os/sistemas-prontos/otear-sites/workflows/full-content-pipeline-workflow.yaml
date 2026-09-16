@@ -1,0 +1,75 @@
+﻿workflow_name: full_content_pipeline
+description: "Pipeline completo de produÃ§Ã£o de conteÃºdo â€” do planejamento editorial Ã  publicaÃ§Ã£o multicanal, integrando estratÃ©gia, escrita, adaptaÃ§Ã£o social, briefs de imagem e agendamento"
+
+agent_sequence:
+  - content-strategist
+  - long-form-writer
+  - social-media-adapter
+  - image-brief-generator
+  - publishing-scheduler
+
+key_commands:
+  - "*content-pipeline"
+  - "*full-pipeline"
+
+trigger_threshold: 1
+typical_duration: "60-120 minutes"
+
+success_indicators:
+  - "CalendÃ¡rio editorial gerado"
+  - "ConteÃºdo longo escrito e otimizado para SEO"
+  - "Posts adaptados para cada rede social"
+  - "Briefs de imagem gerados para todas as peÃ§as"
+  - "PublicaÃ§Ãµes agendadas em horÃ¡rios Ã³timos"
+
+transitions:
+  calendar_planned:
+    trigger: "CalendÃ¡rio editorial gerado â€” temas e formatos definidos"
+    confidence: 0.90
+    greeting_message: "ðŸ“‹ CalendÃ¡rio planejado. Iniciando escrita do conteÃºdo."
+    next_steps:
+      - command: "*write-article"
+        args_template: "--topic={theme} --keywords={keywords}"
+        description: "Escrever conteÃºdo longo baseado no tema planejado"
+        priority: 1
+
+  content_written:
+    trigger: "ConteÃºdo longo escrito â€” artigo/whitepaper completo"
+    confidence: 0.90
+    greeting_message: "âœï¸ ConteÃºdo escrito. Adaptando para redes sociais."
+    next_steps:
+      - command: "*adapt-social"
+        args_template: "--content=long-form-content.md --platforms={channels}"
+        description: "Adaptar conteÃºdo longo para posts de redes sociais"
+        priority: 1
+
+  social_adapted:
+    trigger: "ConteÃºdo adaptado para redes sociais â€” posts por plataforma gerados"
+    confidence: 0.90
+    greeting_message: "ðŸ“± Posts sociais prontos. Gerando briefs de imagem."
+    next_steps:
+      - command: "*generate-brief"
+        args_template: "--content=social-posts.json --platforms={channels}"
+        description: "Gerar briefs de imagem para cada peÃ§a de conteÃºdo"
+        priority: 1
+
+  briefs_generated:
+    trigger: "Briefs de imagem gerados â€” prompts e especificaÃ§Ãµes prontos"
+    confidence: 0.95
+    greeting_message: "ðŸŽ¨ Briefs prontos. Agendando publicaÃ§Ãµes."
+    next_steps:
+      - command: "*schedule"
+        args_template: "--content=social-posts.json --channels={channels}"
+        description: "Agendar publicaÃ§Ãµes em horÃ¡rios Ã³timos por plataforma"
+        priority: 1
+
+  publishing_scheduled:
+    trigger: "PublicaÃ§Ãµes agendadas â€” fila configurada com horÃ¡rios Ã³timos"
+    confidence: 0.95
+    greeting_message: "â° Tudo agendado! Pipeline de conteÃºdo completo."
+    next_steps:
+      - command: "*plan-calendar"
+        args_template: "--period=mensal"
+        description: "Opcional: planejar prÃ³ximo ciclo de conteÃºdo"
+        priority: 2
+

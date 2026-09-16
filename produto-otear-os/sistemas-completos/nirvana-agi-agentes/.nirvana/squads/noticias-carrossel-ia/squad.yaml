@@ -1,0 +1,118 @@
+name: noticias-carrossel-ia
+version: "1.0.0"
+protocol: "5.0"
+description: "Squad para pesquisar referencias, noticias e fontes sobre IA/automacao e transformar o material em post carrossel para Instagram, com copy, estrategia, design, revisao e assets finais."
+author: "Marlon Lima"
+license: proprietary
+slashPrefix: nci
+tags:
+  - carrossel
+  - instagram
+  - pesquisa
+  - referencias
+  - noticias
+  - ia
+  - automacao
+  - social-media
+
+capabilities:
+  - id: social_media.carousel_post.create
+    description: "Pesquisa referencias, noticias e fontes atuais sobre um tema, sintetiza os achados, define angulo editorial, escreve copy slide a slide e gera a estrutura de um post carrossel para Instagram."
+    domains:
+      - social_media
+      - content_marketing
+      - research
+    invoke:
+      type: workflow
+      ref: workflows/carrossel.yaml
+    examples:
+      - "busque referencias sobre IA para vendas e crie um carrossel"
+      - "crie um post carrossel com base nas noticias mais recentes sobre agentes de IA"
+      - "pesquise fontes e transforme em carrossel para Instagram"
+    keywords:
+      - buscar referencias
+      - pesquisar referencias
+      - noticias ia
+      - post carrossel
+      - carrossel instagram
+      - fontes
+      - pesquisa
+      - slides
+    produces:
+      - research-brief
+      - strategy-brief
+      - carousel-content
+      - slides-data
+      - instagram-carousel-assets
+    humanize: true
+
+components:
+  agents:
+    - conceituador-visual.agent.md
+    - curador-imagens.agent.md
+    - designer.agent.md
+    - estrategista.agent.md
+    - gerador-imagens.agent.md
+    - image-patcher.agent.md
+    - pesquisador.agent.md
+    - publicador.agent.md
+    - redator.agent.md
+    - revisor.agent.md
+  workflows:
+    - workflows/carrossel.yaml
+
+runtime_requirements:
+  minimum:
+    - runtime: codex
+      version: ">=0.20.0"
+  compatible:
+    - runtime: claude-code
+      version: ">=1.0.0"
+    - runtime: gemini-cli
+      version: ">=0.4.0"
+
+features_required:
+  - file_read
+  - file_write
+  - web_search
+  - web_fetch
+
+features_optional:
+  - bash_execution
+  - image_generation
+  - audit_trail
+
+output:
+  base_dir: default
+
+legacy:
+  v1_path: squads/noticias-carrossel-ia
+
+squad:
+  code: noticias-carrossel-ia
+  name: "Notícias → Carrossel → Instagram"
+  description: >
+    Busca diariamente as notícias mais relevantes sobre IA, agentes e automação
+    para agências digitais. Cria um carrossel completo com design HTML/CSS
+    e publica no Instagram @marlonlima.ia.
+  icon: 📰
+  version: "1.0.0"
+  author: Marlon Lima
+  created: "2026-03-13"
+
+skills:
+  - web_search
+  - web_fetch
+
+pipeline:
+  steps:
+    - checkpoint-tema
+    - pesquisador
+    - estrategista
+    - redator
+    - designer
+    - checkpoint-imagens
+    - curador-imagens
+    - conceituador-visual
+    - gerador-imagens
+    - image-patcher

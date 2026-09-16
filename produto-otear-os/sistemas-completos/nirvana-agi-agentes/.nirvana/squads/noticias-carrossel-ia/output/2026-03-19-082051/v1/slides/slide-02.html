@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 1080px; height: 1440px; overflow: hidden;
+      font-family: 'Inter', sans-serif;
+      display: flex; flex-direction: column;
+      position: relative;
+    }
+    .bg-image {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      background: url('../images/img-slide-02.png') center/cover no-repeat;
+      z-index: 0;
+    }
+    .overlay {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(
+        to bottom,
+        rgba(245, 245, 255, 0.88) 0%,
+        rgba(245, 245, 255, 0.75) 50%,
+        rgba(245, 245, 255, 0.92) 100%
+      );
+      z-index: 1;
+    }
+    .content {
+      position: relative; z-index: 2;
+      display: flex; flex-direction: column;
+      height: 100%; padding: 72px;
+      justify-content: space-between;
+    }
+    .header {
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .handle { font-size: 24px; font-weight: 500; color: rgba(26,26,46,0.5); }
+    .main {
+      display: flex; flex-direction: column; gap: 40px;
+    }
+    .headline {
+      font-size: 52px; font-weight: 800; color: #1A1A2E;
+      line-height: 1.2;
+    }
+    .headline .accent { color: #E8734A; }
+    .body-text {
+      font-size: 34px; font-weight: 500; color: #3A3A5E;
+      line-height: 1.6;
+    }
+    .body-text .highlight { color: #E8734A; font-weight: 700; }
+    .footer {
+      display: flex; justify-content: flex-end; align-items: center; gap: 8px;
+    }
+    .swipe { font-size: 24px; font-weight: 500; color: rgba(26,26,46,0.4); }
+    .swipe-arrow { font-size: 28px; color: #E8734A; }
+  </style>
+</head>
+<body>
+  <div class="bg-image"></div>
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="header">
+      <span class="handle">@marlonlima.ia</span>
+    </div>
+
+    <div class="main">
+      <h2 class="headline">Em 2025, toda empresa de IA dizia <span class="accent">SIM</span> para tudo</h2>
+      <p class="body-text">Contratos militares, parcerias sem filtro, corrida por escala a qualquer custo. O consenso do mercado era claro: <span class="highlight">aceitar tudo, crescer rápido, dominar</span>. Quem recusasse ficaria para trás. Era o que todos acreditavam. Todas as empresas seguiam essa cartilha. <span class="highlight">Menos uma.</span></p>
+    </div>
+
+    <div class="footer">
+      <span class="swipe">Deslize</span>
+      <span class="swipe-arrow">→</span>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+﻿{
+    "slides":  [
+                   {
+                       "bgColor":  "#07110F",
+                       "type":  "cover",
+                       "subtitle":  "7 aplicações práticas para vender mais sem aumentar o time",
+                       "highlightColor":  "#52F2A8",
+                       "titleColor":  "#EAFBF4",
+                       "textPosition":  "bottom",
+                       "highlight":  "IA|VENDAS",
+                       "title":  "IA NAS VENDAS",
+                       "fontFamily":  "urbanist"
+                   },
+                   {
+                       "subtitle":  "",
+                       "fontFamily":  "urbanist",
+                       "title":  "O erro é tratar IA como chatbot. Em vendas, ela precisa virar processo.",
+                       "type":  "text-only",
+                       "bgColor":  "#0E151B",
+                       "titleColor":  "#FFFFFF",
+                       "highlightColor":  "#52F2A8",
+                       "highlight":  "processo"
+                   },
+                   {
+                       "subtitle":  "",
+                       "fontFamily":  "urbanist",
+                       "title":  "1. Priorizar leads: a IA cruza histórico, intenção e fit para mostrar quem merece abordagem agora.",
+                       "type":  "text-only",
+                       "bgColor":  "#F4F7F2",
+                       "titleColor":  "#111111",
+                       "highlightColor":  "#0A8F5A",
+                       "highlight":  "quem merece abordagem agora"
+                   },
+                   {
+                       "subtitle":  "",
+                       "fontFamily":  "urbanist",
+                       "title":  "2. Personalizar a primeira mensagem: segmento, dor provável e oferta certa para cada conta.",
+                       "type":  "text-only",
+                       "bgColor":  "#121212",
+                       "titleColor":  "#FFFFFF",
+                       "highlightColor":  "#F4C542",
+                       "highlight":  "oferta certa"
+                   },
+                   {
+                       "subtitle":  "",
+                       "fontFamily":  "urbanist",
+                       "title":  "3. Preparar o vendedor antes da call: resumo da empresa, gatilhos, objeções e perguntas inteligentes.",
+                       "type":  "text-only",
+                       "bgColor":  "#102033",
+                       "titleColor":  "#FFFFFF",
+                       "highlightColor":  "#6EC6FF",
+                       "highlight":  "antes da call"
+                   },
+                   {
+                       "subtitle":  "",
+                       "fontFamily":  "urbanist",
+                       "title":  "4. Analisar ligações: a IA encontra objeções repetidas, momentos de perda e frases que convertem.",
+                       "type":  "text-only",
+                       "bgColor":  "#18110D",
+                       "titleColor":  "#FFFFFF",
+                       "highlightColor":  "#FF9F68",
+                       "highlight":  "frases que convertem"
+                   },
+                   {
+                       "subtitle":  "",
+                       "fontFamily":  "urbanist",
+                       "title":  "5. Automatizar follow-up: próximo passo, prazo e mensagem saem do CRM sem depender da memória do vendedor.",
+                       "type":  "text-only",
+                       "bgColor":  "#10131A",
+                       "titleColor":  "#FFFFFF",
+                       "highlightColor":  "#B6F36A",
+                       "highlight":  "sem depender da memória"
+                   },
+                   {
+                       "subtitle":  "IA boa em vendas não substitui vendedor bom. Ela tira o trabalho invisível do caminho.",
+                       "fontFamily":  "urbanist",
+                       "title":  "Comece pequeno: escolha 1 etapa do funil, meça conversão por 14 dias e só depois expanda.",
+                       "type":  "text-only",
+                       "bgColor":  "#EAFBF4",
+                       "titleColor":  "#07110F",
+                       "highlightColor":  "#0A8F5A",
+                       "highlight":  "Comece pequeno|14 dias"
+                   }
+               ]
+}

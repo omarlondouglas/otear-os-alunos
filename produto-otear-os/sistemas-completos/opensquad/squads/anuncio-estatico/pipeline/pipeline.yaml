@@ -1,0 +1,30 @@
+pipeline:
+  name: "Anúncio Estático Pipeline"
+  version: "1.0.0"
+
+  steps:
+    - id: checkpoint-brief
+      file: steps/01-checkpoint-brief.md
+
+    - id: copywriter
+      file: steps/02-copywriter.md
+
+    - id: checkpoint-copy
+      file: steps/03-checkpoint-copy.md
+
+    - id: designer
+      file: steps/04-designer.md
+
+    - id: revisor
+      file: steps/05-revisor.md
+
+    - id: checkpoint-final
+      file: steps/06-checkpoint-final.md
+
+  checkpoints:
+    - checkpoint-brief
+    - checkpoint-copy
+    - checkpoint-final
+
+  on_reject:
+    revisor: copywriter

@@ -1,0 +1,196 @@
+﻿workflow_name: lp_auto_pipeline
+description: "Pipeline full-auto: Webhook â†’ Extract â†’ Discovery â†’ Copy+Design â†’ Images â†’ Build â†’ QA â†’ Deploy â†’ GitHub. Zero intervenÃ§Ã£o humana."
+
+agent_sequence:
+  - lp-orchestrator
+  - lp-scraper
+  - lp-strategist
+  - lp-researcher
+  - lp-copywriter
+  - lp-design-architect
+  - lp-image-creator
+  - lp-frontend-dev
+  - lp-backend-dev
+  - lp-integrator
+  - lp-reviewer
+  - lp-deployer
+  - lp-versioner
+
+success_indicators:
+  - "LP live na Vercel com URL acessÃ­vel"
+  - "QA score >= 8.0"
+  - "CÃ³digo versionado no GitHub com release"
+  - "NotificaÃ§Ã£o de conclusÃ£o enviada"
+
+workflow:
+  id: lp-auto-pipeline
+  name: "LP Auto Pipeline (Full-Auto)"
+  description: "Pipeline automatizado disparado via webhook. Claude Code CLI executa cada agente em sequÃªncia."
+  type: pipeline
+
+  trigger: "HTTP POST /api/create-lp no webhook server"
+
+  pre_conditions:
+    - "Webhook server rodando no EasyPanel"
+    - "Claude Code CLI autenticado na VPS"
+    - "Vercel CLI autenticada"
+    - "GitHub CLI autenticada"
+
+  sequence:
+    # Step 0 â€” Receive & Validate
+    - agent: lp-orchestrator
+      action: "receive-order"
+      creates: "workspace + order.json + status.json"
+      description: "Receber pedido, validar, criar workspace isolado"
+
+    # Step 1-2 â€” Extract Reference (condicional: se URL existe)
+    - agent: lp-scraper
+      action: "extract-design"
+      creates: "extracted-design-tokens.md"
+      description: "Extrair design system da URL de referÃªncia"
+      conditional: "reference_url exists"
+
+    - agent: lp-scraper
+      action: "extract-content"
+      creates: "extracted-content-structure.md"
+      description: "Extrair estrutura de conteÃºdo da referÃªncia"
+      conditional: "reference_url exists"
+
+    # Step 3 â€” Discovery (auto mode)
+    - agent: lp-strategist
+      action: "auto-discover"
+      creates: "product-brief.md + scope-definition.md"
+      description: "Discovery automÃ¡tico usando dados do pedido (sem questionÃ¡rio)"
+
+    # Step 4 â€” Research
+    - agent: lp-researcher
+      action: "full-research"
+      creates: "research-synthesis.md"
+      description: "Pesquisa de mercado, concorrentes e audiÃªncia"
+
+    # Step 5 â€” Copywriting
+    - agent: lp-copywriter
+      action: "write-all-sections"
+      creates: "section-copy.md"
+      description: "Copy de todas as seÃ§Ãµes baseado na pesquisa"
+
+    # Step 6 â€” Design System
+    - agent: lp-design-architect
+      action: "full-design"
+      creates: "design-tokens.md + component-specs.md + section-layouts.md"
+      description: "Design system baseado na extraÃ§Ã£o da referÃªncia"
+
+    # Step 7a â€” Generate Images
+    - agent: lp-image-creator
+      action: "generate-all"
+      creates: "hero-image + section-images"
+      description: "Gerar imagens para hero e seÃ§Ãµes"
+
+    # Step 7b â€” Edit Client Photos (condicional: se cliente enviou fotos)
+    - agent: lp-image-creator
+      action: "edit-client-photos"
+      creates: "edited-photos"
+      description: "Editar fotos do cliente com nano-banana-pro para combinar com o design system"
+      conditional: "client photos exist in R2"
+
+    # Step 7c â€” Upload All Assets to R2
+    - agent: lp-storage
+      action: "init-storage + upload-assets"
+      creates: "assets-manifest.json"
+      description: "Inicializar storage no R2, otimizar e fazer upload de imagens geradas + fotos editadas + vÃ­deos"
+
+    # Step 8 â€” Frontend Build
+    - agent: lp-frontend-dev
+      action: "full-build"
+      creates: "packages/frontend/"
+      description: "Build completo do frontend Next.js"
+
+    # Step 9 â€” Backend Build (condicional)
+    - agent: lp-backend-dev
+      action: "full-build"
+      creates: "packages/backend/"
+      description: "Build do backend FastAPI"
+      conditional: "backend: true"
+
+    # Step 10 â€” Integrations (condicional)
+    - agent: lp-integrator
+      action: "connect-all"
+      creates: "integrations"
+      description: "Conectar WhatsApp, email e API"
+      conditional: "whatsapp: true OR email: true"
+
+    # Step 11 â€” QA
+    - agent: lp-reviewer
+      action: "full-review"
+      creates: "final-report.md"
+      description: "QA multi-dimensional automÃ¡tica"
+
+    # Step 12 â€” Deploy Vercel
+    - agent: lp-deployer
+      action: "deploy-vercel"
+      creates: "vercel-url"
+      description: "Deploy frontend na Vercel"
+
+    # Step 13 â€” Deploy Backend (condicional)
+    - agent: lp-deployer
+      action: "deploy-easypanel"
+      creates: "backend-url"
+      description: "Deploy backend no EasyPanel"
+      conditional: "backend: true"
+
+    # Step 14 â€” Domain (condicional)
+    - agent: lp-deployer
+      action: "setup-domain"
+      creates: "domain-config"
+      description: "Configurar domÃ­nio customizado"
+      conditional: "custom_domain exists"
+
+    # Step 15 â€” Version
+    - agent: lp-versioner
+      action: "full-version"
+      creates: "github-repo + release"
+      description: "Criar repo GitHub, versionar e criar release"
+
+    # Step 16 â€” Notify
+    - agent: lp-orchestrator
+      action: "notify"
+      creates: "notification"
+      description: "Enviar notificaÃ§Ã£o de conclusÃ£o com URLs e metadados"
+
+  key_commands:
+    - "*create-lp"
+
+  trigger_threshold: 1
+  typical_duration: "30-60 minutes"
+
+  transitions:
+    order_received:
+      trigger: "HTTP POST received with valid payload"
+      confidence: 0.95
+      greeting_message: "ðŸš€ Pedido recebido! Iniciando pipeline automÃ¡tico..."
+
+    extraction_complete:
+      trigger: "Design tokens and content structure extracted from reference URL"
+      confidence: 0.90
+      greeting_message: "ðŸ“¡ ReferÃªncia analisada. Design system extraÃ­do. Iniciando discovery..."
+
+    content_ready:
+      trigger: "Discovery, research, and copywriting complete"
+      confidence: 0.88
+      greeting_message: "ðŸ“ ConteÃºdo pronto. Iniciando design e imagens..."
+
+    build_complete:
+      trigger: "Frontend (and backend if applicable) built successfully"
+      confidence: 0.85
+      greeting_message: "ðŸ”¨ Build concluÃ­do. Rodando QA..."
+
+    qa_passed:
+      trigger: "QA score >= 8.0"
+      confidence: 0.92
+      greeting_message: "âœ… QA aprovada! Deployando..."
+
+    delivered:
+      trigger: "Deployed to Vercel, versioned on GitHub, notification sent"
+      confidence: 0.95
+      greeting_message: "ðŸŽ‰ Entregue! LP live e versionada."
+

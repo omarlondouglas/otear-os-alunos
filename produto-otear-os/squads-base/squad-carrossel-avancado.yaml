@@ -1,0 +1,60 @@
+id: squad-carrossel-avancado
+name: Squad Carrossel Avancado
+version: 1.0.0
+purpose: Criar carrossel com pesquisa, narrativa, design, imagens, revisao e pacote de publicacao.
+
+agents:
+  - curador-de-noticias
+  - pesquisador-de-mercado
+  - designer-de-carrossel
+  - arquiteto-de-design
+  - gerador-de-imagens
+  - curador-de-imagens
+  - ajustador-de-imagem
+  - publicador-conteudo
+  - revisor-de-qualidade
+
+workflow:
+  - step: pauta
+    agent: curador-de-noticias
+    output: pauta_e_angulo
+  - step: pesquisa
+    agent: pesquisador-de-mercado
+    output: contexto
+  - step: narrativa
+    agent: designer-de-carrossel
+    output: slide_a_slide
+  - step: design
+    agent: arquiteto-de-design
+    output: direcao_visual
+  - step: imagens
+    agent: gerador-de-imagens
+    output: prompts_e_referencias
+  - step: curadoria
+    agent: curador-de-imagens
+    output: selecao_visual
+  - step: ajustes
+    agent: ajustador-de-imagem
+    output: ajustes_finais
+  - step: publicacao
+    agent: publicador-conteudo
+    output: pacote_de_publicacao
+  - step: revisao
+    agent: revisor-de-qualidade
+    output: carrossel_final
+
+outputs:
+  - pauta
+  - slides
+  - copy_por_slide
+  - direcao_visual
+  - prompts_de_imagem
+  - legenda
+  - checklist_de_publicacao
+
+acceptance_criteria:
+  - Cada slide tem funcao clara.
+  - A capa prende atencao.
+  - O visual reforca a mensagem.
+  - A publicacao esta pronta.
+

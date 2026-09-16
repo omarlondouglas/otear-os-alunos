@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 1080px; height: 1440px; overflow: hidden;
+      background: #FF6B35;
+      font-family: 'Inter', sans-serif;
+      display: flex; flex-direction: column;
+      position: relative;
+    }
+    /* Background texture */
+    body::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 30% 20%, rgba(255,255,255,0.08) 0%, transparent 60%),
+                  radial-gradient(ellipse at 80% 80%, rgba(0,0,0,0.15) 0%, transparent 50%);
+    }
+    .header {
+      display: flex; justify-content: flex-end;
+      padding: 48px 72px 0;
+      position: relative; z-index: 1;
+    }
+    .handle { font-size: 26px; font-weight: 600; color: rgba(255,255,255,0.6); letter-spacing: 0.02em; }
+    .main {
+      flex: 1; display: flex; flex-direction: column;
+      justify-content: center; align-items: flex-start;
+      padding: 0 72px;
+      position: relative; z-index: 1;
+    }
+    .cta-label {
+      font-size: 26px; font-weight: 700;
+      color: rgba(255,255,255,0.7);
+      text-transform: uppercase; letter-spacing: 0.14em;
+      margin-bottom: 40px;
+    }
+    .keyword {
+      font-size: 140px; font-weight: 900;
+      color: #FFFFFF;
+      line-height: 0.9;
+      letter-spacing: -0.03em;
+      margin-bottom: 48px;
+      text-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    }
+    .description {
+      font-size: 30px; font-weight: 500;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.6;
+      margin-bottom: 48px;
+    }
+    .description strong { color: #FFFFFF; font-weight: 800; }
+    .source {
+      font-size: 22px; font-weight: 500;
+      color: rgba(255,255,255,0.5);
+      border-top: 1px solid rgba(255,255,255,0.2);
+      padding-top: 32px;
+      width: 100%;
+    }
+    .source span { display: block; margin-top: 6px; }
+  </style>
+</head>
+<body>
+  <div class="header"><span class="handle">@marlonlima.ia</span></div>
+  <div class="main">
+    <div class="cta-label">Comenta a palavra</div>
+    <div class="keyword">AGENTE</div>
+    <p class="description">
+      Te mando o passo a passo gratuito<br>
+      de como montar seu <strong>agente de<br>atendimento no WhatsApp.</strong><br><br>
+      Sem programar nada.<br>
+      No ar em menos de 1 hora.
+    </p>
+    <div class="source">
+      Fonte: UAI / Mundo Corporativo
+      <span>Agentes de IA ajudam a acelerar vendas e atendimento — 17/03/2026</span>
+    </div>
+  </div>
+</body>
+</html>

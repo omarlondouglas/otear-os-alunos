@@ -1,0 +1,33 @@
+id: squad-identidade-visual
+name: Squad Identidade Visual
+version: 1.0.0
+purpose: Criar direcao visual para marca, produto ou campanha.
+
+agents:
+  - pesquisador-de-mercado
+  - arquiteto-de-design
+  - revisor-de-qualidade
+
+workflow:
+  - step: contexto
+    agent: pesquisador-de-mercado
+    output: publico_e_referencias
+  - step: direcao
+    agent: arquiteto-de-design
+    output: sistema_visual
+  - step: revisao
+    agent: revisor-de-qualidade
+    output: guia_visual
+
+outputs:
+  - paleta
+  - tipografia
+  - estilo_de_imagem
+  - componentes
+  - regras_de_uso
+
+acceptance_criteria:
+  - A direcao visual combina com o posicionamento.
+  - As regras sao claras.
+  - A identidade pode orientar novas pecas.
+

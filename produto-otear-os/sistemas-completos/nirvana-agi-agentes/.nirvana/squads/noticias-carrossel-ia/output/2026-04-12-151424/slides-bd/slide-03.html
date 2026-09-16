@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&family=Inter:wght@400;500;600;700&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 1080px; height: 1440px; overflow: hidden;
+      font-family: 'Instrument Serif', 'Tiempos Headline', Georgia, serif;
+      position: relative;
+      font-weight: 400;
+    }
+
+    /* ---- Themes (BrandsDecoded palette) ---- */
+    body.theme-dark   { background: #0A0A0A; color: #FFFFFF; }
+    body.theme-light  { background: #F5F2EC; color: #0A0A0A; }
+    body.theme-accent { background: #F15A29; color: #0A0A0A; }
+    body.theme-black  { background: #000000; color: #FFFFFF; }
+
+    /* ---- Image Layer ---- */
+    .img-layer {
+      position: absolute; inset: 0;
+      background-size: cover; background-position: center;
+    }
+    .img-layer::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(0deg, rgba(0,0,0,0.94) 0%, rgba(0,0,0,0.78) 35%, rgba(0,0,0,0.18) 65%, rgba(0,0,0,0.05) 100%);
+    }
+
+    /* ---- Content ---- */
+    .content {
+      position: relative; z-index: 2;
+      width: 100%; height: 100%;
+      padding: 80px 72px 72px;
+      display: flex; flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      text-align: left;
+    }
+    body.theme-black .content {
+      justify-content: flex-end;
+      padding-bottom: 100px;
+    }
+
+    /* ---- Header bar ---- */
+    .header-bar {
+      display: flex; justify-content: space-between; align-items: center;
+      font-family: 'Inter', sans-serif;
+      font-size: 20px; font-weight: 500;
+      letter-spacing: 0.01em;
+      position: absolute; top: 56px; left: 72px; right: 72px;
+      z-index: 3;
+    }
+    body.theme-dark .header-bar,
+    body.theme-black .header-bar { color: rgba(255,255,255,0.55); }
+    body.theme-light .header-bar  { color: rgba(10,10,10,0.50); }
+    body.theme-accent .header-bar { color: rgba(10,10,10,0.65); }
+
+    /* ---- Brand bar (abaixo do header) ---- */
+    .brand-bar {
+      display: flex; align-items: center; gap: 14px;
+      font-family: 'Inter', sans-serif;
+      font-size: 26px; font-weight: 600;
+      margin-bottom: 28px;
+      flex-shrink: 0;
+    }
+    .brand-bar .brand-dot {
+      width: 34px; height: 34px; border-radius: 50%;
+      background: #F15A29; color: #0A0A0A;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-size: 22px; font-weight: 800;
+      font-family: 'Inter', sans-serif;
+    }
+    .brand-bar .brand-handle { letter-spacing: -0.01em; }
+    .brand-bar .brand-check {
+      font-size: 22px; color: #3898EC;
+    }
+
+    /* ---- Tag ---- */
+    .tag {
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      font-size: 20px; font-weight: 600;
+      letter-spacing: 0.10em; text-transform: uppercase;
+      padding: 8px 18px; border-radius: 6px;
+      background: #F15A29; color: #0A0A0A;
+      margin-bottom: 36px; align-self: flex-start;
+      flex-shrink: 0;
+    }
+    body.theme-accent .tag { background: #0A0A0A; color: #F15A29; }
+    body.theme-light  .tag { background: #0A0A0A; color: #F5F2EC; }
+    body.theme-black  .tag { background: #F15A29; color: #0A0A0A; }
+
+    /* ---- Stat ---- */
+    .stat {
+      font-size: 220px; font-weight: 400;
+      line-height: 0.92; letter-spacing: -0.04em;
+      color: #F15A29;
+      margin-bottom: 20px;
+      flex-shrink: 0;
+      font-style: italic;
+    }
+    body.theme-accent .stat { color: #0A0A0A; font-style: italic; }
+    body.theme-light  .stat { color: #0A0A0A; }
+
+    /* ---- Headline ---- */
+    .headline {
+      font-family: 'Instrument Serif', serif;
+      font-size: 92px; font-weight: 400;
+      line-height: 1.02; letter-spacing: -0.025em;
+      margin-bottom: 28px;
+      flex-shrink: 0;
+    }
+    .headline em {
+      font-style: italic;
+      background: #F15A29; color: #0A0A0A;
+      padding: 0 14px 2px;
+      border-radius: 2px;
+    }
+    body.theme-accent .headline em { background: #0A0A0A; color: #F15A29; }
+    body.theme-light  .headline em { background: #F15A29; color: #0A0A0A; }
+
+    /* ---- Sub ---- */
+    .sub {
+      font-family: 'Instrument Serif', serif;
+      font-size: 46px; font-weight: 400;
+      line-height: 1.25; letter-spacing: -0.015em;
+      margin-bottom: 24px;
+      opacity: 0.85;
+      flex-shrink: 0;
+      font-style: italic;
+    }
+
+    /* ---- Body ---- */
+    .body-text {
+      font-family: 'Inter', sans-serif;
+      font-size: 32px; font-weight: 400;
+      line-height: 1.5; letter-spacing: -0.005em;
+      opacity: 0.80;
+      flex-shrink: 0;
+    }
+    .body-text strong { font-weight: 700; opacity: 1; }
+    .body-text em {
+      font-style: normal;
+      background: #F15A29; color: #0A0A0A;
+      padding: 0 8px 2px;
+      border-radius: 2px;
+    }
+    body.theme-accent .body-text em { background: #0A0A0A; color: #F15A29; }
+
+    /* ---- List ---- */
+    .list {
+      list-style: none;
+      display: flex; flex-direction: column; gap: 22px;
+      flex-shrink: 0;
+    }
+    .list li {
+      font-family: 'Inter', sans-serif;
+      font-size: 32px; font-weight: 500; line-height: 1.35;
+      display: flex; gap: 20px; align-items: flex-start;
+    }
+    .list li::before {
+      content: '—';
+      color: #F15A29; font-weight: 700; flex-shrink: 0;
+    }
+    body.theme-accent .list li::before { color: #0A0A0A; }
+
+    /* ---- CTA Box ---- */
+    .cta-box {
+      font-family: 'Instrument Serif', serif;
+      background: rgba(241,90,41,0.08);
+      border: 2px solid #F15A29;
+      border-radius: 4px;
+      padding: 36px 44px;
+      font-size: 42px; font-weight: 400;
+      line-height: 1.25; letter-spacing: -0.015em;
+      flex-shrink: 0;
+    }
+
+    /* ---- Swipe ---- */
+    .swipe {
+      font-family: 'Inter', sans-serif;
+      font-size: 22px; font-weight: 500;
+      opacity: 0.45; letter-spacing: 0.02em;
+      position: absolute; bottom: 48px; right: 72px;
+      z-index: 3;
+    }
+    .swipe::after { content: ' →'; }
+
+    /* ---- Spacer ---- */
+    .spacer { flex: 1; min-height: 24px; }
+
+    /* ---- Pagination dots ---- */
+    .dots {
+      position: absolute; bottom: 50px; left: 50%;
+      transform: translateX(-50%);
+      display: flex; gap: 8px;
+      z-index: 3;
+    }
+    .dots span { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,0.25); }
+    body.theme-light .dots span { background: rgba(10,10,10,0.25); }
+    body.theme-accent .dots span { background: rgba(10,10,10,0.35); }
+  </style>
+</head>
+<body class="theme-accent">
+  
+  <div class="content">
+    <div class="header-bar">
+      <span>Powered by Tear</span>
+      <span>@marlonlima.ia</span>
+      <span>2026 //</span>
+    </div>
+    <div class="brand-bar">
+      <span class="brand-dot">✱</span>
+      <span class="brand-handle">@marlonlima.ia</span>
+      <span class="brand-check">✓</span>
+    </div>
+    <div class="stat">Milhares</div>
+    <p class="sub">de zero-days encontrados em semanas.</p>
+    <p class="body-text">Falhas que times humanos de ponta levariam anos pra mapear. Mythos fez sozinho.</p>
+  </div>
+</body>
+</html>

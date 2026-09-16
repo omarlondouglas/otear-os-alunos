@@ -1,0 +1,39 @@
+id: squad-exemplo
+name: Squad Exemplo
+version: 0.1.0
+purpose: "Produzir um resultado especifico do Tear com agentes coordenados."
+
+inputs:
+  - briefing
+  - contexto
+  - referencias
+
+outputs:
+  - artefato_final
+  - relatorio_curto
+  - checklist_qualidade
+
+agents:
+  - id: estrategista
+    role: define plano e criterios
+  - id: executor
+    role: produz o artefato
+  - id: validador
+    role: revisa contra checklist
+
+workflow:
+  - step: intake
+    agent: estrategista
+    output: plano_de_execucao
+  - step: producao
+    agent: executor
+    output: artefato_final
+  - step: validacao
+    agent: validador
+    output: checklist_qualidade
+
+acceptance_criteria:
+  - "Nao usa caminhos absolutos pessoais."
+  - "Funciona dentro de {OTEAR_SO_ROOT}."
+  - "Tem entrada, saida e criterio de pronto claros."
+

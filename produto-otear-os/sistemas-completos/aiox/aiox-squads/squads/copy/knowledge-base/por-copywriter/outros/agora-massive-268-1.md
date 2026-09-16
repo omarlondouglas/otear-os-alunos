@@ -1,0 +1,70 @@
+---
+copywriter: "Agora (uncredited)"
+source_format: "pdf"
+original_type: "sales-letter"
+category: "financial"
+tags:
+  - "agora"
+  - "financial"
+  - "massive-swipe"
+quality_score: 6
+extracted_date: "2026-04-09"
+source_file: "Massive Agora Swipe File/268-1.pdf"
+---
+
+# Panama City, Panama - May 15-19, 2002      When the world's leading privacy experts, money  managers
+
+> Agora promo (34358 chars, 24p). Cat: financial.
+
+## Lead
+
+```
+Panama City, Panama - May 15-19, 2002  
+  
+When the world's leading privacy experts, money 
+managers, and tax geniuses meet this spring to share their 
+secrets and strategies, you'll find out...Eleven ways to 
+diversify your portfolio offshore... three proven strategies 
+to profit overseas... seven ways investing offshore can 
+Page 1 of 24
+4/7/2005
+http://www.agora-inc.com/reports/191SPN2/escape/home.cfm
+help protect your assets from attack...and more...  
+Hosted this year at the luxurious Miramar Inter-Continental Hotel in Panama City, 
+this exclusive conference brings together a select group of high-level experts in the 
+America's most sophisticated banking haven. In an age when the offshore 
+infrastructure throughout the Caribbean and beyond has begun to unravel, Panama 
+continues to stand by its strong financial privacy laws and its commitment to no taxes 
+on offshore activities, corporate or personal.  
+That's why we'd like you to join us there this May. During general-education 
+sessions, subject-specific workshops, and one-on-one meetings, you'll learn how to:  
+IDENTIFY the few banking havens left where your hard-earned money is still 
+secure and your privacy is really protected.  
+USE proven global-investing strategies to reduce the volatility in your portfolio so 
+you're making money, even in a recession.  
+INVEST legally in any of the 40,000 mutual funds to which U.S. citizens don't 
+normally have access.  
+ASK the right questions about foreign nationality. Not all
+```
+
+## Corpo (trecho)
+
+```
+privacy laws in so many traditional banking haven nations 
+have been compromised, Panama remains one of the few countries where 
+your banking privacy is assured - which is why we have selected this haven 
+for our 17th Annual Premier Offshore Advantage Seminar.  
+  
+ 
+This seminar is too important to miss  
+As you know, when you're dealing with ever- changing tax laws and 
+complicated wealth-protection mechanisms, you quickly can get into trouble if 
+you make the wrong move. And that's exactly why we've planned this 
+conference - to give you the straight story.  
+ 
+ 
+We've gone to great lengths to assemble an extraordinary group of high-
+powered experts in one place at one time. It would be impossible for you to 
+gather, in just a few short days, the wealth of knowledge and the excellent 
+c
+```

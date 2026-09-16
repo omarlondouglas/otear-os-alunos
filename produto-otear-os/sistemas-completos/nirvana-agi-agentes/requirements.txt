@@ -1,0 +1,52 @@
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+celery[redis]==5.3.6
+redis==5.0.1
+sqlalchemy==2.0.25
+psycopg2-binary==2.9.9
+alembic==1.13.1
+pydantic[email]==2.5.3
+pydantic-settings==2.1.0
+python-multipart==0.0.6
+aiofiles==23.2.1
+ffmpeg-python==0.2.0
+faster-whisper==0.10.0
+boto3==1.34.34
+minio>=7.2.0
+python-magic==0.4.27
+httpx==0.26.0
+requests==2.31.0
+pysrt==1.1.2
+webvtt-py==0.4.6
+openai>=1.57.0
+agno>=1.5.1
+python-dotenv>=1.0.0
+supabase>=2.3.0
+anthropic>=0.40.0
+google-genai>=1.0.0 # Mantido para generate_image_tool (Google Imagen)
+nest_asyncio>=1.6.0
+slowapi>=0.1.9
+# editordofuturo pipeline
+groq>=0.11.0
+google-generativeai>=0.8.0
+mediapipe>=0.10.18
+opencv-python>=4.10.0
+numpy>=1.26.0
+# Social listing & download (banco de referencias)
+yt-dlp>=2024.10.7
+instaloader>=4.13.0
+# Playwright para screenshots de perfis Instagram (referencia visual)
+playwright>=1.48.0
+# News Digest scrapers (substitui Apify do fluxo n8n original)
+google-api-python-client>=2.140.0
+youtube-transcript-api>=0.6.2
+beautifulsoup4>=4.12.0
+praw>=7.7.0
+pypdf>=4.0.0
+python-docx>=1.1.0
+Pillow>=10.0.0
+
+# Hermes Agent NAO eh instalado por padrao no requirements.txt principal
+# porque o pacote nao esta no PyPI e seria instalado via git, o que pode
+# quebrar builds. Eh instalado on-demand pelo entrypoint.sh quando
+# ENABLE_HERMES=true (ver requirements-hermes.txt).

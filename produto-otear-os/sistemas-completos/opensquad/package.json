@@ -1,0 +1,17 @@
+{
+  "name": "opensquad-project",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "office3d": "node agent-dashboard-main/server.js .",
+    "office3d:dev": "cd agent-dashboard-main && npm run dev",
+    "office3d:build": "cd agent-dashboard-main && npm run build && cp -r dist/* ../interface-app/public/office3d/ && cp -r static/* ../interface-app/public/office3d/"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "playwright": "^1.58.2",
+    "ws": "^8.19.0",
+    "yaml": "^2.8.2"
+  }
+}

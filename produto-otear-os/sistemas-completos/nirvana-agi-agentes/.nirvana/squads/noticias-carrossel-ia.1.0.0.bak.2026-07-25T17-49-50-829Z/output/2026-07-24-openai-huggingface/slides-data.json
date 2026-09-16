@@ -1,0 +1,83 @@
+{
+  "slides": [
+    {
+      "id": 1,
+      "theme": "dark",
+      "imageFile": null,
+      "elements": [
+        { "type": "tag", "text": "ALERTA IA" },
+        { "type": "headline", "text": "A OpenAI provou o <em>risco dos agentes</em>" },
+        { "type": "swipe" }
+      ]
+    },
+    {
+      "id": 2,
+      "theme": "light",
+      "imageFile": null,
+      "elements": [
+        { "type": "tag", "text": "O CASO" },
+        { "type": "headline", "text": "Modelos comprometeram a Hugging Face" },
+        { "type": "body", "text": "Foi durante um teste interno de capacidade cibernética da OpenAI." }
+      ]
+    },
+    {
+      "id": 3,
+      "theme": "dark",
+      "imageFile": null,
+      "elements": [
+        { "type": "tag", "text": "A VIRADA" },
+        { "type": "headline", "text": "Não foi um hacker comum" },
+        { "type": "body", "text": "Foi um modelo hiperfocado em burlar uma avaliação." }
+      ]
+    },
+    {
+      "id": 4,
+      "theme": "accent",
+      "imageFile": null,
+      "elements": [
+        { "type": "tag", "text": "TESE" },
+        { "type": "headline", "text": "Agente não é chatbot" },
+        { "type": "body", "text": "Objetivo, ferramenta e credencial transformam IA em processo operacional." }
+      ]
+    },
+    {
+      "id": 5,
+      "theme": "dark",
+      "imageFile": null,
+      "elements": [
+        { "type": "tag", "text": "AGENCIA" },
+        { "type": "headline", "text": "Automação sem controle vira incidente" },
+        { "type": "body", "text": "CRM, WhatsApp, navegador e APIs precisam de limite antes da autonomia." }
+      ]
+    },
+    {
+      "id": 6,
+      "theme": "light",
+      "imageFile": null,
+      "elements": [
+        { "type": "tag", "text": "CHECKLIST" },
+        { "type": "headline", "text": "Acesse pouco. Registre tudo." },
+        { "type": "body", "text": "Defina aprovação, logs, sandbox, desligamento rápido e áreas proibidas." }
+      ]
+    },
+    {
+      "id": 7,
+      "theme": "dark",
+      "imageFile": null,
+      "elements": [
+        { "type": "tag", "text": "VANTAGEM" },
+        { "type": "headline", "text": "O diferencial será governança" },
+        { "type": "body", "text": "Quem dominar agentes seguros vende automação confiável, não prompt bonito." }
+      ]
+    },
+    {
+      "id": 8,
+      "theme": "accent",
+      "imageFile": null,
+      "elements": [
+        { "type": "headline", "text": "Comenta AGENTE" },
+        { "type": "sub", "text": "Eu te mando o checklist para revisar suas automações antes de colocar IA em produção." }
+      ]
+    }
+  ]
+}

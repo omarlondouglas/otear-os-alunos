@@ -1,0 +1,64 @@
+---
+copywriter: "Chris Haddad"
+source_format: "pdf"
+original_type: "email"
+tags:
+  - "haddad"
+  - "email"
+quality_score: 5
+extracted_date: "2026-04-09"
+source_file: "Chris Haddad/MMemail2freegift080806_SMC.pdf"
+---
+
+# MMemail2freegift080806_SMC
+
+> Haddad (3321 chars, 2p). Tipo: email.
+
+## Lead
+
+```
+<Subject> Here’s The Email We Told You About…You Can’t Afford Pass This Up! 
+ 
+Hi <name>, 
+ 
+This is the e-mail we told you would be coming to you today… 
+ 
+You need to act on this RIGHT NOW!   
+ 
+Well, OK you don’t have to, but you will be extremely upset with yourself when you 
+realize what you missed out on! 
+ 
+Please read this very carefully and click on to the website right away… 
+ 
+Discover how BIG TIME Membership Gurus Jeff Paul, Jim Fleck, and Shawn Casey take 
+in millions of dollars a year using simple and easy memberships!  (NOTICE:  The secrets 
+they are going to be revealing about memberships are the ones that are making them 
+millions!  As far as we know we have more membership revenue than anyone else we’re 
+familiar with (currently $350,000 a month… kind of makes you wonder what we do that 
+no one else does, doesn’t it?). 
+ 
+You will discover dozens of Membership Millions secrets no one else can provide to you 
+because they don’t know how to do these amazingly easy, but cash attracting methods!  
+See previously we were only sharing these ground breaking secrets with customers of 
+ours that paid $697.00 to get on a teleseminar.   
+ 
+The people who heard this call RAVE
+```
+
+## Corpo (trecho)
+
+```
+of 
+ours that paid $697.00 to get on a teleseminar.   
+ 
+The people who heard this call RAVED about what they discovered so much that we 
+have decided to make it available to you…this ONE TIME ONLY!  We want you to 
+discover the secrets of how to have ongoing income with memberships!   
+ 
+But…instead of charging you $697.00 like our other customers paid…you can hear this 
+amazing teleseminar for FREE…and get a FREE written report about Membership 
+Millions to boot! 
+ 
+There’s no catch, no gimmick.  This is an absolutely FREE set of gifts just because we 
+wanted to reward you for being so seri
+```

@@ -1,0 +1,31 @@
+---
+copywriter: "Agora"
+source_format: "pdf"
+original_type: "sales-letter"
+tags: ["agora"]
+quality_score: 4
+extracted_date: "2026-04-09"
+source_file: "266-3.pdf"
+---
+# How A Tidal Wave of Cash Is Making Gold  Investors Rich!   Why did gold prices start to skyrocket earlier this year?
+> (31653 chars, 19p)
+## Lead
+```
+How A Tidal Wave of Cash Is Making Gold 
+Investors Rich!  
+Why did gold prices start to skyrocket earlier this year?  Many 
+reasons.  But here's an essential one.  With the economy weakening, 
+Fed Chairman Alan Greenspan is responding the only way he knows 
+how... by flooding the markets with cash. Take a look at this chart...  
+  
+The Fed dumped $20 billion of paper currency into circulation last 
+year... cranking the total up to $540 billion... or twice the amount 
+circulating at the start of the 1990s.  
+That's not all...  
+M3 -- the broadest measure of the money supply -- has skyrocketed a 
+Page 1 of 19
+4/7/2005
+http://www.agora-inc.com/reports/OST/YourProfitsHere/HOME.CFM?PAGE=3&PCODE=WOSTC922&ALIAS=OIL2
+trillion dollars in just the last two years...  
+The total "money of zero matu
+```

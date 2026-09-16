@@ -1,0 +1,84 @@
+# ==============================================================================
+# COPY SQUAD — Briefing Schema
+# briefing-schema.yaml
+# ==============================================================================
+#
+# Schema de validação para briefings submetidos ao Copy Squad.
+
+schema:
+  version: "1.0"
+
+  required:
+    produto:
+      type: string
+      description: "Descrição do produto ou serviço"
+      validation:
+        min_length: 10
+        not_empty: true
+      error: "Campo 'produto' obrigatório. Descreva o produto/serviço em pelo menos 10 caracteres."
+
+    publico:
+      type: string
+      description: "Público-alvo específico"
+      validation:
+        min_length: 5
+        not_empty: true
+        blacklist: ["todos", "qualquer pessoa", "geral", "público geral"]
+      error: "Campo 'publico' obrigatório. Seja específico — 'todos' não é público-alvo."
+
+    canal:
+      type: enum
+      description: "Canal/formato de distribuição"
+      values: ["ads", "email", "landing", "social"]
+      error: "Campo 'canal' obrigatório. Valores aceitos: ads, email, landing, social."
+
+  optional:
+    tom:
+      type: enum
+      description: "Tom da comunicação"
+      values: ["urgente", "educativo", "emocional", "autoritativo"]
+      default: null
+
+    copywriter:
+      type: enum
+      description: "Estilo de copywriter para canalizar"
+      values: ["halbert", "schwartz", "ogilvy", "kennedy"]
+      default: null
+
+    contexto:
+      type: string
+      description: "Informações adicionais sobre campanha/momento"
+      default: null
+
+    formato_especifico:
+      type: enum
+      description: "Formato específico dentro do canal"
+      values_by_canal:
+        ads: ["meta-ad", "google-ad", "tiktok-ad", "display-ad"]
+        email: ["sequence", "broadcast", "nurture", "welcome"]
+        landing: ["sales-page", "vsl", "opt-in"]
+        social: ["carrossel", "thread", "post", "script"]
+      default: null
+
+    quantidade:
+      type: integer
+      description: "Quantidade de peças"
+      validation:
+        min: 1
+        max: 20
+      default: 1
+
+example_valid:
+  produto: "Curso online de inglês para profissionais de TI que precisam de fluência para reuniões internacionais"
+  publico: "Desenvolvedores e tech leads em empresas internacionais, 25-40 anos"
+  canal: "email"
+  formato_especifico: "sequence"
+  quantidade: 5
+  tom: "urgente"
+  copywriter: "schwartz"
+  contexto: "Lançamento do novo módulo de Business English, lista de 5000 leads que baixaram um ebook sobre inglês técnico"
+
+example_minimal:
+  produto: "App de meditação guiada com IA"
+  publico: "Profissionais estressados que nunca meditaram"
+  canal: "ads"

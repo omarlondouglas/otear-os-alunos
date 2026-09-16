@@ -1,0 +1,10 @@
+path,displayName,icon,role
+./agents/pesquisador.agent.md,Pesquisador,🔍,Researcher
+./agents/estrategista.agent.md,Estrategista,🎯,Strategist
+./agents/redator.agent.md,Redator,✍️,Copywriter
+./agents/designer.agent.md,Designer,🎨,Designer
+./agents/curador-imagens.agent.md,Curador de Imagens,🖼️,Image Curator
+./agents/conceituador-visual.agent.md,Conceituador Visual,🎬,Visual Concept Director
+./agents/gerador-imagens.agent.md,Gerador de Imagens,🖼️,AI Image Generator
+./agents/image-patcher.agent.md,Patcher de Imagens,🔧,Image Patcher
+./agents/revisor.agent.md,Revisor,🔎,Reviewer

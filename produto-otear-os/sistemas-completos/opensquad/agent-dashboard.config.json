@@ -1,0 +1,21 @@
+{
+  "name": "OpenSquad",
+  "ceoName": "Orchestrator",
+  "ceoDescription": "Pipeline Runner — Orquestra todos os agentes do squad",
+  "detectActive": true,
+  "demoMode": false,
+  "scanPaths": [
+    { "path": "./squads/noticias-carrossel-ia/agents", "squad": "noticias-carrossel-ia" },
+    { "path": "./squads/anuncio-estatico/agents", "squad": "anuncio-estatico" },
+    { "path": "./squads/cover-director/agents", "squad": "cover-director" },
+    { "path": "./squads/slides-aula/agents", "squad": "slides-aula" },
+    { "path": "./squads/instagram-scraper/agents", "squad": "instagram-scraper" }
+  ],
+  "squads": {
+    "noticias-carrossel-ia": { "title": "Noticias > Carrossel > Instagram", "color": "#A3F12E" },
+    "anuncio-estatico": { "title": "Anuncio Estatico", "color": "#FF6B35" },
+    "cover-director": { "title": "Cover Director", "color": "#E040FB" },
+    "slides-aula": { "title": "Slides Aula", "color": "#66bbff" },
+    "instagram-scraper": { "title": "Instagram Scraper", "color": "#7C4DFF" }
+  }
+}

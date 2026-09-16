@@ -1,0 +1,170 @@
+version: '3.8'
+
+services:
+  # Service 1: API Gateway & Orchestrator (Frontend Host)
+  # Service: API Gateway & Orchestrator
+  # Connects to existing Video (8001) and Carousel (8002) services on the host.
+  gateway:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    labels:
+      # Sem buffering - Traefik faz streaming direto para o FastAPI (necessario pro SSE em /chat/stream)
+      - "traefik.http.middlewares.gateway-retry.retry.attempts=0"
+      - "traefik.http.services.gateway.loadbalancer.responseforwarding.flushinterval=10ms"
+      # Sem compressao no chat/stream (gzip quebra SSE)
+      - "traefik.http.middlewares.gateway-no-compress.compress.excludedcontenttypes=text/event-stream"
+    environment:
+      - PORT=8000
+      - REDIS_URL=redis://redis:6379/0
+      - VIDEO_SERVICE_URL=http://localhost:8001
+      - CAROUSEL_SERVICE_URL=http://carousel:8000
+      # O gateway fala com o renderizador pela rede interna do Compose. Usar
+      # localhost aqui faria o container apontar para ele próprio.
+      - CAROUSEL_API_URL=http://carousel:8000
+      - CAROUSEL_API_KEY=${CAROUSEL_API_KEY}
+      - VIDEO_EDITOR_API_URL=${VIDEO_EDITOR_API_URL}
+      - VIDEO_EDITOR_API_KEY=${VIDEO_EDITOR_API_KEY}
+      - DATABASE_URL=${DATABASE_URL}
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+      - OPENROUTER_BASE_URL=${OPENROUTER_BASE_URL:-https://openrouter.ai/api/v1}
+      - OPENROUTER_MODEL=${OPENROUTER_MODEL:-}
+      - OPENROUTER_MODEL_PLANNER=${OPENROUTER_MODEL_PLANNER:-}
+      - OPENROUTER_MODEL_WRITER=${OPENROUTER_MODEL_WRITER:-}
+      - OPENROUTER_MODEL_FAST=${OPENROUTER_MODEL_FAST:-}
+      - OPENROUTER_MODEL_SMART=${OPENROUTER_MODEL_SMART:-}
+      - LLM_CASCADE_OPENROUTER_MODEL=${LLM_CASCADE_OPENROUTER_MODEL:-}
+      - SELECT_CLIPS_OPENROUTER_MODEL=${SELECT_CLIPS_OPENROUTER_MODEL:-}
+      - OPENROUTER_HTTP_REFERER=${OPENROUTER_HTTP_REFERER:-}
+      - OPENROUTER_APP_NAME=${OPENROUTER_APP_NAME:-O Tear}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+      - GROQ_API_KEY=${GROQ_API_KEY:-}
+      - GROQ_WHISPER_MODEL=${GROQ_WHISPER_MODEL:-whisper-large-v3-turbo}
+      - TRANSCRIPTION_PROVIDER=${TRANSCRIPTION_PROVIDER:-openai}
+      - LLM_CASCADE_ANTHROPIC_MODEL=${LLM_CASCADE_ANTHROPIC_MODEL:-}
+      - LLM_CASCADE_OPENAI_MODEL=${LLM_CASCADE_OPENAI_MODEL:-}
+      - LLM_CASCADE_GEMINI_MODEL=${LLM_CASCADE_GEMINI_MODEL:-}
+      - LLM_CASCADE_GROQ_MODEL=${LLM_CASCADE_GROQ_MODEL:-}
+      - SELECT_CLIPS_ANTHROPIC_MODEL=${SELECT_CLIPS_ANTHROPIC_MODEL:-}
+      - SELECT_CLIPS_OPENAI_MODEL=${SELECT_CLIPS_OPENAI_MODEL:-}
+      - SELECT_CLIPS_GEMINI_MODEL=${SELECT_CLIPS_GEMINI_MODEL:-}
+      - SELECT_CLIPS_GROQ_MODEL=${SELECT_CLIPS_GROQ_MODEL:-}
+      - EVOLUTION_API_URL=${EVOLUTION_API_URL}
+      - EVOLUTION_API_KEY=${EVOLUTION_API_KEY}
+      - EVOLUTION_INSTANCE_NAME=${EVOLUTION_INSTANCE_NAME}
+      - MODEL_PROVIDER=${MODEL_PROVIDER:-}
+      - MODEL_PLANNER=${MODEL_PLANNER}
+      - MODEL_WRITER=${MODEL_WRITER}
+      - MODEL_FAST=${MODEL_FAST}
+      - S3_ENDPOINT_URL=${S3_ENDPOINT_URL}
+      - S3_INTERNAL_URL=${S3_INTERNAL_URL}
+      - S3_ACCESS_KEY=${S3_ACCESS_KEY}
+      - S3_SECRET_KEY=${S3_SECRET_KEY}
+      - S3_BUCKET_NAME=${S3_BUCKET_NAME}
+      - S3_REGION=${S3_REGION:-us-east-1}
+      - S3_PUBLIC_URL=${S3_PUBLIC_URL}
+      - MAX_UPLOAD_SIZE_MB=${MAX_UPLOAD_SIZE_MB:-2048}
+      - STORAGE_TYPE=${STORAGE_TYPE:-s3}
+      - REFERENCES_PATH=${REFERENCES_PATH:-/app/storage/references}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD}
+      - REMOTION_SERVICE_URL=http://remotion:8003
+      # Geracao de imagens - chatgpt-bridge sidecar (auto-fallback Google)
+      - IMAGE_GEN_PROVIDER=${IMAGE_GEN_PROVIDER:-auto}
+      - CHATGPT_BRIDGE_URL=http://chatgpt-bridge:10531/v1
+      - CHATGPT_BRIDGE_MODEL=${CHATGPT_BRIDGE_MODEL:-gpt-image-2}
+    volumes:
+      - app_storage:/app/storage
+      - app_var:/app/var
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - agi-network
+    depends_on:
+      - redis
+      - carousel
+      - remotion
+
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - agi-network
+
+  carousel:
+    build:
+      context: ./carrocel
+      dockerfile: Dockerfile
+    ports:
+      - "8002:8000"
+    environment:
+      - PORT=8000
+      - S3_ENDPOINT_URL=${S3_ENDPOINT_URL}
+      - S3_ACCESS_KEY=${S3_ACCESS_KEY}
+      - S3_SECRET_KEY=${S3_SECRET_KEY}
+      - S3_BUCKET_NAME=${S3_BUCKET_NAME}
+      - S3_REGION=${S3_REGION:-us-east-1}
+      - S3_PUBLIC_URL=${S3_PUBLIC_URL}
+      - SUPABASE_URL=${SUPABASE_URL:-}
+      - SUPABASE_KEY=${SUPABASE_KEY:-}
+      - SUPABASE_BUCKET=${SUPABASE_BUCKET:-carousels}
+    networks:
+      - agi-network
+
+  remotion:
+    build:
+      context: ./remotion-service
+      dockerfile: Dockerfile
+    ports:
+      - "8003:8003"
+    environment:
+      - PORT=8003
+      - STORAGE_DIR=/tmp/remotion-output
+    volumes:
+      - remotion_output:/tmp/remotion-output
+    networks:
+      - agi-network
+
+  # ChatGPT Bridge - proxy OpenAI-compatible que usa OAuth da subscription
+  # ChatGPT (via Codex CLI) em vez de API key paga. Gera imagens com gpt-image-2.
+  #
+  # Setup: rodar `npx -y @openai/codex login` na maquina host (uma vez), pegar
+  # os tokens do ~/.codex/auth.json e colar nas env vars CODEX_*.
+  # O entrypoint do servico monta auth.json automaticamente no boot.
+  chatgpt-bridge:
+    build:
+      context: ./chatgpt-bridge-service
+      dockerfile: Dockerfile
+    environment:
+      # Padrao recomendado: vars separadas (igual ao Claude OAuth)
+      - CODEX_ACCESS_TOKEN=${CODEX_ACCESS_TOKEN:-}
+      - CODEX_REFRESH_TOKEN=${CODEX_REFRESH_TOKEN:-}
+      - CODEX_ID_TOKEN=${CODEX_ID_TOKEN:-}
+      - CODEX_ACCOUNT_ID=${CODEX_ACCOUNT_ID:-}
+      - CODEX_LAST_REFRESH=${CODEX_LAST_REFRESH:-}
+      # Alternativa: JSON inteiro (legacy)
+      - CODEX_AUTH_JSON=${CODEX_AUTH_JSON:-}
+    ports:
+      - "10531:10531"
+    volumes:
+      - codex_auth:/root/.codex
+    networks:
+      - agi-network
+
+networks:
+  agi-network:
+    driver: bridge
+
+volumes:
+  redis_data:
+  claude_credentials:
+  app_storage:
+  app_var:
+  remotion_output:
+  codex_auth:

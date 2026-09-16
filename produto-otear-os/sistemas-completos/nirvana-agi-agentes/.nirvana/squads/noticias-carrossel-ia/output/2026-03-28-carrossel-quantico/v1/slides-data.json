@@ -1,0 +1,93 @@
+{
+  "slides": [
+    {
+      "id": 1,
+      "theme": "black",
+      "imageFile": "img-slide-01-v2.png",
+      "elements": [
+        { "type": "tag", "text": "SEGURANÇA DIGITAL" },
+        { "type": "headline", "text": "Suas senhas têm <em>prazo de validade.</em> O Google revelou quando." },
+        { "type": "swipe" }
+      ]
+    },
+    {
+      "id": 2,
+      "theme": "light",
+      "imageFile": null,
+      "elements": [
+        { "type": "tag", "text": "CONTEXTO" },
+        { "type": "headline", "text": "Computadores quânticos <em>não são ficção científica.</em> Já existem." },
+        { "type": "body", "text": "Enquanto um computador normal leva séculos para quebrar uma senha, o computador quântico faz o mesmo cálculo em minutos. Google, IBM e governos do mundo todo estão investindo bilhões nessa corrida. A questão não é SE vai acontecer. É QUANDO." },
+        { "type": "swipe" }
+      ]
+    },
+    {
+      "id": 3,
+      "theme": "dark",
+      "imageFile": null,
+      "elements": [
+        { "type": "tag", "text": "O PROBLEMA" },
+        { "type": "headline", "text": "Tudo que protege seus dados hoje vai <em>parar de funcionar.</em>" },
+        { "type": "body", "text": "PIX, WhatsApp, senhas do banco, contratos digitais, assinaturas eletrônicas. Toda a segurança digital que você conhece é baseada em criptografia que computadores quânticos vão conseguir quebrar. Não é teoria. É matemática." },
+        { "type": "swipe" }
+      ]
+    },
+    {
+      "id": 4,
+      "theme": "light",
+      "imageFile": null,
+      "elements": [
+        { "type": "tag", "text": "RISCO INVISÍVEL" },
+        { "type": "headline", "text": "Hackers <em>já estão</em> se preparando. E você nem sabe." },
+        { "type": "body", "text": "Existe uma estratégia chamada \"armazene agora, decifre depois\". Criminosos estão coletando dados criptografados HOJE para decifrar quando os computadores quânticos estiverem prontos. Seus dados de 2026 podem ser lidos em 2030." },
+        { "type": "swipe" }
+      ]
+    },
+    {
+      "id": 5,
+      "theme": "accent",
+      "imageFile": null,
+      "elements": [
+        { "type": "tag", "text": "O PRAZO" },
+        { "type": "stat", "text": "2029" },
+        { "type": "sub", "text": "É o prazo que o Google deu." },
+        { "type": "body", "text": "O Google anunciou que vai migrar todos os seus sistemas para criptografia pós-quântica até 2029. Se a maior empresa de tecnologia do mundo está correndo, o recado é claro: o relógio já está contando. A Europa quer estar pronta até 2027." },
+        { "type": "swipe" }
+      ]
+    },
+    {
+      "id": 6,
+      "theme": "dark",
+      "imageFile": null,
+      "elements": [
+        { "type": "tag", "text": "QUEM SE MOVE" },
+        { "type": "headline", "text": "Google, Europa, EUA. <em>Quem já está agindo.</em>" },
+        { "type": "body", "text": "O Google está migrando para criptografia pós-quântica (PQC). A Europa quer infraestrutura quântica até 2027. EUA, Reino Unido, França e Alemanha já publicaram diretrizes de transição. Enquanto isso, a maioria das empresas brasileiras nem sabe que o problema existe." },
+        { "type": "swipe" }
+      ]
+    },
+    {
+      "id": 7,
+      "theme": "light",
+      "imageFile": null,
+      "elements": [
+        { "type": "tag", "text": "E VOCÊ?" },
+        { "type": "headline", "text": "Se você lida com <em>dados de clientes,</em> isso é problema seu." },
+        { "type": "body", "text": "Agências digitais guardam dados de clientes em planilhas, CRMs, drives e ferramentas online. Quando a criptografia quebrar, esses dados ficam expostos. O momento de entender e se preparar é agora, antes que o mercado cobre." },
+        { "type": "swipe" }
+      ]
+    },
+    {
+      "id": 8,
+      "theme": "dark",
+      "imageFile": null,
+      "elements": [
+        { "type": "tag", "text": "CTA" },
+        { "type": "cta", "text": "Salve este carrossel." },
+        { "type": "body", "text": "Quando seu cliente perguntar sobre segurança de dados, você vai ter a resposta. Comenta QUÂNTICO se você não sabia desse prazo." },
+        { "type": "spacer" },
+        { "type": "sub", "text": "Fonte: Olhar Digital, 28/03/2026" }
+      ]
+    }
+  ]
+}

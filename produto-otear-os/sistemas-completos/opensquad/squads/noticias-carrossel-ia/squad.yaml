@@ -1,0 +1,28 @@
+squad:
+  code: noticias-carrossel-ia
+  name: "Notícias → Carrossel → Instagram"
+  description: >
+    Busca diariamente as notícias mais relevantes sobre IA, agentes e automação
+    para agências digitais. Cria um carrossel completo com design HTML/CSS
+    e publica no Instagram @marlonlima.ia.
+  icon: 📰
+  version: "1.0.0"
+  author: Marlon Lima
+  created: "2026-03-13"
+
+skills:
+  - web_search
+  - web_fetch
+
+pipeline:
+  steps:
+    - checkpoint-tema
+    - pesquisador
+    - estrategista
+    - redator
+    - designer
+    - checkpoint-imagens
+    - curador-imagens
+    - conceituador-visual
+    - gerador-imagens
+    - image-patcher

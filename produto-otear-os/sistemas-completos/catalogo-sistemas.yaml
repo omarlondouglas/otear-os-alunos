@@ -1,0 +1,42 @@
+version: "1.0"
+updated_at: "2026-08-24"
+identity: "Otear OS"
+visibility: "interno; usar o roteador-otear.yaml para selecionar capacidades"
+packages:
+  - id: aiox
+    path: aiox
+    inclui:
+      - apex
+      - brand
+      - copy
+      - curator
+      - deep-research
+      - dispatch
+      - education
+      - kaizen
+      - kaizen-v2
+      - legal-analyst
+      - seo
+      - squad-creator
+      - squad-creator-pro
+  - id: opensquad
+    path: opensquad
+    inclui:
+      - anuncio-estatico
+      - cover-director
+      - instagram-scraper
+      - noticias-carrossel-ia
+      - slides-aula
+      - vyve-identidade-visual
+      - yt-thumbnails
+  - id: nirvana-agi-agentes
+    path: nirvana-agi-agentes
+    inclui:
+      - instagram-scraper
+      - noticias-carrossel-ia
+      - hermes_skills
+  - id: hermes-profile
+    path: hermes-profile-agenciasemesforco
+    inclui:
+      - skills
+      - profile

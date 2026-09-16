@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 1080px; height: 1440px; overflow: hidden;
+      background: #0a0a0a;
+      font-family: 'Urbanist', sans-serif;
+      display: flex; flex-direction: column;
+      justify-content: center;
+      padding: 96px 80px;
+      position: relative;
+    }
+    .handle {
+      position: absolute;
+      top: 52px; right: 72px;
+      font-size: 24px; font-weight: 500; color: #888888;
+    }
+    .label {
+      font-size: 22px; font-weight: 700; color: #A3F12E;
+      text-transform: uppercase; letter-spacing: 2px;
+      margin-bottom: 32px;
+    }
+    .headline {
+      font-size: 58px; font-weight: 800; color: #ffffff;
+      line-height: 1.15; letter-spacing: -0.5px;
+      margin-bottom: 48px; max-width: 920px;
+    }
+    .headline .primary { color: #A3F12E; }
+    .divider {
+      width: 56px; height: 3px;
+      background: #2a2a2a;
+      border-radius: 2px;
+      margin-bottom: 48px;
+    }
+    .card {
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-radius: 16px;
+      padding: 40px;
+    }
+    .body-text {
+      font-size: 34px; font-weight: 400; color: #cccccc;
+      line-height: 1.6;
+    }
+    .body-text strong { color: #ffffff; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <span class="handle">@marlonlima.ia</span>
+  <div class="label">O problema</div>
+  <h2 class="headline">
+    Você comprou um CRM pra vender mais. Mas <span class="primary">ninguém usa</span>.
+  </h2>
+  <div class="divider"></div>
+  <div class="card">
+    <p class="body-text">
+      Todo vendedor odeia preencher CRM. É chato, demora e tira o foco do que importa: vender. Resultado? Os dados ficam desatualizados, o gestor não enxerga nada e o sistema vira um <strong>elefante branco</strong>.
+    </p>
+  </div>
+</body>
+</html>

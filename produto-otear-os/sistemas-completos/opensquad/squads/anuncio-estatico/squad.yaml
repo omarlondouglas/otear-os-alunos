@@ -1,0 +1,31 @@
+squad:
+  code: anuncio-estatico
+  name: "Anúncio Estático — Meta Ads"
+  description: >
+    Cria anúncios estáticos (imagem + copy) para Meta Ads. Produz headline,
+    corpo, CTA e design visual em HTML/CSS pronto para renderizar.
+  icon: 🎯
+  version: "1.0.0"
+  author: Marlon Lima
+  created: "2026-03-16"
+
+skills:
+  - web_search
+  - web_fetch
+
+data:
+  - pipeline/data/research-brief.md
+  - pipeline/data/domain-framework.md
+  - pipeline/data/quality-criteria.md
+  - pipeline/data/output-examples.md
+  - pipeline/data/anti-patterns.md
+  - pipeline/data/tone-of-voice.md
+
+pipeline:
+  steps:
+    - checkpoint-brief
+    - copywriter
+    - checkpoint-copy
+    - designer
+    - revisor
+    - checkpoint-final

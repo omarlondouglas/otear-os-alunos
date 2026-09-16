@@ -1,0 +1,30 @@
+squad:
+  code: slides-aula
+  name: "Tema → Slides → Apresentação"
+  description: >
+    Pesquisa um tema de aula, estrutura o conteúdo didático,
+    cria slides HTML/CSS em 1920x1080 (widescreen) e gera
+    uma apresentação completa pronta para projetar.
+  icon: 🎓
+  version: "1.0.0"
+  author: Marlon Lima
+  created: "2026-03-20"
+
+skills:
+  - web_search
+  - web_fetch
+
+pipeline:
+  steps:
+    - checkpoint-tema
+    - pesquisador
+    - estrategista
+    - redator
+    - designer
+    - checkpoint-imagens
+    - curador-imagens
+    - conceituador-visual
+    - gerador-imagens
+    - image-patcher
+    - revisor
+    - checkpoint-final

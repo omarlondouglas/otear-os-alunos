@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 1080px; height: 1440px; overflow: hidden;
+      background: #F5F5FF;
+      font-family: 'Inter', sans-serif;
+      display: flex; flex-direction: column;
+    }
+    .header {
+      display: flex;
+      justify-content: flex-end;
+      padding: 48px 72px 0;
+    }
+    .handle {
+      font-size: 26px;
+      font-weight: 600;
+      color: #A0A0C0;
+      letter-spacing: 0.02em;
+    }
+    .image-zone {
+      width: 100%;
+      height: 520px;
+      overflow: hidden;
+      position: relative;
+    }
+    .image-zone img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .image-overlay {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 160px;
+      background: linear-gradient(to bottom, transparent, #F5F5FF);
+    }
+    .content {
+      flex: 1;
+      padding: 48px 72px 64px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .headline {
+      font-size: 56px;
+      font-weight: 900;
+      color: #1A1A2E;
+      line-height: 1.1;
+      margin-bottom: 32px;
+    }
+    .headline .highlight {
+      color: #6C63FF;
+    }
+    .divider {
+      width: 80px;
+      height: 6px;
+      background: #FFD93D;
+      border-radius: 3px;
+      margin-bottom: 32px;
+    }
+    .body-text {
+      font-size: 32px;
+      font-weight: 500;
+      color: #3A3A5C;
+      line-height: 1.55;
+    }
+    .stat-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      background: #1A1A2E;
+      border-radius: 16px;
+      padding: 20px 32px;
+      margin-top: 36px;
+    }
+    .stat-number {
+      font-size: 52px;
+      font-weight: 900;
+      color: #25D366;
+    }
+    .stat-label {
+      font-size: 26px;
+      font-weight: 600;
+      color: #FFFFFF;
+      line-height: 1.3;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <span class="handle">@marlonlima.ia</span>
+  </div>
+
+  <div class="image-zone">
+    <img src="../images/img-slide-02.png" alt="Ampulheta tempo">
+    <div class="image-overlay"></div>
+  </div>
+
+  <div class="content">
+    <div class="divider"></div>
+    <h2 class="headline">
+      Cada minuto a mais que você<br>demora custa <span class="highlight">uma venda.</span>
+    </h2>
+    <p class="body-text">
+      Leads respondidos em até 5 minutos convertem muito mais.<br>
+      Depois de 30 minutos, a chance de fechar cai drasticamente.
+    </p>
+    <div class="stat-box">
+      <span class="stat-number">8x</span>
+      <span class="stat-label">mais conversão<br>em até 5 minutos</span>
+    </div>
+  </div>
+</body>
+</html>

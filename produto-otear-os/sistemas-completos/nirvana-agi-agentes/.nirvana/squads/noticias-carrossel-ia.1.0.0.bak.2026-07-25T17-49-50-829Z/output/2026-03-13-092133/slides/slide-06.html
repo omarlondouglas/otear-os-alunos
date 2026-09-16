@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 1080px; height: 1440px; overflow: hidden;
+      background: #0a0a0a;
+      font-family: 'Urbanist', sans-serif;
+      display: flex; flex-direction: column;
+      justify-content: center;
+      padding: 96px 80px;
+      position: relative;
+    }
+    .handle {
+      position: absolute;
+      top: 52px; right: 72px;
+      font-size: 24px; font-weight: 500; color: #888888;
+    }
+    .label {
+      font-size: 22px; font-weight: 700; color: #EF4444;
+      text-transform: uppercase; letter-spacing: 2px;
+      margin-bottom: 32px;
+    }
+    .headline {
+      font-size: 58px; font-weight: 800; color: #ffffff;
+      line-height: 1.15; letter-spacing: -0.5px;
+      margin-bottom: 48px; max-width: 920px;
+    }
+    .body-text {
+      font-size: 34px; font-weight: 400; color: #cccccc;
+      line-height: 1.6; margin-bottom: 52px;
+    }
+    .body-text strong { color: #ffffff; font-weight: 600; }
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .stat {
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-radius: 16px;
+      padding: 36px 28px;
+      text-align: center;
+    }
+    .stat-number {
+      font-size: 56px; font-weight: 800; color: #A3F12E;
+      display: block; line-height: 1;
+      letter-spacing: -1px;
+    }
+    .stat-company {
+      font-size: 26px; font-weight: 700; color: #ffffff;
+      display: block; margin-top: 12px;
+    }
+    .stat-label {
+      font-size: 24px; font-weight: 400; color: #888888;
+      display: block; margin-top: 6px; line-height: 1.3;
+    }
+  </style>
+</head>
+<body>
+  <span class="handle">@marlonlima.ia</span>
+  <div class="label">Mas corre</div>
+  <h2 class="headline">As gigantes já entraram. E você?</h2>
+  <p class="body-text">
+    Empresas enormes já tão lá dentro. A vantagem de entrar <strong>agora, no começo</strong>, é que você se posiciona antes de todo mundo. Mas essa janela <strong>não vai ficar aberta pra sempre</strong>.
+  </p>
+  <div class="stats">
+    <div class="stat">
+      <span class="stat-number">30 mil</span>
+      <span class="stat-company">Accenture</span>
+      <span class="stat-label">pessoas já treinadas</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">350 mil</span>
+      <span class="stat-company">Cognizant</span>
+      <span class="stat-label">funcionários no programa</span>
+    </div>
+  </div>
+</body>
+</html>

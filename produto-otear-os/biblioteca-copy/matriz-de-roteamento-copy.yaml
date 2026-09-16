@@ -1,0 +1,61 @@
+ads:
+  frio: halbert
+  morno: kennedy
+  quente: schwartz
+  b2b: ogilvy
+  default: halbert
+
+email:
+  frio: schwartz
+  morno: ogilvy
+  quente: kennedy
+  b2b: ogilvy
+  sequence: schwartz
+  broadcast: halbert
+  nurture: ogilvy
+  lancamento: kennedy
+  default: schwartz
+
+landing:
+  frio: schwartz
+  morno: halbert
+  quente: kennedy
+  b2b: ogilvy
+  vsl: halbert
+  sales_page: schwartz
+  opt_in: kennedy
+  default: schwartz
+
+social:
+  frio: halbert
+  morno: schwartz
+  quente: kennedy
+  b2b: ogilvy
+  carrossel: halbert
+  thread: ogilvy
+  post: kennedy
+  script: halbert
+  default: halbert
+
+temperatura:
+  frio:
+    - publico novo
+    - nunca ouviu falar
+    - topo de funil
+    - prospeccao
+  morno:
+    - ja conhece
+    - retargeting
+    - engajou
+    - meio de funil
+  quente:
+    - lista engajada
+    - carrinho abandonado
+    - fundo de funil
+    - comprador
+  b2b:
+    - empresa
+    - decisor
+    - corporativo
+    - profissional
+

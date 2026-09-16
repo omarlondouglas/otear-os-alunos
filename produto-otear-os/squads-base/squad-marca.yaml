@@ -1,0 +1,41 @@
+id: squad-marca
+name: Squad Marca
+version: 1.0.0
+purpose: Criar posicionamento, personalidade, mensagem e base de identidade verbal/visual.
+
+agents:
+  - pesquisador-de-mercado
+  - estrategista-de-oferta
+  - arquiteto-de-design
+  - copywriter-otear
+  - revisor-de-qualidade
+
+workflow:
+  - step: pesquisa
+    agent: pesquisador-de-mercado
+    output: contexto_de_mercado
+  - step: posicionamento
+    agent: estrategista-de-oferta
+    output: posicionamento
+  - step: identidade
+    agent: arquiteto-de-design
+    output: direcao_visual
+  - step: mensagem
+    agent: copywriter-otear
+    output: voz_e_mensagens
+  - step: revisao
+    agent: revisor-de-qualidade
+    output: guia_de_marca
+
+outputs:
+  - posicionamento
+  - promessa
+  - tom_de_voz
+  - direcao_visual
+  - mensagens_principais
+
+acceptance_criteria:
+  - A marca tem diferenciacao clara.
+  - O tom de voz esta definido.
+  - A direcao visual orienta proximas pecas.
+

@@ -1,0 +1,13 @@
+steps:
+  - 01-checkpoint-tema
+  - 02-pesquisador
+  - 03-estrategista
+  - 04-redator
+  - 05-designer
+  - 05b-checkpoint-imagens
+  - 05c-curador-imagens
+  - 05d-conceituador-visual
+  - 05e-gerador-imagens
+  - 06-image-patcher
+  - 07-revisor
+  - 08-checkpoint-final

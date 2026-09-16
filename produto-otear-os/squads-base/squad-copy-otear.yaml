@@ -1,0 +1,45 @@
+id: squad-copy-otear
+name: Squad Copy Otear
+version: 1.0.0
+purpose: Criar copy persuasiva por canal usando briefing, roteamento, frameworks e revisao de qualidade.
+
+agents:
+  - diretor-de-copy
+  - especialista-ads
+  - especialista-email
+  - especialista-landing
+  - especialista-social-copy
+  - revisor-de-copy
+
+workflow:
+  - step: diagnostico
+    agent: diretor-de-copy
+    output: briefing_validado
+  - step: roteamento
+    agent: diretor-de-copy
+    output: canal_especialista_e_framework
+  - step: geracao
+    agent: especialista_por_canal
+    output: primeira_versao
+  - step: revisao
+    agent: revisor-de-copy
+    output: melhorias_e_nota
+  - step: entrega
+    agent: diretor-de-copy
+    output: copy_final_com_variacoes
+
+outputs:
+  - diagnostico_do_briefing
+  - framework_usado
+  - copy_final
+  - variacoes
+  - checklist_de_revisao
+  - recomendacoes_de_teste
+
+acceptance_criteria:
+  - A copy tem dor especifica.
+  - A promessa e clara.
+  - O canal foi respeitado.
+  - O CTA e direto.
+  - A copy nao parece generica.
+

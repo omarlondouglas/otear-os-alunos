@@ -1,0 +1,12 @@
+pipeline:
+  steps:
+    - id: checkpoint-perfil
+      file: checkpoint-perfil.md
+      type: checkpoint
+
+    - id: scraper
+      file: scraper.md
+      type: agent
+      agent: scraper
+      execution: inline
+      outputFile: squads/instagram-scraper/output/report.md

@@ -1,0 +1,40 @@
+# ==============================================================================
+# COPY SQUAD — Briefing Template
+# briefing-tmpl.yaml
+# ==============================================================================
+#
+# Template para submissão de briefing ao Copy Squad.
+# Preencha os campos e envie ao @copy-chief.
+
+# ─── CAMPOS OBRIGATÓRIOS ───────────────────────────────────────────────────
+
+# O que é o produto/serviço?
+produto: ""
+
+# Quem é o público-alvo? (seja específico — "todos" não é público)
+publico: ""
+
+# Qual canal? (ads | email | landing | social)
+canal: ""
+
+# ─── CAMPOS OPCIONAIS ─────────────────────────────────────────────────────
+
+# Tom da comunicação (urgente | educativo | emocional | autoritativo)
+# tom: ""
+
+# Estilo de copywriter (halbert | schwartz | ogilvy | kennedy)
+# Se não especificado, o Copy Chief seleciona o melhor match.
+# copywriter: ""
+
+# Contexto adicional (campanha, momento, sazonalidade, etc.)
+# contexto: ""
+
+# Formato específico dentro do canal:
+#   ads: meta-ad | google-ad | tiktok-ad | display-ad
+#   email: sequence | broadcast | nurture | welcome
+#   landing: sales-page | vsl | opt-in
+#   social: carrossel | thread | post | script
+# formato_especifico: ""
+
+# Quantidade de peças
+# quantidade: 1

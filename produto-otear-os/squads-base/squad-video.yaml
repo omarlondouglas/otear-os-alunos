@@ -1,0 +1,35 @@
+id: squad-video
+name: Squad Video
+version: 1.0.0
+purpose: Criar roteiros de video para conteudo, venda ou autoridade. Para transcrever link ou arquivo de video, use primeiro o sistema pronto Otear Videos.
+
+agents:
+  - social-media-otear
+  - roteirista-de-video
+  - copywriter-otear
+  - revisor-de-qualidade
+
+workflow:
+  - step: ideia
+    agent: social-media-otear
+    output: ideia_e_gancho
+  - step: roteiro
+    agent: roteirista-de-video
+    output: roteiro_falado
+  - step: chamada
+    agent: copywriter-otear
+    output: cta
+  - step: revisao
+    agent: revisor-de-qualidade
+    output: roteiro_final
+
+outputs:
+  - gancho
+  - roteiro
+  - marcacoes_de_cena
+  - cta
+
+acceptance_criteria:
+  - O inicio prende atencao.
+  - O roteiro pode ser gravado.
+  - O fechamento direciona uma acao.

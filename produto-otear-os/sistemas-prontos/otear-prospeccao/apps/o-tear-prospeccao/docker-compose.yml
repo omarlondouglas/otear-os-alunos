@@ -1,0 +1,45 @@
+version: "3.8"
+
+services:
+  frontend:
+    build: ./frontend
+    container_name: otear-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+      - prospect-pro
+    networks:
+      - otear-network
+
+  backend:
+    build: ./backend
+    container_name: otear-backend
+    ports:
+      - "8000:8000"
+    env_file: .env
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000
+    restart: unless-stopped
+    networks:
+      - otear-network
+
+  prospect-pro:
+    build:
+      context: ../../agents/prospect-pro
+      dockerfile: Dockerfile
+    container_name: otear-prospect-pro
+    ports:
+      - "8001:8001"
+    env_file: .env
+    volumes:
+      - prospect-data:/app/data
+    restart: unless-stopped
+    networks:
+      - otear-network
+
+volumes:
+  prospect-data:
+
+networks:
+  otear-network:
+    driver: bridge

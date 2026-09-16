@@ -1,0 +1,36 @@
+id: squad-thumbnail-youtube
+name: Squad Thumbnail YouTube
+version: 1.0.0
+purpose: Criar conceito, texto e direcao visual para thumbnail de video.
+
+agents:
+  - pesquisador-de-mercado
+  - copywriter-otear
+  - arquiteto-de-design
+  - revisor-de-qualidade
+
+workflow:
+  - step: entender_video
+    agent: pesquisador-de-mercado
+    output: promessa_do_video
+  - step: texto
+    agent: copywriter-otear
+    output: frases_de_thumbnail
+  - step: conceito_visual
+    agent: arquiteto-de-design
+    output: composicao
+  - step: revisao
+    agent: revisor-de-qualidade
+    output: thumbnail_final
+
+outputs:
+  - conceito
+  - texto_curto
+  - composicao_visual
+  - variações
+
+acceptance_criteria:
+  - A thumbnail gera curiosidade.
+  - O texto e curto.
+  - A imagem comunica antes da leitura.
+

@@ -1,0 +1,84 @@
+{
+  "slides": [
+    {
+      "id": 1,
+      "theme": "black",
+      "imageFile": "img-slide-01.png",
+      "elements": [
+        { "type": "tag", "text": "IA + NEUROCIÊNCIA" },
+        { "type": "headline", "text": "A Meta agora <em>prevê</em> o que seu cérebro vai fazer" },
+        { "type": "swipe" }
+      ]
+    },
+    {
+      "id": 2,
+      "theme": "dark",
+      "imageFile": null,
+      "elements": [
+        { "type": "tag", "text": "CONTEXTO" },
+        { "type": "headline", "text": "A Meta não quer só seus <em>dados</em>." },
+        { "type": "body", "text": "Agora ela quer entender o que acontece <em>dentro da sua cabeça</em>. O Tribe v2 é uma IA que prevê a atividade do seu cérebro diante de qualquer estímulo." }
+      ]
+    },
+    {
+      "id": 3,
+      "theme": "light",
+      "imageFile": null,
+      "elements": [
+        { "type": "tag", "text": "COMO FUNCIONA" },
+        { "type": "headline", "text": "Ele processa tudo que você <em>vê, ouve e lê</em>." },
+        { "type": "body", "text": "Três canais simultaneamente: vídeo, áudio e linguagem. Usando a mesma arquitetura do ChatGPT, ele integra tudo e gera uma previsão de como seu cérebro reage." }
+      ]
+    },
+    {
+      "id": 4,
+      "theme": "accent",
+      "imageFile": null,
+      "elements": [
+        { "type": "stat", "text": "1.000h" },
+        { "type": "sub", "text": "de escaneamentos cerebrais" },
+        { "type": "list", "items": ["720 pessoas participaram", "20.000 pontos do cérebro mapeados", "IA acertou mais que dados reais"] }
+      ]
+    },
+    {
+      "id": 5,
+      "theme": "dark",
+      "imageFile": null,
+      "elements": [
+        { "type": "tag", "text": "DISRUPTIVO" },
+        { "type": "headline", "text": "Agora dá pra estudar o cérebro <em>sem pessoas reais</em>." },
+        { "type": "body", "text": "Testes 'in silico': experimentos 100% digitais. Cientistas podem simular como seu cérebro reagiria a um anúncio, uma música, uma notícia. Sem você estar lá." }
+      ]
+    },
+    {
+      "id": 6,
+      "theme": "light",
+      "imageFile": null,
+      "elements": [
+        { "type": "tag", "text": "IMPACTO" },
+        { "type": "headline", "text": "Marketing e <em>atenção</em> nunca mais serão os mesmos." },
+        { "type": "body", "text": "Imagina testar 50 versões de um anúncio com simulação cerebral. A Meta ainda não falou em uso comercial. Mas quando a tecnologia existe, é questão de tempo." }
+      ]
+    },
+    {
+      "id": 7,
+      "theme": "dark",
+      "imageFile": null,
+      "elements": [
+        { "type": "spacer" },
+        { "type": "headline", "text": "Progresso científico ou <em>vigilância neurológica</em>?" },
+        { "type": "body", "text": "O Tribe v2 pode revolucionar a neurociência. Mas também pode ser a base para a maior máquina de persuasão já criada. Você confia na Meta com um mapa do seu cérebro?" },
+        { "type": "spacer" }
+      ]
+    },
+    {
+      "id": 8,
+      "theme": "accent",
+      "imageFile": null,
+      "elements": [
+        { "type": "headline", "text": "Comenta <em>CÉREBRO</em>" },
+        { "type": "sub", "text": "se você acha que isso muda tudo." }
+      ]
+    }
+  ]
+}

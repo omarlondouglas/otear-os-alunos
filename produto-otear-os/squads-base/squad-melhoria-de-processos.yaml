@@ -1,0 +1,35 @@
+id: squad-melhoria-de-processos
+name: Squad Melhoria de Processos
+version: 1.0.0
+purpose: Mapear, simplificar e melhorar processos repetitivos do usuario.
+
+agents:
+  - orquestrador-otear
+  - pesquisador-de-mercado
+  - revisor-de-qualidade
+
+workflow:
+  - step: mapear
+    agent: orquestrador-otear
+    output: mapa_do_processo
+  - step: diagnosticar
+    agent: pesquisador-de-mercado
+    output: gargalos
+  - step: redesenhar
+    agent: orquestrador-otear
+    output: novo_fluxo
+  - step: validar
+    agent: revisor-de-qualidade
+    output: processo_final
+
+outputs:
+  - mapa_atual
+  - gargalos
+  - novo_fluxo
+  - checklist_de_execucao
+
+acceptance_criteria:
+  - O processo ficou mais claro.
+  - Etapas desnecessarias foram removidas.
+  - Existe checklist para repetir.
+

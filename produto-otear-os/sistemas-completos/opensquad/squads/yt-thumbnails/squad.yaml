@@ -1,0 +1,23 @@
+name: "YouTube Thumbnail Creator"
+code: yt-thumbnails
+description: "Squad que gera conceitos e prompts otimizados de IA para criar thumbnails de YouTube com alto CTR"
+icon: "🎬"
+version: "1.0.0"
+performance_mode: alta-performance
+
+skills:
+  - web_search
+  - web_fetch
+
+data:
+  - pipeline/data/research-brief.md
+  - pipeline/data/domain-framework.md
+  - pipeline/data/quality-criteria.md
+  - pipeline/data/output-examples.md
+  - pipeline/data/anti-patterns.md
+
+investigation:
+  enriched: true
+  profiles_analyzed: 1
+  date: 2026-04-05
+  dir: squads/yt-thumbnails/_investigations

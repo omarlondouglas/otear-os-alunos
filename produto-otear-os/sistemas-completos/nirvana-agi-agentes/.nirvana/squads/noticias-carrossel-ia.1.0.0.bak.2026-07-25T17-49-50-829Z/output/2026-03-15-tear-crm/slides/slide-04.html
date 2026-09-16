@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 1080px; height: 1440px; overflow: hidden;
+      background: #0a0a0a;
+      font-family: 'Urbanist', sans-serif;
+      display: flex; flex-direction: column;
+      justify-content: center;
+      padding: 96px 80px;
+      position: relative;
+    }
+    .handle {
+      position: absolute;
+      top: 52px; right: 72px;
+      font-size: 24px; font-weight: 500; color: #888888;
+    }
+    .label {
+      font-size: 22px; font-weight: 700; color: #A3F12E;
+      text-transform: uppercase; letter-spacing: 2px;
+      margin-bottom: 32px;
+    }
+    .headline {
+      font-size: 58px; font-weight: 800; color: #ffffff;
+      line-height: 1.15; letter-spacing: -0.5px;
+      margin-bottom: 48px; max-width: 920px;
+    }
+    .headline .primary { color: #A3F12E; }
+    .body-text {
+      font-size: 34px; font-weight: 400; color: #cccccc;
+      line-height: 1.6; margin-bottom: 52px;
+    }
+    .body-text strong { color: #ffffff; font-weight: 600; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 16px;
+      background: #A3F12E;
+      border-radius: 50px;
+      padding: 24px 48px;
+      align-self: flex-start;
+    }
+    .badge-text {
+      font-size: 34px; font-weight: 800; color: #0a0a0a;
+    }
+    .badge-dot {
+      width: 12px; height: 12px;
+      background: #0a0a0a;
+      border-radius: 50%;
+      opacity: 0.4;
+    }
+    .price {
+      font-size: 26px; font-weight: 500; color: #888888;
+      margin-top: 28px;
+    }
+    .price strong { color: #A3F12E; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <span class="handle">@marlonlima.ia</span>
+  <div class="label">A virada</div>
+  <h2 class="headline">E se o CRM preenchesse <span class="primary">tudo sozinho</span>?</h2>
+  <p class="body-text">
+    O <strong>Tear CRM</strong> se conecta direto no seu WhatsApp. Cada conversa com cliente é analisada automaticamente. Nome, interesse, momento de compra, sentimento. Tudo aparece organizado <strong>sem você digitar nada</strong>.
+  </p>
+  <div class="badge">
+    <div class="badge-dot"></div>
+    <span class="badge-text">Tear CRM</span>
+    <div class="badge-dot"></div>
+  </div>
+  <p class="price">A partir de <strong>R$97/mês</strong></p>
+</body>
+</html>

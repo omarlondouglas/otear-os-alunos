@@ -1,0 +1,37 @@
+id: squad-prospeccao
+name: Squad Prospeccao
+version: 1.0.0
+purpose: Criar plano de prospeccao, criterios de leads e mensagens de abordagem.
+
+agents:
+  - prospector-otear
+  - estrategista-de-oferta
+  - copywriter-otear
+  - revisor-de-qualidade
+
+workflow:
+  - step: definir_lead_ideal
+    agent: prospector-otear
+    output: criterios_de_lead
+  - step: ajustar_oferta
+    agent: estrategista-de-oferta
+    output: proposta_de_valor
+  - step: criar_abordagem
+    agent: copywriter-otear
+    output: mensagens
+  - step: revisar
+    agent: revisor-de-qualidade
+    output: plano_final
+
+outputs:
+  - perfil_de_lead
+  - segmentos_prioritarios
+  - mensagem_inicial
+  - follow_up
+  - checklist_de_qualificacao
+
+acceptance_criteria:
+  - O lead ideal esta definido.
+  - A mensagem e especifica.
+  - Existe proxima acao comercial.
+

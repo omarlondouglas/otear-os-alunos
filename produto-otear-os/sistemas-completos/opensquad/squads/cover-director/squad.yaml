@@ -1,0 +1,19 @@
+squad:
+  code: cover-director
+  name: "Diretor de Capa — Neuro-Visual"
+  description: >
+    Analisa o conteúdo de um carrossel e define qual personagem, expressão facial
+    e composição visual vai gerar maior impacto emocional na capa.
+    Usa princípios de neuromarketing para ativar o sistema límbico do espectador.
+  icon: 🧠
+  version: "1.0.0"
+  author: Marlon Lima
+  created: "2026-03-14"
+
+skills: []
+
+pipeline:
+  steps:
+    - checkpoint-conteudo
+    - neuro-estrategista
+    - checkpoint-aprovacao

@@ -1,0 +1,42 @@
+id: otear-sites
+name: Otear Sites
+version: 1.0.0
+purpose: Criar landing pages, paginas de venda, sites simples e paginas de captura com pipeline de estrategia, copy, design, build, integracoes, QA e publicacao.
+
+inputs:
+  - briefing_do_negocio
+  - produto_ou_servico
+  - publico
+  - objetivo_da_pagina
+  - oferta
+  - chamada_para_acao
+  - referencia_visual
+  - integracoes
+
+outputs:
+  - product_brief
+  - scope_definition
+  - research_synthesis
+  - section_copy
+  - design_tokens
+  - section_layouts
+  - frontend_plan
+  - integration_plan
+  - qa_report
+  - publication_plan
+
+main_files:
+  - LEIA-ME-ALUNO.md
+  - squad.yaml
+  - workflows/lp-full-pipeline.yaml
+  - workflows/lp-discovery-flow.yaml
+  - workflows/lp-qa-gate.yaml
+
+use_when:
+  - criar site
+  - criar landing page
+  - criar pagina de vendas
+  - criar pagina de captura
+  - criar pagina com WhatsApp
+  - revisar pagina existente
+

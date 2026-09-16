@@ -1,0 +1,7 @@
+pipeline:
+  name: "Vyve Brand Identity Pipeline"
+  version: "1.0.0"
+
+  steps:
+    - id: brand-concept-slides
+      file: steps/01-brand-concept-slides.md

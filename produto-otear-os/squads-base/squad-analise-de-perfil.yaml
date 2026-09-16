@@ -1,0 +1,41 @@
+id: squad-analise-de-perfil
+name: Squad Analise de Perfil
+version: 1.0.0
+purpose: Analisar perfil de rede social e gerar diagnostico, oportunidades e plano de conteudo.
+
+agents:
+  - analisador-de-perfil
+  - pesquisador-de-mercado
+  - social-media-otear
+  - planejador-editorial
+  - revisor-de-qualidade
+
+workflow:
+  - step: diagnostico
+    agent: analisador-de-perfil
+    output: analise_do_perfil
+  - step: mercado
+    agent: pesquisador-de-mercado
+    output: contexto_e_referencias
+  - step: conteudo
+    agent: social-media-otear
+    output: ideias_de_posts
+  - step: calendario
+    agent: planejador-editorial
+    output: plano_editorial
+  - step: revisao
+    agent: revisor-de-qualidade
+    output: diagnostico_final
+
+outputs:
+  - diagnostico
+  - oportunidades
+  - pilares
+  - ideias_de_conteudo
+  - plano_de_acao
+
+acceptance_criteria:
+  - O perfil tem diagnostico claro.
+  - As oportunidades sao acionaveis.
+  - Existe plano de conteudo.
+

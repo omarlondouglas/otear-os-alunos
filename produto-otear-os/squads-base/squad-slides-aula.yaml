@@ -1,0 +1,41 @@
+id: squad-slides-aula
+name: Squad Slides de Aula
+version: 1.0.0
+purpose: Criar estrutura de aula, narrativa e slides para ensinar um tema.
+
+agents:
+  - pesquisador-de-mercado
+  - social-media-otear
+  - designer-de-carrossel
+  - arquiteto-de-design
+  - revisor-de-qualidade
+
+workflow:
+  - step: organizar_conteudo
+    agent: pesquisador-de-mercado
+    output: pontos_principais
+  - step: narrativa
+    agent: social-media-otear
+    output: fluxo_da_aula
+  - step: slides
+    agent: designer-de-carrossel
+    output: estrutura_slide_a_slide
+  - step: design
+    agent: arquiteto-de-design
+    output: direcao_visual
+  - step: revisao
+    agent: revisor-de-qualidade
+    output: aula_final
+
+outputs:
+  - roteiro_da_aula
+  - slides
+  - exemplos
+  - exercicio
+  - checklist
+
+acceptance_criteria:
+  - A aula tem começo, meio e fim.
+  - Os slides nao ficam carregados.
+  - O aluno tem proxima acao.
+

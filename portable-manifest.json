@@ -1,0 +1,42 @@
+﻿{
+  "name": "otear-os",
+  "created": "2026-08-22",
+  "purpose": "Base portatil para criar e operar agentes, skills e squads no Otear OS.",
+  "student_visible_name": "Otear OS",
+  "student_visible_terms": [
+    "Otear OS",
+    "agente",
+    "skill",
+    "squad",
+    "cockpit",
+    "workflow",
+    "memoria",
+    "biblioteca"
+  ],
+  "student_root": "produto-otear-os",
+  "placeholders": {
+    "OTEAR_OS_ROOT": ".",
+    "OTEAR_PRODUCT_ROOT": "produto-otear-os",
+    "OTEAR_USER_AGENTS": "produto-otear-os/meus-agentes",
+    "OTEAR_USER_SKILLS": "produto-otear-os/minhas-skills",
+    "OTEAR_USER_SQUADS": "produto-otear-os/meus-squads",
+    "OTEAR_BASE_AGENTS": "produto-otear-os/agentes-base",
+    "OTEAR_BASE_SKILLS": "produto-otear-os/skills-base",
+    "OTEAR_BASE_SQUADS": "produto-otear-os/squads-base",
+    "OTEAR_BASE_WORKFLOWS": "produto-otear-os/workflows-base",
+    "USER_HOME": "home do usuario"
+  },
+  "do_not_ship": [
+    "_fontes-internas-nao-entregar",
+    ".env",
+    ".git",
+    ".venv",
+    "node_modules",
+    "cache",
+    "logs",
+    "sessions",
+    "outputs",
+    "bancos locais",
+    "midias pesadas"
+  ]
+}

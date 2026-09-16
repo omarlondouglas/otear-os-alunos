@@ -1,0 +1,40 @@
+pipeline:
+  steps:
+    - step: checkpoint-conteudo
+      type: checkpoint
+      label: "Receber conteúdo do carrossel"
+      questions:
+        - id: conteudo
+          text: "Cole aqui o título/gancho da capa do carrossel e uma breve descrição do tema:"
+          type: free-text
+          examples:
+            - "A dona do Claude abriu um programa gratuito pra quem trabalha com IA — oportunidade que quase ninguém viu"
+            - "O mercado de IA vai demitir 40% dos consultores em 2 anos — alerta sobre certificação"
+            - "Essa ferramenta gratuita pode substituir 90% do trabalho da sua agência"
+
+    - step: neuro-estrategista
+      type: agent
+      agent: neuro-estrategista
+      execution: inline
+      label: "Analisar emoção e definir personagem + expressão"
+      tasks:
+        - analyze-content
+        - define-character
+        - generate-prompt
+      input:
+        - checkpoint-conteudo.conteudo
+      output:
+        file: cover-brief.md
+
+    - step: checkpoint-aprovacao
+      type: checkpoint
+      label: "Aprovar brief da capa"
+      questions:
+        - id: aprovacao
+          text: "O brief da capa está bom? Posso gerar a imagem com esse prompt?"
+          type: choice
+          options:
+            - "Sim, gera a imagem"
+            - "Ajustar expressão"
+            - "Ajustar personagem"
+            - "Refazer do zero"

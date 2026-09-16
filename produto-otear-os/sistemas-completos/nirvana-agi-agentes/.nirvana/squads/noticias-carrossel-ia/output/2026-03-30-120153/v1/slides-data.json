@@ -1,0 +1,84 @@
+{
+  "slides": [
+    {
+      "id": 1,
+      "theme": "black",
+      "imageFile": "img-slide-01.png",
+      "elements": [
+        { "type": "tag", "text": "BUSCA VIA IA" },
+        { "type": "headline", "text": "Seu negócio aparece quando alguém <em>pergunta ao ChatGPT</em>?" },
+        { "type": "swipe" }
+      ]
+    },
+    {
+      "id": 2,
+      "theme": "accent",
+      "imageFile": null,
+      "elements": [
+        { "type": "stat", "text": "527%" },
+        { "type": "sub", "text": "crescimento da busca via IA em 2025" },
+        { "type": "body", "text": "As pessoas não pesquisam mais só no Google. Elas <em>perguntam às IAs</em>. E se você não aparece lá, seu concorrente aparece." }
+      ]
+    },
+    {
+      "id": 3,
+      "theme": "dark",
+      "imageFile": null,
+      "elements": [
+        { "type": "tag", "text": "O PROBLEMA" },
+        { "type": "headline", "text": "O Google está <em>perdendo relevância</em>." },
+        { "type": "body", "text": "60% das buscas no Google terminam sem clique. 25% das buscas tradicionais vão desaparecer até 2026. Quem não se adaptar agora vai ficar invisível." }
+      ]
+    },
+    {
+      "id": 4,
+      "theme": "light",
+      "imageFile": null,
+      "elements": [
+        { "type": "tag", "text": "DADO CHAVE" },
+        { "type": "stat", "text": "5x" },
+        { "type": "sub", "text": "mais conversão via IA que Google" },
+        { "type": "body", "text": "Tráfego vindo de IAs converte 14,2% contra 2,8% do Google tradicional. Quem é citado pelo ChatGPT vende mais." }
+      ]
+    },
+    {
+      "id": 5,
+      "theme": "dark",
+      "imageFile": null,
+      "elements": [
+        { "type": "tag", "text": "A SOLUÇÃO" },
+        { "type": "headline", "text": "Landing page + blog semanal <em>otimizados para IAs</em>." },
+        { "type": "body", "text": "O Você Mais Visto cria sua página profissional e publica 1 artigo por semana com GEO. Para o ChatGPT, Gemini e Perplexity citarem você." }
+      ]
+    },
+    {
+      "id": 6,
+      "theme": "accent",
+      "imageFile": null,
+      "elements": [
+        { "type": "headline", "text": "Tudo isso por <em>R$97/mês</em>." },
+        { "type": "list", "items": ["Landing page pronta em 48h", "1 artigo de blog por semana", "Otimização GEO para IAs", "Sem anúncios, sem fidelidade"] }
+      ]
+    },
+    {
+      "id": 7,
+      "theme": "dark",
+      "imageFile": null,
+      "elements": [
+        { "type": "spacer" },
+        { "type": "headline", "text": "Enquanto você espera, seu concorrente já <em>aparece nas IAs</em>." },
+        { "type": "body", "text": "84% dos consumidores confiam mais em empresas com site. Blogs são a fonte #1 citada por IAs generativas. Posicione-se agora ou fique invisível." },
+        { "type": "spacer" }
+      ]
+    },
+    {
+      "id": 8,
+      "theme": "accent",
+      "imageFile": null,
+      "elements": [
+        { "type": "headline", "text": "Acesse <em>vocemaisvisto.com.br</em>" },
+        { "type": "sub", "text": "e comece a ser encontrado pelas IAs." }
+      ]
+    }
+  ]
+}

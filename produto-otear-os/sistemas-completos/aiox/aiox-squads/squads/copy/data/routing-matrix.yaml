@@ -1,0 +1,81 @@
+# ==============================================================================
+# COPY SQUAD — Routing Matrix
+# routing-matrix.yaml
+# ==============================================================================
+#
+# Matrix de decisão para seleção de especialista + copywriter.
+# Usado pelo Copy Chief quando briefing não especifica copywriter.
+
+specialist_routing:
+  ads: ads-specialist
+  email: email-specialist
+  landing: landing-specialist
+  social: social-specialist
+
+style_selection:
+  ads:
+    frio: halbert
+    morno: kennedy
+    quente: schwartz
+    b2b: ogilvy
+    default: halbert
+
+  email:
+    frio: schwartz
+    morno: ogilvy
+    quente: kennedy
+    b2b: ogilvy
+    sequence: schwartz
+    broadcast: halbert
+    nurture: ogilvy
+    lancamento: kennedy
+    default: schwartz
+
+  landing:
+    frio: schwartz
+    morno: halbert
+    quente: kennedy
+    b2b: ogilvy
+    vsl: halbert
+    sales_page: schwartz
+    opt_in: kennedy
+    default: schwartz
+
+  social:
+    frio: halbert
+    morno: schwartz
+    quente: kennedy
+    b2b: ogilvy
+    carrossel: halbert
+    thread: ogilvy
+    post: kennedy
+    script: halbert
+    default: halbert
+
+audience_temperature_signals:
+  frio:
+    - "público novo"
+    - "nunca ouviu falar"
+    - "topo de funil"
+    - "cold audience"
+    - "prospecção"
+  morno:
+    - "já conhece"
+    - "retargeting"
+    - "engajou"
+    - "meio de funil"
+    - "warm audience"
+  quente:
+    - "lista engajada"
+    - "carrinho abandonado"
+    - "fundo de funil"
+    - "hot audience"
+    - "comprador"
+  b2b:
+    - "empresa"
+    - "B2B"
+    - "decisor"
+    - "CTO"
+    - "CEO"
+    - "corporativo"
+    - "profissional"

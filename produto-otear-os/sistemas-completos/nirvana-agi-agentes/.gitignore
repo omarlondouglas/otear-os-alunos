@@ -1,0 +1,90 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+/lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+.env
+.venv
+
+# Environment Variables
+.env
+.claude-credentials.json
+.anthropic_tokens.json
+
+# Docker
+.docker/
+
+# Editor
+.vscode/
+.idea/
+
+# Node
+node_modules/
+
+# Project specific
+storage/
+uploads/
+*.db
+*.sqlite3
+
+# Large Reference Files
+Agente de IA para criação de conteúdo.zip
+O tear - conteudo/
+
+# Video files
+*.mp4
+videos/
+
+# System files
+__MACOSX/
+.DS_Store
+
+# Reference folders (submodules/references only)
+athena_ref/
+ralph_ref/
+a2ui/
+aios-core/
+agi-videos-temp/
+agent-dashboard-main/
+hermes_ref/
+chatgpt_bridge_ref/
+graphify_ref/
+editordofuturo/
+carrocel/
+pixelle_ref/
+
+# Test artifacts
+test_*.png
+test_*.bin
+test_*_output.txt
+*.tmp
+bigfile.*
+
+# Local cache/temp
+tmp/
+.cache/
+var/
+
+# Organized local references / legacy content
+references/
+legacy/content/

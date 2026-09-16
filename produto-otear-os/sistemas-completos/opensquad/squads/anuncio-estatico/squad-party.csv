@@ -1,0 +1,4 @@
+id,name,title,icon,path,execution
+copywriter,Clara Copy,Ad Copywriter,✍️,./agents/copywriter.agent.md,inline
+designer,Diego Design,Static Ad Designer,🎨,./agents/designer.agent.md,inline
+revisor,Vera Veredito,Quality Reviewer,🔎,./agents/revisor.agent.md,inline

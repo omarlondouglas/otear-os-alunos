@@ -1,0 +1,37 @@
+id: squad-conteudo-social
+name: Squad Conteudo Social
+version: 1.0.0
+purpose: Criar conteudos para redes sociais a partir de temas, ofertas ou noticias.
+
+agents:
+  - curador-de-noticias
+  - social-media-otear
+  - designer-de-carrossel
+  - revisor-de-qualidade
+
+workflow:
+  - step: encontrar_angulo
+    agent: curador-de-noticias
+    output: angulo_de_conteudo
+  - step: criar_post
+    agent: social-media-otear
+    output: post_e_legenda
+  - step: adaptar_para_carrossel
+    agent: designer-de-carrossel
+    output: slides
+  - step: revisar
+    agent: revisor-de-qualidade
+    output: conteudo_final
+
+outputs:
+  - pauta
+  - post
+  - legenda
+  - carrossel
+  - cta
+
+acceptance_criteria:
+  - O conteudo tem gancho.
+  - O formato combina com o canal.
+  - O CTA esta claro.
+

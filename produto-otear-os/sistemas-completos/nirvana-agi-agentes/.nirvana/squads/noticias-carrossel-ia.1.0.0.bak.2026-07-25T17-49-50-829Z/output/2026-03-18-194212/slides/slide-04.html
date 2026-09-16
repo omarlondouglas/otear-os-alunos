@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 1080px; height: 1440px; overflow: hidden;
+      background: #6C63FF;
+      font-family: 'Inter', sans-serif;
+      display: flex; flex-direction: column;
+    }
+    .header {
+      display: flex; justify-content: flex-end;
+      padding: 48px 72px 0;
+    }
+    .handle { font-size: 26px; font-weight: 600; color: rgba(255,255,255,0.5); letter-spacing: 0.02em; }
+    .image-zone {
+      width: 100%; height: 580px; overflow: hidden; position: relative;
+    }
+    .image-zone img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center;
+    }
+    .image-overlay {
+      position: absolute; bottom: 0; left: 0; right: 0; height: 200px;
+      background: linear-gradient(to bottom, transparent, #6C63FF);
+    }
+    .content {
+      flex: 1; padding: 36px 72px 64px;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .overline {
+      font-size: 22px; font-weight: 700;
+      color: #FFD93D;
+      text-transform: uppercase; letter-spacing: 0.12em;
+      margin-bottom: 24px;
+    }
+    .headline {
+      font-size: 54px; font-weight: 900; color: #FFFFFF; line-height: 1.15; margin-bottom: 32px;
+    }
+    .body-text {
+      font-size: 30px; font-weight: 500; color: rgba(255,255,255,0.8); line-height: 1.6;
+    }
+    .stat-row {
+      display: flex; gap: 20px; margin-top: 36px;
+    }
+    .stat-pill {
+      flex: 1;
+      background: rgba(0,0,0,0.25);
+      border-radius: 16px;
+      padding: 20px 24px;
+      text-align: center;
+    }
+    .stat-pill .num { font-size: 42px; font-weight: 900; color: #FFD93D; }
+    .stat-pill .label { font-size: 22px; font-weight: 600; color: rgba(255,255,255,0.8); margin-top: 6px; }
+  </style>
+</head>
+<body>
+  <div class="header"><span class="handle">@marlonlima.ia</span></div>
+  <div class="image-zone">
+    <img src="../images/img-slide-04.png" alt="Balança IA vs humano">
+    <div class="image-overlay"></div>
+  </div>
+  <div class="content">
+    <div class="overline">A virada</div>
+    <h2 class="headline">
+      Existe um jeito de responder<br>em segundos, 24h por dia,<br>sem você estar online.
+    </h2>
+    <p class="body-text">
+      58% das empresas brasileiras<br>já usam IA em operações comerciais.
+    </p>
+    <div class="stat-row">
+      <div class="stat-pill">
+        <div class="num">58%</div>
+        <div class="label">já automatizaram</div>
+      </div>
+      <div class="stat-pill">
+        <div class="num">24/7</div>
+        <div class="label">sem parar</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

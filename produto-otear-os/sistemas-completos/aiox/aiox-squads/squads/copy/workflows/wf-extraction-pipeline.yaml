@@ -1,0 +1,107 @@
+# ==============================================================================
+# COPY SQUAD — WORKFLOW: Extraction Pipeline
+# wf-extraction-pipeline.yaml
+# ==============================================================================
+
+id: wf-extraction-pipeline
+name: Extraction Pipeline
+description: >
+  Pipeline completo de extração de conteúdo para a knowledge-base:
+  detecção de novos arquivos → conversão por engine → enriquecimento
+  de metadados → validação de qualidade → organização + indexação.
+
+metadata:
+  version: "1.0.0"
+  owner: copy-chief
+  squad: copy
+  created: "2026-04-08"
+  tags:
+    - extraction
+    - pipeline
+    - knowledge-base
+    - enrichment
+
+inputs:
+  - name: input_path
+    type: string
+    required: false
+    description: "Pasta com arquivos novos (default: knowledge-base/_inbox/)"
+
+phases:
+
+  - id: "detect"
+    name: "Detect New Files"
+    executor: copy-chief
+    checkpoint: false
+    steps:
+      - scan_inbox:
+          action: "Glob knowledge-base/_inbox/ para novos arquivos"
+      - classify:
+          action: "Classificar por formato (PDF, vídeo, imagem)"
+      - report:
+          action: "Reportar N arquivos detectados por formato"
+
+  - id: "extract"
+    name: "Extract Content"
+    executor: copy-chief
+    checkpoint: false
+    task: tasks/extract-content.md
+    steps:
+      - extract_pdfs:
+          action: "Docling para PDFs (fallback Gemini 2.5 Pro para scans)"
+      - extract_videos:
+          action: "Whisper/Groq para vídeos com segmentação"
+      - extract_images:
+          action: "Claude Vision para imagens publicitárias"
+      - quality_check:
+          action: "Verificar legibilidade básica pós-conversão"
+
+  - id: "enrich"
+    name: "Enrich Metadata"
+    executor: copy-chief
+    checkpoint: false
+    task: tasks/enrich-metadata.md
+    steps:
+      - analyze:
+          action: "Identificar copywriter, framework, técnicas, nível consciência"
+      - frontmatter:
+          action: "Gerar frontmatter YAML para cada arquivo"
+      - organize:
+          action: "Mover para estrutura (por-copywriter/por-formato/por-framework)"
+
+  - id: "validate"
+    name: "Validate Quality"
+    executor: copy-chief
+    checkpoint: true
+    task: tasks/validate-extraction.md
+    steps:
+      - validate_content:
+          action: "Verificar legibilidade, completude, estrutura"
+      - validate_metadata:
+          action: "Verificar copywriter, framework, técnicas, tags"
+      - decide:
+          action: "APROVADO → base | REJEITADO → _rejected/ | MANUAL → _review/"
+
+  - id: "index"
+    name: "Update Index"
+    executor: copy-chief
+    checkpoint: false
+    task: tasks/update-index.md
+    steps:
+      - regenerate:
+          action: "Glob todos os arquivos aprovados, regenerar index.md"
+      - report:
+          action: "Reportar total de arquivos na base"
+
+error_handling:
+  on_extraction_failure:
+    action: "Tentar fallback engine. Se falhar, mover para _review/ com log."
+  on_enrichment_failure:
+    action: "Marcar para curadoria manual, não rejeitar."
+  on_batch_failure:
+    action: "Processar arquivos restantes, não abortar batch inteiro."
+
+metrics:
+  target_per_file_seconds: 30
+  fallback_threshold: "< 50% texto legível"
+  batch_failure_tolerance: "continuar processando"

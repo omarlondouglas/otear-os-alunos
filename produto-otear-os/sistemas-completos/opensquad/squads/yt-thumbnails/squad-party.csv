@@ -1,0 +1,5 @@
+name,title,icon,execution,path
+Renato Referência,Pesquisador de Contexto,🔍,subagent,./agents/researcher.agent.md
+Caio Conceito,Diretor Criativo de Thumbnails,🎨,inline,./agents/conceptor.agent.md
+Pablo Prompt,Engenheiro de Prompts de IA,✍️,inline,./agents/prompt-engineer.agent.md
+Vera Veredito,Revisora de Qualidade,✅,inline,./agents/reviewer.agent.md

@@ -1,0 +1,85 @@
+{
+  "slides": [
+    {
+      "id": 1,
+      "theme": "title",
+      "elements": [
+        { "type": "tag", "text": "AULA PRÁTICA" },
+        { "type": "headline", "text": "Como criar um <em>Design System</em> do zero" },
+        { "type": "sub", "text": "Tokens, componentes, documentação e ferramentas." }
+      ]
+    },
+    {
+      "id": 2,
+      "theme": "dark",
+      "elements": [
+        { "type": "tag", "text": "O QUE É" },
+        { "type": "headline", "text": "Design System é um <em>conjunto de regras</em> visuais reutilizáveis." },
+        { "type": "body", "text": "Não é um kit de UI. É a linguagem visual do seu produto: cores, tipografia, espaçamentos, componentes e padrões de uso. Tudo documentado e versionado para que qualquer pessoa do time crie interfaces consistentes." }
+      ]
+    },
+    {
+      "id": 3,
+      "theme": "accent",
+      "elements": [
+        { "type": "headline", "text": "Por que criar um?" },
+        { "type": "list", "items": ["Consistência visual em todos os produtos e telas", "Velocidade de desenvolvimento (não reinventa a roda)", "Comunicação clara entre design e dev", "Escalabilidade: funciona com 1 ou 100 pessoas no time", "Menos bugs visuais e retrabalho"] }
+      ]
+    },
+    {
+      "id": 4,
+      "theme": "dark",
+      "elements": [
+        { "type": "tag", "text": "PASSO 1" },
+        { "type": "headline", "text": "<em>Design Tokens</em>: a base de tudo." },
+        { "type": "columns", "left": { "type": "body", "text": "Tokens são os valores primitivos do seu sistema. Eles definem as decisões visuais mais básicas que todo componente vai usar.\n\nSão variáveis, não valores fixos. Mude o token, muda tudo." }, "right": { "type": "code", "text": "/* Cores */\n--color-primary: #A3F12E;\n--color-bg: #0a0a0a;\n--color-text: #FFFFFF;\n\n/* Tipografia */\n--font-family: 'Urbanist';\n--font-size-h1: 64px;\n--font-size-body: 18px;\n\n/* Espaçamentos */\n--space-sm: 8px;\n--space-md: 16px;\n--space-lg: 32px;" } }
+      ]
+    },
+    {
+      "id": 5,
+      "theme": "light",
+      "elements": [
+        { "type": "tag", "text": "PASSO 2" },
+        { "type": "headline", "text": "<em>Componentes</em>: blocos reutilizáveis." },
+        { "type": "body", "text": "Componentes são elementos de interface construídos a partir dos tokens. Vão do mais simples (botão, input, tag) ao mais complexo (card, modal, tabela)." },
+        { "type": "spacer" },
+        { "type": "list", "items": ["Átomos: botão, ícone, label, input", "Moléculas: campo de busca, card simples, menu item", "Organismos: header, formulário completo, tabela de dados", "Templates: layouts de página com placeholders"] }
+      ]
+    },
+    {
+      "id": 6,
+      "theme": "dark",
+      "elements": [
+        { "type": "tag", "text": "PASSO 3" },
+        { "type": "headline", "text": "<em>Documentação</em>: se não está documentado, não existe." },
+        { "type": "list", "items": ["Quando usar cada componente (e quando NÃO usar)", "Variantes e estados (hover, disabled, loading, error)", "Código de exemplo (copiar e colar)", "Acessibilidade: contraste mínimo, foco, leitor de tela", "Changelog: o que mudou em cada versão"] }
+      ]
+    },
+    {
+      "id": 7,
+      "theme": "light",
+      "elements": [
+        { "type": "tag", "text": "PASSO 4" },
+        { "type": "headline", "text": "<em>Ferramentas</em> para construir." },
+        { "type": "columns", "left": { "type": "list", "items": ["Figma — design e prototipação", "Storybook — documentação de componentes", "Style Dictionary — tokens em código", "Chromatic — testes visuais automatizados"] }, "right": { "type": "list", "items": ["Tailwind CSS — utility-first com tokens", "Radix UI — primitivos acessíveis", "shadcn/ui — componentes prontos", "Zeroheight — documentação visual"] } }
+      ]
+    },
+    {
+      "id": 8,
+      "theme": "dark",
+      "elements": [
+        { "type": "tag", "text": "RESUMO" },
+        { "type": "headline", "text": "4 passos para criar seu <em>Design System</em>." },
+        { "type": "list", "items": ["1. Design Tokens — cores, fontes, espaçamentos como variáveis", "2. Componentes — botões, cards, modais reutilizáveis (atomic design)", "3. Documentação — regras de uso, estados, acessibilidade, changelog", "4. Ferramentas — Figma + Storybook + Tailwind + Style Dictionary"] }
+      ]
+    },
+    {
+      "id": 9,
+      "theme": "accent",
+      "elements": [
+        { "type": "headline", "text": "Comece <em>pequeno</em>." },
+        { "type": "sub", "text": "3 cores, 2 fontes, 5 componentes. Isso já é um Design System." }
+      ]
+    }
+  ]
+}

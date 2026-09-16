@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 1080px; height: 1440px; overflow: hidden;
+      background: #F5F5FF;
+      font-family: 'Inter', sans-serif;
+      display: flex; flex-direction: column;
+    }
+    .header {
+      display: flex; justify-content: flex-end;
+      padding: 48px 72px 0;
+    }
+    .handle { font-size: 26px; font-weight: 600; color: #A0A0C0; letter-spacing: 0.02em; }
+    .image-zone {
+      width: 100%; height: 560px; overflow: hidden; position: relative;
+    }
+    .image-zone img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center;
+    }
+    .image-overlay {
+      position: absolute; bottom: 0; left: 0; right: 0; height: 180px;
+      background: linear-gradient(to bottom, transparent, #F5F5FF);
+    }
+    .content {
+      flex: 1; padding: 36px 72px 64px;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .tag {
+      display: inline-block;
+      background: #1A1A2E;
+      color: #FFD93D;
+      font-size: 22px; font-weight: 700;
+      padding: 10px 24px; border-radius: 100px;
+      margin-bottom: 28px; width: fit-content;
+      text-transform: uppercase; letter-spacing: 0.08em;
+    }
+    .headline {
+      font-size: 50px; font-weight: 900; color: #1A1A2E; line-height: 1.15; margin-bottom: 32px;
+    }
+    .headline .highlight { color: #6C63FF; }
+    .steps {
+      display: flex; flex-direction: column; gap: 18px;
+    }
+    .step {
+      display: flex; align-items: center; gap: 20px;
+      background: #FFFFFF;
+      border-radius: 16px;
+      padding: 20px 28px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .step-icon { font-size: 32px; }
+    .step-text { font-size: 28px; font-weight: 600; color: #1A1A2E; }
+  </style>
+</head>
+<body>
+  <div class="header"><span class="handle">@marlonlima.ia</span></div>
+  <div class="image-zone">
+    <img src="../images/img-slide-05.png" alt="Fluxo de automação IA">
+    <div class="image-overlay"></div>
+  </div>
+  <div class="content">
+    <div class="tag">A solução</div>
+    <h2 class="headline">
+      O agente responde, qualifica<br>e agenda. <span class="highlight">Sem parar.</span>
+    </h2>
+    <div class="steps">
+      <div class="step">
+        <span class="step-icon">💬</span>
+        <span class="step-text">Mensagem chega</span>
+      </div>
+      <div class="step">
+        <span class="step-icon">🤖</span>
+        <span class="step-text">Agente responde em segundos</span>
+      </div>
+      <div class="step">
+        <span class="step-icon">✅</span>
+        <span class="step-text">Lead qualificado e agendado</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

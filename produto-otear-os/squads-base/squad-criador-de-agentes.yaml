@@ -1,0 +1,31 @@
+id: squad-criador-de-agentes
+name: Squad Criador de Agentes
+version: 1.0.0
+purpose: Criar agentes, skills e squads personalizados para o usuario.
+
+agents:
+  - orquestrador-otear
+  - pesquisador-de-mercado
+  - revisor-de-qualidade
+
+workflow:
+  - step: entender_necessidade
+    agent: orquestrador-otear
+    output: funcao_necessaria
+  - step: desenhar_contrato
+    agent: orquestrador-otear
+    output: contrato_do_agente_skill_ou_squad
+  - step: validar_utilidade
+    agent: revisor-de-qualidade
+    output: arquivo_final
+
+outputs:
+  - agente_skill_ou_squad
+  - exemplo_de_uso
+  - checklist_de_qualidade
+
+acceptance_criteria:
+  - A criacao tem missao clara.
+  - A saida e reutilizavel.
+  - O usuario sabe como chamar no Otear OS.
+

@@ -1,0 +1,66 @@
+{
+  "slides": [
+    {
+      "id": 1,
+      "theme": "black",
+      "imageFile": "images/v1/img-cover.png",
+      "elements": [
+        { "type": "tag", "text": "ESTILO · 13 ABR 2026" },
+        { "type": "headline", "text": "Aliança <em>fina</em>." },
+        { "type": "sub", "text": "Elegância que não pesa." },
+        { "type": "swipe" }
+      ]
+    },
+    {
+      "id": 2,
+      "theme": "light",
+      "imageFile": null,
+      "elements": [
+        { "type": "tag", "text": "A TESE" },
+        { "type": "headline", "text": "Menos metal. Mais <em>presença</em>." },
+        { "type": "body", "text": "A aliança fina escapa do óbvio — ela compõe com a mão ao invés de dominar o dedo. O resultado é sofisticação <em>silenciosa</em>: joia que fala sem gritar." }
+      ]
+    },
+    {
+      "id": 3,
+      "theme": "dark",
+      "imageFile": null,
+      "elements": [
+        { "type": "tag", "text": "ESTÉTICA" },
+        { "type": "headline", "text": "A linha que <em>valoriza</em> o dedo." },
+        { "type": "body", "text": "Traços finos <em>alongam</em> visualmente a mão e combinam com qualquer anel sobreposto. Por isso stylists e joalheiros de alto padrão recomendam aliança fina pra um look contemporâneo e <em>atemporal</em>." }
+      ]
+    },
+    {
+      "id": 4,
+      "theme": "accent",
+      "imageFile": null,
+      "elements": [
+        { "type": "tag", "text": "PELE SENSÍVEL" },
+        { "type": "headline", "text": "Menos contato, <em>menos alergia</em>." },
+        { "type": "body", "text": "Peles sensíveis reagem ao níquel e ligas mistas de alianças grossas. A aliança fina, em <em>ouro 18k</em> ou <em>platina pura</em>, reduz a área de contato e diminui drasticamente irritação, coceira e manchas no dedo." }
+      ]
+    },
+    {
+      "id": 5,
+      "theme": "light",
+      "imageFile": null,
+      "elements": [
+        { "type": "tag", "text": "CONFORTO" },
+        { "type": "headline", "text": "Leve no dedo. <em>O dia inteiro</em>." },
+        { "type": "body", "text": "Você <em>esquece</em> que ela está ali — e é isso que importa. Nada de marcar, apertar ou incomodar no digitar, no treino ou no sono. A aliança fina <em>acompanha</em> a rotina sem pedir licença." }
+      ]
+    },
+    {
+      "id": 6,
+      "theme": "dark",
+      "imageFile": null,
+      "elements": [
+        { "type": "tag", "text": "ESCOLHA CERTA" },
+        { "type": "headline", "text": "Delicada por fora. <em>Definitiva</em> por dentro." },
+        { "type": "body", "text": "Pensa no que você vai querer usar daqui a 20 anos. Fina, leve e bem feita <em>envelhece com você</em>. Salva e manda pra quem vai casar." },
+        { "type": "cta", "text": "@marlonlima.ia" }
+      ]
+    }
+  ]
+}

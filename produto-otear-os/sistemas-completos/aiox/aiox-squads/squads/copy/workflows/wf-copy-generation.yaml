@@ -1,0 +1,129 @@
+# ==============================================================================
+# COPY SQUAD — WORKFLOW: Copy Generation Cycle
+# wf-copy-generation.yaml
+# ==============================================================================
+
+id: wf-copy-generation
+name: Copy Generation Cycle
+description: >
+  Ciclo completo de geração de copy: briefing → validação → routing →
+  geração com consulta à knowledge-base → revisão → reescrita (se necessário)
+  → entrega. Máximo 2 ciclos de revisão.
+
+metadata:
+  version: "1.0.0"
+  owner: copy-chief
+  squad: copy
+  created: "2026-04-08"
+  tags:
+    - copy
+    - generation
+    - review
+    - quality-gate
+
+inputs:
+  - name: briefing
+    type: string
+    required: true
+    description: "Briefing YAML ou linguagem natural"
+
+phases:
+
+  - id: "validate"
+    name: "Validate Briefing"
+    executor: copy-chief
+    checkpoint: false
+    task: tasks/validate-briefing.md
+    steps:
+      - detect_format:
+          action: "Detectar se input é YAML ou linguagem natural"
+      - parse_briefing:
+          action: "Parsear YAML ou converter NL para YAML"
+      - validate_fields:
+          action: "Validar campos obrigatórios e opcionais"
+    on_failure:
+      action: "Retornar erro com campos faltantes, solicitar correção"
+
+  - id: "route"
+    name: "Route to Specialist"
+    executor: copy-chief
+    checkpoint: false
+    task: tasks/route-briefing.md
+    steps:
+      - select_specialist:
+          action: "Selecionar especialista por canal"
+      - select_style:
+          action: "Selecionar copywriter se não especificado (Style Selection Matrix)"
+      - enrich_briefing:
+          action: "Adicionar _routing ao briefing"
+      - dispatch:
+          action: "Enviar briefing enriquecido ao especialista"
+
+  - id: "generate"
+    name: "Generate Draft"
+    executor: "{specialist from routing}"
+    checkpoint: false
+    task: tasks/generate-copy.md
+    steps:
+      - consult_kb:
+          action: "grep/glob na knowledge-base por copywriter + formato + framework"
+      - apply_framework:
+          action: "Aplicar framework do mestre ao briefing"
+      - write_draft:
+          action: "Gerar draft completo no formato do canal"
+      - tag_draft:
+          action: "Adicionar _draft_meta com sources e frameworks usados"
+
+  - id: "review"
+    name: "Quality Review"
+    executor: copy-reviewer
+    checkpoint: true
+    task: tasks/review-copy.md
+    steps:
+      - score_criteria:
+          action: "Pontuar 4 critérios (dor, benefício, framework, tom)"
+      - decide_verdict:
+          action: "APROVADO (todos >= mínimo) ou REJEITADO"
+      - generate_feedback:
+          action: "Se rejeitado: feedback específico e acionável"
+
+  - id: "rewrite"
+    name: "Rewrite (if rejected)"
+    executor: "{specialist from routing}"
+    checkpoint: false
+    condition: "review.verdict == REJEITADO AND cycle <= 2"
+    steps:
+      - apply_feedback:
+          action: "Reescrever com base no feedback do reviewer"
+      - resubmit:
+          action: "Reenviar para review (volta à fase review)"
+
+  - id: "deliver"
+    name: "Deliver Approved Copy"
+    executor: copy-chief
+    checkpoint: false
+    condition: "review.verdict == APROVADO"
+    steps:
+      - format_output:
+          action: "Formatar copy como texto puro"
+      - deliver:
+          action: "Entregar ao solicitante (agente ou humano)"
+
+execution_modes:
+  autonomous:
+    name: "*generate"
+    description: "Roda todas as fases, pausa apenas no review para decisão"
+    checkpoints: 1
+
+error_handling:
+  on_validation_failure:
+    action: "Retornar campos faltantes, solicitar correção"
+  on_generation_failure:
+    action: "Reportar erro ao Copy Chief"
+  on_review_max_cycles:
+    action: "Escalar ao Copy Chief com relatório de 2 ciclos falhados"
+
+metrics:
+  target_duration_minutes: 2
+  max_review_cycles: 2
+  min_quality_score: 6

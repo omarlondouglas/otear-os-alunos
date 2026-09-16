@@ -1,0 +1,217 @@
+﻿name: otear-sites
+version: 1.0.0
+description: >
+  Squad fullstack para criaÃ§Ã£o de landing pages de ultra-alta conversÃ£o.
+  Pipeline end-to-end com 14 agentes especializados: discovery de produto,
+  pesquisa de mercado e experts de copywriting, design system atÃ´mico com
+  contraste WCAG AAA e light/dark, geraÃ§Ã£o de imagens por IA, frontend
+  Next.js com SEO perfeito e acessibilidade WCAG AAA, backend Python FastAPI
+  com admin panel e exportaÃ§Ã£o CSV, integraÃ§Ãµes com WhatsApp (evolution-api)
+  e email (MCP), QA multi-dimensional com score por dimensÃ£o, deploy
+  automatizado via Vercel (frontend, CDN global) com EasyPanel na VPS
+  apenas para backend condicional, domÃ­nio grÃ¡tis ou prÃ³prio com SSL,
+  e versionamento por cliente no GitHub com tags semÃ¢nticas.
+author: gutomec
+license: MIT
+slashPrefix: otear-sites
+
+aios:
+  minVersion: "2.1.0"
+  type: squad
+
+components:
+  agents:
+    - lp-strategist.md
+    - lp-researcher.md
+    - lp-copywriter.md
+    - lp-design-architect.md
+    - lp-image-creator.md
+    - lp-frontend-dev.md
+    - lp-backend-dev.md
+    - lp-integrator.md
+    - lp-reviewer.md
+    - lp-deployer.md
+    - lp-versioner.md
+    - lp-scraper.md
+    - lp-orchestrator.md
+    - lp-storage.md
+  tasks:
+    - lp-strategist-discover.md
+    - lp-strategist-elicit.md
+    - lp-strategist-scope.md
+    - lp-researcher-competitors.md
+    - lp-researcher-audience.md
+    - lp-researcher-copy-experts.md
+    - lp-researcher-synthesize.md
+    - lp-copywriter-write-section.md
+    - lp-copywriter-review-tone.md
+    - lp-design-architect-select-ds.md
+    - lp-design-architect-tokens.md
+    - lp-design-architect-components.md
+    - lp-design-architect-sections.md
+    - lp-design-architect-backend-spec.md
+    - lp-image-creator-hero.md
+    - lp-image-creator-sections.md
+    - lp-image-creator-edit-photo.md
+    - lp-frontend-dev-setup.md
+    - lp-frontend-dev-design-system.md
+    - lp-frontend-dev-build-section.md
+    - lp-frontend-dev-assemble.md
+    - lp-backend-dev-setup.md
+    - lp-backend-dev-leads.md
+    - lp-backend-dev-admin.md
+    - lp-integrator-whatsapp.md
+    - lp-integrator-email.md
+    - lp-integrator-connect.md
+    - lp-reviewer-copy.md
+    - lp-reviewer-design.md
+    - lp-reviewer-seo-a11y.md
+    - lp-reviewer-backend.md
+    - lp-reviewer-integrations.md
+    - lp-reviewer-final-report.md
+    - lp-deployer-deploy-vercel.md
+    - lp-deployer-setup-domain.md
+    - lp-deployer-dockerize.md
+    - lp-deployer-deploy-easypanel.md
+    - lp-versioner-init-repo.md
+    - lp-versioner-save-version.md
+    - lp-versioner-list-versions.md
+    - lp-versioner-export-client.md
+    - lp-scraper-extract-design.md
+    - lp-scraper-extract-content.md
+    - lp-orchestrator-receive-order.md
+    - lp-orchestrator-run-pipeline.md
+    - lp-orchestrator-notify.md
+    - lp-storage-init-bucket.md
+    - lp-storage-upload-assets.md
+    - lp-storage-generate-urls.md
+  workflows:
+    - lp-full-pipeline.yaml
+    - lp-discovery-flow.yaml
+    - lp-design-copy-parallel.yaml
+    - lp-build-parallel.yaml
+    - lp-section-pipeline.yaml
+    - lp-qa-gate.yaml
+    - lp-deploy-pipeline.yaml
+    - lp-auto-pipeline.yaml
+  checklists: []
+  templates: []
+  tools: []
+  scripts: []
+
+config:
+  extends: extend
+  coding-standards: config/coding-standards.md
+  tech-stack: config/tech-stack.md
+  source-tree: config/source-tree.md
+
+dependencies:
+  system:
+    - "vercel>=37.0"
+    - "gh>=2.40"
+    - "docker>=24.0"
+    - "docker-compose>=2.20"
+  node: []
+  python:
+    - "fastapi>=0.115.0"
+    - "sqlalchemy>=2.0.0"
+    - "alembic>=1.13.0"
+    - "pydantic>=2.0.0"
+    - "python-jose>=3.3.0"
+    - "passlib>=1.7.0"
+    - "uvicorn>=0.30.0"
+  squads: []
+
+mcpTools:
+  required:
+    - gpt-image: "Geracao de imagens para hero e secoes"
+  optional:
+    - dalle3: "GeraÃ§Ã£o alternativa de imagens (GPT Image)"
+    - fal-video: "GeraÃ§Ã£o de imagens adicionais (Imagen4, Ideogram, Flux, etc.)"
+    - flux: "GeraÃ§Ã£o de imagens com alta aderÃªncia a prompt"
+    - shadcn: "Componentes UI base para o design system"
+
+conditionalComponents:
+  backend:
+    flag: "backend"
+    agents: ["lp-backend-dev"]
+    tasks: ["lp-backend-dev-setup.md", "lp-backend-dev-leads.md", "lp-backend-dev-admin.md", "lp-design-architect-backend-spec.md"]
+    description: "Backend Python FastAPI com captura de leads e admin panel"
+  whatsapp:
+    flag: "whatsapp"
+    agents: ["lp-integrator"]
+    tasks: ["lp-integrator-whatsapp.md"]
+    description: "IntegraÃ§Ã£o com WhatsApp via evolution-api"
+  email:
+    flag: "email"
+    agents: ["lp-integrator"]
+    tasks: ["lp-integrator-email.md"]
+    description: "IntegraÃ§Ã£o com email via SMTP/MCP"
+  adminPanel:
+    flag: "admin_panel"
+    tasks: ["lp-backend-dev-admin.md"]
+    description: "Painel administrativo para gerenciamento de leads"
+  deploy:
+    flag: "deploy"
+    agents: ["lp-deployer", "lp-versioner"]
+    tasks: ["lp-deployer-deploy-vercel.md", "lp-deployer-setup-domain.md", "lp-versioner-init-repo.md", "lp-versioner-save-version.md", "lp-versioner-list-versions.md", "lp-versioner-export-client.md"]
+    description: "Deploy frontend via Vercel (CDN global, grÃ¡tis) + versionamento GitHub por cliente"
+  deployBackend:
+    flag: "backend"
+    agents: ["lp-deployer"]
+    tasks: ["lp-deployer-dockerize.md", "lp-deployer-deploy-easypanel.md"]
+    description: "Deploy backend FastAPI via Docker no EasyPanel (somente quando backend: true)"
+  locationMap:
+    flag: "map"
+    tasks: ["lp-frontend-dev-build-section.md"]
+    description: "SeÃ§Ã£o de mapa com localizaÃ§Ã£o do negÃ³cio via Google Maps Embed (grÃ¡tis, iframe)"
+
+landingPageSections:
+  - navigation
+  - hero
+  - social-proof-bar
+  - problem-agitation
+  - solution-demo
+  - testimonials
+  - benefits
+  - features
+  - pricing
+  - faq
+  - final-cta
+  - location-map
+  - footer
+
+tags:
+  - landing-page
+  - fullstack
+  - copywriting
+  - design-system
+  - atomic-design
+  - seo
+  - accessibility
+  - wcag-aaa
+  - light-dark-mode
+  - fastapi
+  - nextjs
+  - whatsapp
+  - evolution-api
+  - lead-capture
+  - conversion
+  - marketing
+  - image-generation
+  - cloudflare-r2
+  - asset-storage
+  - webhook
+  - automation
+  - full-auto
+  - scraper
+  - vercel
+  - docker
+  - easypanel
+  - deploy
+  - github
+  - versioning
+  - client-management
+  - ssl
+  - domain
+

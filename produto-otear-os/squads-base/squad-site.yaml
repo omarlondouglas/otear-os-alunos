@@ -1,0 +1,74 @@
+id: squad-site-completo
+name: Squad Site Completo
+version: 1.0.0
+purpose: Planejar, escrever, estruturar, revisar e preparar publicacao de pagina, landing page ou site de venda. Para o sistema completo com agentes, tasks e workflows, use tambem `produto-otear-os/sistemas-prontos/otear-sites`.
+
+agents:
+  - orquestrador-otear
+  - pesquisador-de-mercado
+  - estrategista-de-oferta
+  - copywriter-otear
+  - arquiteto-de-design
+  - arquiteto-de-site
+  - construtor-de-site
+  - integrador-comercial
+  - publicador-de-site
+  - auditor-seo
+  - revisor-de-qualidade
+
+workflow:
+  - step: briefing
+    agent: orquestrador-otear
+    output: escopo_e_plano
+  - step: pesquisa
+    agent: pesquisador-de-mercado
+    output: publico_concorrentes_e_referencias
+  - step: estrategia
+    agent: estrategista-de-oferta
+    output: promessa_oferta_e_argumentos
+  - step: copy
+    agent: copywriter-otear
+    output: textos_da_pagina
+  - step: design
+    agent: arquiteto-de-design
+    output: direcao_visual
+  - step: arquitetura
+    agent: arquiteto-de-site
+    output: mapa_de_secoes
+  - step: construcao
+    agent: construtor-de-site
+    output: pagina_montada
+  - step: integracoes
+    agent: integrador-comercial
+    output: formularios_whatsapp_email_e_eventos
+  - step: publicacao
+    agent: publicador-de-site
+    output: plano_de_publicacao
+  - step: seo
+    agent: auditor-seo
+    output: checklist_seo_e_acessibilidade
+  - step: revisao
+    agent: revisor-de-qualidade
+    output: entrega_final
+
+outputs:
+  - escopo
+  - pesquisa
+  - promessa
+  - estrutura_da_pagina
+  - secoes
+  - copy_por_secao
+  - direcao_visual
+  - checklist_de_integracoes
+  - checklist_seo
+  - plano_de_publicacao
+  - cta
+  - pacote_final_para_cliente
+
+acceptance_criteria:
+  - A primeira dobra comunica valor.
+  - A pagina responde objeções.
+  - O CTA aparece nos pontos certos.
+  - A pagina tem estrutura pronta para construcao ou publicacao.
+  - Integracoes principais foram especificadas.
+  - SEO basico e acessibilidade foram revisados.

@@ -1,0 +1,29 @@
+# Environment variables (API keys)
+.env
+
+# Browser profile (login sessions)
+_opensquad/_browser_profile/
+
+# State files (temporary)
+squads/*/state.json
+
+# Node modules
+node_modules/
+
+# Next.js
+interface-app/.next/
+interface-app/node_modules/
+
+# Output files
+squads/*/output/
+
+# Build artifacts
+dashboard/dist/
+agent-dashboard-main/dist/
+agent-dashboard-main/node_modules/
+
+# Playwright MCP logs
+.playwright-mcp/
+
+# Image bank (local storage)
+_opensquad/_image-bank/

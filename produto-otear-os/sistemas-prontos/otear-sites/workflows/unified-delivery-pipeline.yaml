@@ -1,0 +1,436 @@
+﻿workflow_name: unified_delivery_pipeline
+description: >
+  Pipeline unificado de entrega completa: LP + Blog Post + Social Media.
+  Cada cliente recebe: site live + 1 artigo SEO no blog + posts adaptados para redes sociais.
+  ServiÃ§o de assinatura â€” entrega inicial + conteÃºdo recorrente.
+
+agent_sequence:
+  # === FASE 1: LANDING PAGE ===
+  - lp-orchestrator
+  - lp-scraper
+  - lp-strategist
+  - lp-researcher
+  - lp-copywriter
+  - lp-design-architect
+  - lp-image-creator
+  - lp-storage
+  - lp-frontend-dev
+  - lp-backend-dev
+  - lp-integrator
+  - lp-reviewer
+  - lp-deployer
+  - lp-versioner
+  # === FASE 2: CONTEUDO (BLOG + SOCIAL) ===
+  - content-strategist
+  - long-form-writer
+  - social-media-adapter
+  - image-brief-generator
+  - publishing-scheduler
+
+key_commands:
+  - "*full-delivery"
+  - "*create-client"
+
+trigger_threshold: 1
+typical_duration: "60-120 minutes"
+
+success_indicators:
+  - "LP live na Vercel com URL acessivel"
+  - "QA score >= 8.0"
+  - "Codigo versionado no GitHub com release"
+  - "Blog post publicado no site do cliente"
+  - "Posts sociais adaptados para Instagram, Facebook, WhatsApp"
+  - "Briefs de imagem gerados para todas as pecas"
+  - "Publicacoes agendadas em horarios otimos"
+  - "Notificacao de conclusao enviada"
+
+workflow:
+  id: unified-delivery-pipeline
+  name: "Entrega Completa (LP + Blog + Social)"
+  description: >
+    Pipeline full-auto que entrega:
+    1. Landing page completa (discovery -> deploy na Vercel)
+    2. Blog post SEO otimizado sobre o nicho do cliente
+    3. Posts adaptados para redes sociais
+    4. Briefs de imagem para todo o conteudo
+    5. Agendamento de publicacoes
+  type: pipeline
+
+  trigger: "HTTP POST /api/create-client no webhook server"
+
+  pre_conditions:
+    - "Claude Code CLI autenticado na VPS"
+    - "Vercel CLI autenticada"
+    - "GitHub CLI autenticada"
+    - "Token Vercel configurado"
+
+  # =========================================================================
+  # FASE 1 â€” LANDING PAGE
+  # =========================================================================
+  sequence:
+
+    # --- Step 0: Receber pedido ---
+    - step: 0
+      phase: "LP"
+      agent: lp-orchestrator
+      action: "receive-order"
+      creates: "workspace + order.json + status.json"
+      description: "Receber pedido, validar dados, criar workspace isolado"
+
+    # --- Step 1: Extrair referencia (condicional) ---
+    - step: 1
+      phase: "LP"
+      agent: lp-scraper
+      action: "extract-design"
+      creates: "extracted-design-tokens.md"
+      description: "Extrair design system da URL de referencia"
+      conditional: "reference_url exists"
+
+    # --- Step 2: Discovery automatico ---
+    - step: 2
+      phase: "LP"
+      agent: lp-strategist
+      action: "auto-discover"
+      creates: "product-brief.md + scope-definition.md"
+      description: "Discovery usando dados do pedido + pesquisa de mercado"
+
+    # --- Step 3: Pesquisa de mercado ---
+    - step: 3
+      phase: "LP"
+      agent: lp-researcher
+      action: "full-research"
+      creates: "research-synthesis.md"
+      description: "Pesquisa de mercado, concorrentes e audiencia"
+
+    # --- Step 4-5: Copy + Design (paralelo) ---
+    - step: 4
+      phase: "LP"
+      parallel: true
+      agents:
+        - agent: lp-copywriter
+          action: "write-all-sections"
+          creates: "section-copy.md"
+          description: "Copy de todas as secoes da LP"
+        - agent: lp-design-architect
+          action: "full-design"
+          creates: "design-tokens.md + component-specs.md"
+          description: "Design system completo com tokens"
+
+    # --- Step 5: Gerar imagens ---
+    - step: 5
+      phase: "LP"
+      agent: lp-image-creator
+      action: "generate-all"
+      creates: "hero-image + section-images"
+      description: "Gerar imagens para hero e secoes"
+
+    # --- Step 5b: Editar fotos do cliente ---
+    - step: "5b"
+      phase: "LP"
+      agent: lp-image-creator
+      action: "edit-client-photos"
+      creates: "edited-photos"
+      description: "Editar fotos do cliente com nano-banana-pro"
+      conditional: "client_photos exist"
+
+    # --- Step 5c: Upload assets pro R2 ---
+    - step: "5c"
+      phase: "LP"
+      agent: lp-storage
+      action: "upload-assets"
+      creates: "assets-manifest.json"
+      description: "Upload de todas as imagens e assets pro R2"
+
+    # --- Step 6: Build frontend ---
+    - step: 6
+      phase: "LP"
+      agent: lp-frontend-dev
+      action: "full-build"
+      creates: "packages/frontend/"
+      description: "Build completo do frontend Next.js com blog integrado"
+      notes: "Incluir rota /blog e /blog/[slug] no Next.js"
+
+    # --- Step 7: Build backend (condicional) ---
+    - step: 7
+      phase: "LP"
+      agent: lp-backend-dev
+      action: "full-build"
+      creates: "packages/backend/"
+      description: "Build do backend FastAPI"
+      conditional: "backend: true"
+
+    # --- Step 8: Integracoes ---
+    - step: 8
+      phase: "LP"
+      agent: lp-integrator
+      action: "connect-all"
+      creates: "integrations"
+      description: "Conectar WhatsApp, email e API"
+      conditional: "whatsapp: true OR email: true"
+
+    # --- Step 9: QA da LP ---
+    - step: 9
+      phase: "LP"
+      agent: lp-reviewer
+      action: "full-review"
+      creates: "final-report.md"
+      description: "QA multi-dimensional automatica"
+
+    # --- Step 10: Deploy Vercel ---
+    - step: 10
+      phase: "LP"
+      agent: lp-deployer
+      action: "deploy-vercel"
+      creates: "vercel-url"
+      description: "Deploy frontend na Vercel"
+
+    # --- Step 11: Deploy backend (condicional) ---
+    - step: 11
+      phase: "LP"
+      agent: lp-deployer
+      action: "deploy-easypanel"
+      creates: "backend-url"
+      description: "Deploy backend no EasyPanel"
+      conditional: "backend: true"
+
+    # --- Step 12: Dominio (condicional) ---
+    - step: 12
+      phase: "LP"
+      agent: lp-deployer
+      action: "setup-domain"
+      creates: "domain-config"
+      description: "Configurar dominio customizado"
+      conditional: "custom_domain exists"
+
+    # --- Step 13: Versionar no GitHub ---
+    - step: 13
+      phase: "LP"
+      agent: lp-versioner
+      action: "full-version"
+      creates: "github-repo + release"
+      description: "Versionar codigo no repo sites/ do GitHub"
+
+    # =========================================================================
+    # FASE 2 â€” BLOG POST (primeiro post de entrega)
+    # =========================================================================
+
+    # --- Step 14: Planejar conteudo do blog ---
+    - step: 14
+      phase: "CONTENT"
+      agent: content-strategist
+      action: "plan-first-post"
+      creates: "content-calendar.md"
+      description: >
+        Planejar primeiro blog post baseado no nicho do cliente.
+        Usa product-brief.md e research-synthesis.md como input.
+        Foco: artigo SEO que gera trafego organico pro site.
+      inputs:
+        - "artifacts/product-brief.md"
+        - "artifacts/research-synthesis.md"
+        - "artifacts/section-copy.md"
+
+    # --- Step 15: Escrever artigo ---
+    - step: 15
+      phase: "CONTENT"
+      agent: long-form-writer
+      action: "write-article"
+      creates: "blog/first-post.md"
+      description: >
+        Escrever artigo SEO-otimizado sobre o nicho do cliente.
+        Exemplo para costureira: "10 Dicas para Cuidar das Suas Roupas e Economizar"
+        Minimo 1500 palavras, com headings, meta description, keywords.
+      inputs:
+        - "artifacts/content-calendar.md"
+        - "artifacts/research-synthesis.md"
+
+    # --- Step 16: Adaptar para redes sociais ---
+    - step: 16
+      phase: "CONTENT"
+      agent: social-media-adapter
+      action: "adapt-first-post"
+      creates: "social/posts.json"
+      description: >
+        Adaptar o artigo para posts em:
+        - Instagram (carrossel + stories + reels script)
+        - Facebook (post + stories)
+        - WhatsApp Status (imagem + texto curto)
+      inputs:
+        - "blog/first-post.md"
+
+    # --- Step 17: Gerar briefs de imagem ---
+    - step: 17
+      phase: "CONTENT"
+      agent: image-brief-generator
+      action: "generate-briefs"
+      creates: "social/image-briefs.json"
+      description: >
+        Gerar briefs de imagem para:
+        - Thumbnail do blog post
+        - Imagens do carrossel Instagram
+        - Capa do Facebook
+        - Imagem do WhatsApp Status
+        Todos seguindo o design system da LP (mesmas cores, fontes, estilo).
+      inputs:
+        - "social/posts.json"
+        - "artifacts/design-tokens.md"
+
+    # --- Step 18: Agendar publicacoes ---
+    - step: 18
+      phase: "CONTENT"
+      agent: publishing-scheduler
+      action: "schedule-first-batch"
+      creates: "social/schedule.json"
+      description: >
+        Agendar publicacoes nos melhores horarios por plataforma.
+        Gerar calendario de 7 dias com distribuicao inteligente.
+      inputs:
+        - "social/posts.json"
+        - "social/image-briefs.json"
+
+    # =========================================================================
+    # FASE 3 â€” INTEGRACAO BLOG NO SITE
+    # =========================================================================
+
+    # --- Step 19: Publicar blog post no site ---
+    - step: 19
+      phase: "INTEGRATION"
+      agent: lp-frontend-dev
+      action: "add-blog-post"
+      creates: "packages/frontend/src/app/blog/[slug]/page.tsx"
+      description: >
+        Criar rota /blog no Next.js e publicar o primeiro post.
+        O blog usa MDX ou markdown renderizado com o design system da LP.
+        Inclui: SEO meta tags, Open Graph, schema Article, breadcrumb.
+      inputs:
+        - "blog/first-post.md"
+        - "artifacts/design-tokens.md"
+
+    # --- Step 20: Redeploy com blog ---
+    - step: 20
+      phase: "INTEGRATION"
+      agent: lp-deployer
+      action: "deploy-vercel"
+      creates: "vercel-url-updated"
+      description: "Redeploy na Vercel com blog integrado"
+
+    # --- Step 21: Versionar atualizacao ---
+    - step: 21
+      phase: "INTEGRATION"
+      agent: lp-versioner
+      action: "save-version"
+      creates: "github-release-v1.1"
+      description: "Commit e release v1.1 com blog post"
+
+    # =========================================================================
+    # FASE 4 â€” NOTIFICACAO FINAL
+    # =========================================================================
+
+    # =========================================================================
+    # FASE 5 â€” SEO AUDIT + PDF
+    # =========================================================================
+
+    # --- Step 22: Audit SEO ---
+    - step: 22
+      phase: "SEO"
+      agent: seo-auditor
+      action: "full-audit"
+      creates: "artifacts/seo-audit-raw.json + artifacts/seo-scores.json"
+      description: >
+        Rodar audit completo via PageSpeed API (mobile + desktop),
+        verificar meta tags, schema, OG, sitemap, robots.
+        Consultar Moz API para Domain Authority.
+      inputs:
+        - "vercel-url"
+        - "order.json (client_name, target_keywords)"
+
+    # --- Step 23: Gerar PDF ---
+    - step: 23
+      phase: "SEO"
+      agent: seo-auditor
+      action: "generate-pdf"
+      creates: "artifacts/seo-report.pdf"
+      description: >
+        Gerar relatorio PDF profissional com scores visuais,
+        Core Web Vitals, checklist SEO e keywords.
+        Estilizado com as cores do design system do cliente.
+      inputs:
+        - "artifacts/seo-audit-raw.json"
+        - "artifacts/design-tokens.md"
+
+    # =========================================================================
+    # FASE 6 â€” NOTIFICACAO FINAL
+    # =========================================================================
+
+    # --- Step 24: Notificar conclusao ---
+    - step: 24
+      phase: "NOTIFY"
+      agent: lp-orchestrator
+      action: "notify-full-delivery"
+      creates: "notification"
+      description: >
+        Enviar notificacao completa com:
+        - URL do site live
+        - URL do blog post
+        - Posts sociais prontos pra publicar
+        - Briefs de imagem
+        - Calendario de publicacoes
+        - Link do repo GitHub
+
+  # =========================================================================
+  # WORKFLOW RECORRENTE (assinatura mensal)
+  # =========================================================================
+  recurring:
+    id: monthly-content
+    name: "Conteudo Mensal (Assinatura)"
+    description: >
+      Workflow recorrente para assinantes:
+      Cada mes gera novo blog post + adaptacoes sociais.
+      Reutiliza design system e research do cliente.
+    frequency: monthly
+    sequence:
+      - agent: content-strategist
+        action: "plan-monthly-content"
+        description: "Planejar conteudo do mes baseado no nicho"
+      - agent: long-form-writer
+        action: "write-article"
+        description: "Escrever artigo SEO do mes"
+      - agent: social-media-adapter
+        action: "adapt-article"
+        description: "Adaptar para redes sociais"
+      - agent: image-brief-generator
+        action: "generate-briefs"
+        description: "Gerar briefs de imagem"
+      - agent: lp-frontend-dev
+        action: "add-blog-post"
+        description: "Publicar novo post no blog do site"
+      - agent: lp-deployer
+        action: "deploy-vercel"
+        description: "Redeploy com novo post"
+      - agent: lp-versioner
+        action: "save-version"
+        description: "Versionar atualizacao"
+      - agent: publishing-scheduler
+        action: "schedule-month"
+        description: "Agendar publicacoes do mes"
+
+  transitions:
+    lp_delivered:
+      trigger: "LP live na Vercel + versionada no GitHub"
+      confidence: 0.95
+      greeting_message: "Site pronto! Iniciando producao de conteudo..."
+
+    blog_written:
+      trigger: "Artigo escrito e otimizado"
+      confidence: 0.90
+      greeting_message: "Artigo pronto! Adaptando para redes sociais..."
+
+    social_ready:
+      trigger: "Posts sociais adaptados + briefs gerados"
+      confidence: 0.90
+      greeting_message: "Conteudo social pronto! Integrando blog ao site..."
+
+    fully_delivered:
+      trigger: "Site + blog + social entregues e notificacao enviada"
+      confidence: 0.95
+      greeting_message: "Entrega completa! Site live, blog publicado, social agendado."
+

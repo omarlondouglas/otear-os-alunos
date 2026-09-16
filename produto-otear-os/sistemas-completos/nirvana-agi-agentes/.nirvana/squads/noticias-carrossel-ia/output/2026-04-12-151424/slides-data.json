@@ -1,0 +1,88 @@
+{
+  "slides": [
+    {
+      "id": 1,
+      "theme": "black",
+      "imageFile": "images/v3/img-slide-01.png",
+      "elements": [
+        { "type": "tag", "text": "CLAUDE · 07 ABR 2026" },
+        { "type": "headline", "text": "<em>Mythos</em>." },
+        { "type": "sub", "text": "O primeiro modelo que a Anthropic se recusou a liberar." },
+        { "type": "swipe" }
+      ]
+    },
+    {
+      "id": 2,
+      "theme": "black",
+      "imageFile": "images/v1/img-slide-02.jpg",
+      "elements": [
+        { "type": "tag", "text": "07 ABRIL 2026" },
+        { "type": "headline", "text": "O dia em que a <em>régua mudou</em>." },
+        { "type": "body", "text": "Anthropic revelou Mythos em preview fechada. TechCrunch chamou de <em>step change</em> em capacidades de IA." }
+      ]
+    },
+    {
+      "id": 3,
+      "theme": "accent",
+      "imageFile": null,
+      "elements": [
+        { "type": "stat", "text": "Milhares" },
+        { "type": "sub", "text": "de zero-days encontrados em semanas." },
+        { "type": "body", "text": "Falhas que times humanos de ponta levariam anos pra mapear. Mythos fez sozinho." }
+      ]
+    },
+    {
+      "id": 4,
+      "theme": "light",
+      "imageFile": null,
+      "elements": [
+        { "type": "tag", "text": "A TESE" },
+        { "type": "headline", "text": "IA que responde é ferramenta. IA que <em>descobre</em> é agente." },
+        { "type": "body", "text": "Mythos inverte o jogo: faz a pergunta, conduz o teste e entrega o que ninguém pediu." }
+      ]
+    },
+    {
+      "id": 5,
+      "theme": "black",
+      "imageFile": "images/v1/img-slide-05.jpg",
+      "elements": [
+        { "type": "tag", "text": "INÉDITO" },
+        { "type": "headline", "text": "A Anthropic disse <em>não</em> pro próprio lançamento." },
+        { "type": "body", "text": "Mythos saiu só pra 8 parceiros dentro do Project Glasswing. Quando o lab mais cauteloso segura, algo cruzou a linha." }
+      ]
+    },
+    {
+      "id": 6,
+      "theme": "accent",
+      "imageFile": null,
+      "elements": [
+        { "type": "tag", "text": "PRA SUA AGÊNCIA" },
+        { "type": "headline", "text": "A régua <em>acabou de subir</em>." },
+        { "type": "body", "text": "Quem vende \"a gente usa IA\" vai competir com quem opera agentes que descobrem sozinhos." }
+      ]
+    },
+    {
+      "id": 7,
+      "theme": "light",
+      "imageFile": null,
+      "elements": [
+        { "type": "tag", "text": "SEGUNDA-FEIRA" },
+        { "type": "headline", "text": "Comece por uma tarefa pequena." },
+        { "type": "list", "items": [
+          "Escolha um processo onde a IA só responde.",
+          "Redesenhe pra IA decidir e executar.",
+          "Meça antes e depois."
+        ]}
+      ]
+    },
+    {
+      "id": 8,
+      "theme": "black",
+      "imageFile": "images/v1/img-slide-08.jpg",
+      "elements": [
+        { "type": "headline", "text": "Comenta <em>MYTHOS</em>." },
+        { "type": "sub", "text": "Te mando o raio-x do que isso muda pra sua operação." }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+---
+copywriter: "Agora (uncredited)"
+source_format: "pdf"
+original_type: "sales-letter"
+tags:
+  - "agora"
+  - "swipe"
+quality_score: 5
+extracted_date: "2026-04-09"
+source_file: "189-2.pdf"
+---
+
+# Other publicly traded companies do what this company does. In  fact, over 300 of them...all register
+
+> (25668 chars, 20p)
+
+## Lead
+
+```
+Other publicly traded companies do what this company does. In 
+fact, over 300 of them...all registered with the SEC. Combined, they 
+control over $300 billion in registered assets, many of them cash 
+producing, like the ones I showed you above.  
+ 
+But the one I've told you about has 
+a powerful edge over all others...  
+It's in a special situation to take 
+advantage of a gaping hole in the 
+U.S. tax code. And for you, that 
+translates into an abnormally low 
+share price.  
+Here's how it works...  
+Most companies that do what this 
+company does have to pay 95% of their revenues out to 
+shareholders as dividends. That's what they trade for a special 
+corporate classification from the U.S. government.  
+That forces most of these companies to beg the stock market for 
+extra cash.  
+The more brokers push the shares, the more expensive they get. 
+Until it just doesn't make sense for the average investor to get in.  
+But this company has it different.  
+Page 1 of 20
+4/7/2005
+http://www.ag
+```
+
+## Corpo
+
+```
+re up more than 
+30% already. Several are up 60%...74%...75%...89%...97%...  
+And at least six of those are new buy recommendations that Chris 
+just revealed to our readers. And they're just part of what will be a 
+very profitable year ahead. Both for our loyal readers and for you, 
+too, if you agree to give Fleet Street Letter a try. In fact, it could be 
+very profitable for you even before you read your first issue, if you 
+let me send you the free report I just mentioned.  
+Because inside you
+```

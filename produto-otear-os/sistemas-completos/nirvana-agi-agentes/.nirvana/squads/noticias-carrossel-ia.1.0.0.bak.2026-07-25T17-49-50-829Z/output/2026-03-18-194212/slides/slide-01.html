@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 1080px; height: 1440px; overflow: hidden;
+      background: #0F0F1A;
+      font-family: 'Inter', sans-serif;
+      display: flex; flex-direction: column;
+      position: relative;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: flex-end;
+      padding: 48px 72px 0;
+    }
+    .handle {
+      font-size: 26px;
+      font-weight: 600;
+      color: #A0A0C0;
+      letter-spacing: 0.02em;
+    }
+
+    /* Image zone */
+    .image-zone {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 72px;
+      position: relative;
+    }
+    .image-zone img {
+      width: 680px;
+      height: 680px;
+      object-fit: contain;
+      border-radius: 24px;
+      filter: drop-shadow(0 0 60px rgba(37, 211, 102, 0.4));
+    }
+
+    /* Bottom content */
+    .content {
+      padding: 0 72px 64px;
+    }
+    .overline {
+      font-size: 22px;
+      font-weight: 700;
+      color: #FFD93D;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 20px;
+    }
+    .headline {
+      font-size: 62px;
+      font-weight: 900;
+      color: #FFFFFF;
+      line-height: 1.1;
+      margin-bottom: 32px;
+    }
+    .headline .highlight {
+      color: #25D366;
+    }
+    .swipe-hint {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 24px;
+      font-weight: 600;
+      color: #A0A0C0;
+    }
+    .swipe-arrow {
+      color: #6C63FF;
+      font-size: 28px;
+    }
+
+    /* Background glow */
+    .bg-glow {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(37,211,102,0.08) 0%, transparent 70%);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-glow"></div>
+
+  <div class="header">
+    <span class="handle">@marlonlima.ia</span>
+  </div>
+
+  <div class="image-zone">
+    <img src="../images/img-slide-01.png" alt="8X WhatsApp">
+  </div>
+
+  <div class="content">
+    <div class="overline">Automação para agências</div>
+    <h1 class="headline">
+      Você demora mais de 5 min pra responder?<br>
+      Está perdendo <span class="highlight">8x mais vendas.</span>
+    </h1>
+    <div class="swipe-hint">
+      <span class="swipe-arrow">→</span>
+      <span>Arraste para entender por quê</span>
+    </div>
+  </div>
+</body>
+</html>

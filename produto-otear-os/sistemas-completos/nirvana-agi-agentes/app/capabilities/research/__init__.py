@@ -1,0 +1,1 @@
+"""Research capability facade placeholder."""

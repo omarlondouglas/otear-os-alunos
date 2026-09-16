@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 1080px; height: 1440px; overflow: hidden;
+      font-family: 'Inter', sans-serif;
+      background: #0F0F1A;
+      display: flex; flex-direction: column;
+      padding: 72px;
+      justify-content: space-between;
+    }
+    .header {
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .handle { font-size: 24px; font-weight: 500; color: rgba(255,255,255,0.5); }
+    .main {
+      display: flex; flex-direction: column; gap: 48px;
+      align-items: center;
+      text-align: center;
+    }
+    .cta-headline {
+      font-size: 52px; font-weight: 800; color: #FFFFFF;
+      line-height: 1.25;
+    }
+    .cta-headline .accent { color: #E8734A; }
+    .cta-headline .highlight { color: #FFD93D; }
+    .divider {
+      width: 120px; height: 4px;
+      background: #E8734A;
+      border-radius: 2px;
+    }
+    .cta-body {
+      font-size: 34px; font-weight: 500; color: #A0A0C0;
+      line-height: 1.6;
+      max-width: 800px;
+    }
+    .cta-button {
+      display: inline-block;
+      background: #E8734A;
+      color: #FFFFFF;
+      font-size: 34px; font-weight: 700;
+      padding: 24px 64px;
+      border-radius: 16px;
+      letter-spacing: 1px;
+    }
+    .footer {
+      display: flex; flex-direction: column; align-items: center; gap: 20px;
+    }
+    .source {
+      font-size: 22px; font-weight: 500; color: rgba(255,255,255,0.3);
+      text-align: center;
+      line-height: 1.5;
+    }
+    .brand {
+      font-size: 28px; font-weight: 700; color: #E8734A;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <span class="handle">@marlonlima.ia</span>
+  </div>
+
+  <div class="main">
+    <h2 class="cta-headline">Salva esse carrossel e lembra: <span class="highlight">NÃO</span> também é <span class="accent">estratégia</span></h2>
+    <div class="divider"></div>
+    <p class="cta-body">Se você já perdeu dinheiro, tempo ou saúde mental por aceitar o cliente errado, comenta "NÃO" aqui embaixo. Manda pra aquele amigo que precisa ouvir isso hoje.</p>
+    <div class="cta-button">Comenta "NÃO"</div>
+  </div>
+
+  <div class="footer">
+    <span class="source">Fontes: The Register (19/03/2026) + TIME (11/03/2026)</span>
+    <span class="brand">@marlonlima.ia</span>
+  </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+id: squad-calendario-editorial
+name: Squad Calendario Editorial
+version: 1.0.0
+purpose: Criar calendario de conteudo, pilares, ideias e rotina de publicacao.
+
+agents:
+  - planejador-editorial
+  - social-media-otear
+  - copywriter-otear
+  - agendador-de-publicacao
+  - revisor-de-qualidade
+
+workflow:
+  - step: pilares
+    agent: planejador-editorial
+    output: pilares_de_conteudo
+  - step: ideias
+    agent: social-media-otear
+    output: ideias_por_canal
+  - step: chamadas
+    agent: copywriter-otear
+    output: ganchos_e_ctas
+  - step: agenda
+    agent: agendador-de-publicacao
+    output: calendario
+  - step: revisao
+    agent: revisor-de-qualidade
+    output: calendario_final
+
+outputs:
+  - pilares
+  - calendario
+  - ideias_de_posts
+  - chamadas
+  - rotina_de_publicacao
+
+acceptance_criteria:
+  - O calendario tem frequencia realista.
+  - Os pilares cobrem o posicionamento.
+  - Ha ideias suficientes por canal.
+

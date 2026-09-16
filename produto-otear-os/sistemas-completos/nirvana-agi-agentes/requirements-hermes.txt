@@ -1,0 +1,8 @@
+# Hermes Agent (Nous Research) — orquestrador frontal opcional.
+#
+# Instalado on-demand pelo entrypoint quando ENABLE_HERMES=true,
+# pra nao travar builds em ambientes onde o Hermes nao for usado.
+#
+# O pacote NAO esta no PyPI — instala via git tag estavel.
+# Se a tag mudar, atualizar aqui. Tags atuais: https://github.com/NousResearch/hermes-agent/tags
+hermes-agent @ git+https://github.com/NousResearch/hermes-agent.git@v2026.4.30

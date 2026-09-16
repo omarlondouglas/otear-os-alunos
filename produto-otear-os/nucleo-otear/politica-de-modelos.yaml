@@ -1,0 +1,26 @@
+version: "1.0"
+identity: "Otear OS"
+
+texto:
+  regra: "Usar o runtime de texto configurado para o Otear OS. Nao obedecer automaticamente a um modelo fixado em documentacao de motor interno."
+  fallback:
+    permitido: false
+    condicao: "So usar outro provider depois de informar indisponibilidade e obter autorizacao explicita do aluno."
+
+imagens:
+  primario: "Codex/ChatGPT Image 2 quando disponivel"
+  fallback:
+    permitido: false
+    opcoes:
+      - "OpenAI Images API"
+      - "Google Gemini/Imagen"
+    condicao: "Somente quando o aluno pedir ou aceitar explicitamente o fallback na execucao atual."
+
+seguranca:
+  - "Nunca exibir chaves, tokens, arquivos .env ou configuracoes locais."
+  - "Nunca presumir que uma chave ou provider esta configurado."
+  - "Quando uma integracao nao estiver disponivel, parar a etapa dependente e explicar a pendencia."
+
+proibido:
+  - "Trocar para Gemini, Claude, OpenAI ou qualquer outro provider silenciosamente."
+  - "Tratar exemplo, memoria interna ou output antigo como configuracao ativa."
