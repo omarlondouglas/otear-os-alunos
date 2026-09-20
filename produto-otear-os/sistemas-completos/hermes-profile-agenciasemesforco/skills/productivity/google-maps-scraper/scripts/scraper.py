@@ -1,22 +1,17 @@
 """
 Google Maps Scraper - Standalone Playwright Script
-Busca empresas no Google Maps via Playwright com cookie injection.
-Funciona APENAS em IPs residenciais (não funciona em VPS/datacenter).
+Busca empresas no Google Maps via Playwright.
+Funciona em conexões residenciais (Google Maps bloqueia IPs de datacenter/VPS).
 
 Uso:
-    python scraper.py "termo de busca" "cidade" [limite]
+    python scripts/scraper.py "termo de busca" "cidade" [limite]
 
 Exemplo:
-    python scraper.py "restaurantes" "São Paulo" 20
-    python scraper.py "empresas de energia solar" "Rio das Ostras" 30
+    python scripts/scraper.py "clinica odontologica" "Campinas - SP" 30
 
 Requisitos:
     pip install playwright pyyaml
     playwright install chromium
-
-Saída:
-    /root/prospect/data/leads_{termo}_{timestamp}.json
-    /root/prospect/data/leads_{termo}_{timestamp}.csv
 """
 import asyncio
 import json
@@ -45,7 +40,7 @@ USER_AGENTS = [
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
 ]
 
-OUTPUT_DIR = Path("/root/prospect/data")
+OUTPUT_DIR = Path("./data/leads")
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 
@@ -184,7 +179,7 @@ async def scrape(query, location, limit=20):
             if "consent.google.com" in page.url:
                 print("  [ERRO] Redirecionado para consent.google.com")
                 print("  [ERRO] IP datacenter detectado - o Google Maps bloqueia VPS/cloud")
-                print("  [DICA] Rode este script na sua máquina local (IP residencial)")
+                print("  [DICA] Rode este script na sua máquina local com IP residencial")
                 await browser.close()
                 return []
 
@@ -200,8 +195,6 @@ async def scrape(query, location, limit=20):
                     print("  [OK] Feed carregado na 2ª tentativa!")
                 except Exception:
                     print(f"  [ERRO] URL atual: {page.url}")
-                    await page.screenshot(path=str(OUTPUT_DIR / "debug_screenshot.png"))
-                    print("  [DEBUG] Screenshot salvo em data/debug_screenshot.png")
                     await browser.close()
                     return []
 
