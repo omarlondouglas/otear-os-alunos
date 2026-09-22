@@ -6,7 +6,7 @@ tags: [otear-os, requisitos]
 
 # Pre-Requisitos
 
-## Obrigatorio
+## Obrigatório
 
 - Ter recebido o convite de acesso do Otear OS por e-mail e concluído o login.
 - Ter a pasta `otear-os-aluno` baixada no computador.
@@ -30,13 +30,13 @@ Tenha em mãos:
 - objetivo da entrega;
 - exemplos ou referências, se tiver.
 
-## Acesso e Seguranca
+## Acesso e Segurança
 
 - Use o link de acesso enviado para o seu e-mail. Se ele expirar ou não chegar, acione o suporte.
 - Não compartilhe seu link de acesso, senha, chave de API ou arquivos `.env`.
 - O Otear OS pode criar planos, rascunhos e análises. Publicações, despesas com anúncios e alterações em contas externas exigem sua aprovação.
 
-## O Que Voce Nao Precisa Saber
+## O Que Você Não Precisa Saber
 
 - Programação.
 - Terminal.

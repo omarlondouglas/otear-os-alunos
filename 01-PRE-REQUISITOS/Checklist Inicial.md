@@ -17,7 +17,7 @@ Antes de usar o Otear OS, confira:
 - [ ] Tenho o Hermes aberto para conversar.
 - [ ] Tenho meu briefing básico.
 
-## Se O Acesso Nao Funcionar
+## Se O Acesso Não Funcionar
 
 1. Procure o convite na caixa de entrada, no spam e na aba Promoções.
 2. Solicite um novo convite ao suporte se o link tiver expirado.
@@ -28,11 +28,11 @@ Antes de usar o Otear OS, confira:
 Preencha:
 
 ```text
-Meu negocio:
-Meu produto/servico:
-Meu publico:
+Meu negócio:
+Meu produto/serviço:
+Meu público:
 Meu objetivo:
 Onde vou usar:
 Tom desejado:
-Referencias:
+Referências:
 ```

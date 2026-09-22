@@ -13,7 +13,7 @@ Otear OS, use o Squad Campanha Completa para criar uma campanha.
 
 Produto:
 
-Publico:
+Público:
 
 Canal:
 
@@ -25,4 +25,3 @@ Objeções:
 
 Provas:
 ```
-

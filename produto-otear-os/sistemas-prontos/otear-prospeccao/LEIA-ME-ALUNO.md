@@ -1,27 +1,27 @@
-# Otear Prospeccao - Sistema Incluido
+# Otear Prospecção - Sistema Incluído
 
-Esta pasta contem o sistema de prospeccao que acompanha o Otear OS.
+Esta pasta contém o sistema de prospecção que acompanha o Otear OS.
 
-## Para usar sem mexer em codigo
+## Para usar sem mexer em código
 
 Abra o Otear OS e peça em linguagem natural:
 
 ```text
-Otear OS, use o Squad Prospeccao para montar uma lista inicial de leads.
+Otear OS, use o Squad Prospecção para montar uma lista inicial de leads.
 
 Nicho:
-Cidade/regiao:
+Cidade/região:
 Quantidade:
 Oferta:
 ```
 
 ## O que existe aqui
 
-- `squads/prospect-pro`: agente/squad que busca, enriquece, analisa e gera relatorio de leads.
-- `apps/o-tear-prospeccao`: aplicacao visual/CRM de prospeccao.
+- `squads/prospect-pro`: agente/squad que busca, enriquece, analisa e gera relatório de leads.
+- `apps/o-tear-prospeccao`: aplicação visual/CRM de prospecção.
 
-## Para operador ou aluno avancado
+## Para operador ou aluno avançado
 
-Antes de rodar qualquer sistema local, configure os arquivos `.env.example` conforme sua maquina e suas chaves.
+Antes de rodar qualquer sistema local, configure os arquivos `.env.example` conforme sua máquina e suas chaves.
 
-Nao use disparo em massa. Comece com lista pequena, revise manualmente e personalize a abordagem.
+Não use disparo em massa. Comece com uma lista pequena, revise manualmente e personalize a abordagem.

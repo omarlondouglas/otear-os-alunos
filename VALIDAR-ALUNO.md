@@ -47,8 +47,8 @@ subagentes só pode ser aceita se a sessão Hermes disponibilizar `delegate_task
 essa ferramenta, o squad deve ser executado sequencialmente. AIOX e Nirvana são
 bibliotecas internas e não são runtimes Hermes. A instalação inclui 31 skills: quatro
 de núcleo, 18 de sistemas e nove capacidades complementares. Confira o mapeamento de cada rota em
-`produto-otear-os/hermes-native/route-skill-map.json`; `Otear Trafego Pago` usa a
-mesma skill de `Otear Trafego`.
+`produto-otear-os/hermes-native/route-skill-map.json`; `Otear Tráfego Pago` usa a
+mesma skill de `Otear Tráfego`.
 
 ## Perfis opcionais
 

@@ -2,7 +2,7 @@
 
 Este pacote torna o Hermes o operador do aluno. Ele instala 31 skills namespaced:
 quatro skills de núcleo e 18 skills operacionais, uma para cada sistema público do
-Otear OS. A rota `Otear Trafego Pago` é um alias de `otear-trafego`, portanto não
+Otear OS. A rota `Otear Tráfego Pago` é um alias de `otear-trafego`, portanto não
 cria uma segunda skill com comportamento diferente.
 
 ## Instalar
@@ -13,7 +13,7 @@ Na raiz da vault, indique a home Hermes que o aluno escolheu:
 powershell -ExecutionPolicy Bypass -File .\produto-otear-os\hermes-native\scripts\Instalar-HermesNative.ps1 -HermesHome "C:\caminho\para\Hermes"
 ```
 
-Para atualizar uma instalacao anterior do Otear OS, acrescente `-Force`. O script
+Para atualizar uma instalação anterior do Otear OS, acrescente `-Force`. O script
 substitui somente `<HermesHome>\skills\otear-os`.
 
 ## Limites

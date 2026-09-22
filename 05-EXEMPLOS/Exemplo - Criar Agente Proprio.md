@@ -1,19 +1,19 @@
 ---
-title: Exemplo - Criar Agente Proprio
+title: Exemplo - Criar Agente Próprio
 created: 2026-08-22
 tags: [otear-os, exemplo, agente]
 ---
 
-# Exemplo - Criar Agente Proprio
+# Exemplo - Criar Agente Próprio
 
 Copie e preencha:
 
 ```text
-Otear OS, use o Squad Criador de Agentes para criar um agente proprio.
+Otear OS, use o Squad Criador de Agentes para criar um agente próprio.
 
-Funcao do agente:
+Função do agente:
 
-Meu negocio:
+Meu negócio:
 
 O que ele deve receber:
 
@@ -21,4 +21,3 @@ O que ele deve entregar:
 
 Como saber se ficou bom:
 ```
-

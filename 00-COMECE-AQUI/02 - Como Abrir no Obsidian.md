@@ -14,7 +14,7 @@ Baixe e extraia a pasta:
 otear-os-aluno
 ```
 
-Coloque em um lugar facil, por exemplo:
+Coloque em um lugar fácil, por exemplo:
 
 ```text
 Documentos/Otear OS
@@ -33,7 +33,7 @@ Escolha:
 Open folder as vault
 ```
 
-ou, em portugues:
+ou, em português:
 
 ```text
 Abrir pasta como cofre/vault
@@ -61,7 +61,7 @@ ou:
 00-COMECE-AQUI/00 - Leia Primeiro.md
 ```
 
-## Se Nao Aparecer Bonito
+## Se Não Aparecer Bonito
 
 Use a busca do Obsidian e procure:
 
@@ -74,4 +74,3 @@ ou:
 ```text
 MAPA DO OTEAR OS
 ```
-

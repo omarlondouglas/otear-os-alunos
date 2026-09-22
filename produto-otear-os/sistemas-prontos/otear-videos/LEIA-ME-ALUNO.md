@@ -1,39 +1,38 @@
-# Otear Videos - Sistema Incluido
+# Otear Vídeos - Sistema Incluído
 
-Esta pasta contem o sistema para pegar um video ou link publico e gerar transcricao.
+Esta pasta contém o sistema para pegar um vídeo ou link público e gerar transcrição.
 
-## Para usar sem mexer em codigo
+## Para usar sem mexer em código
 
-Abra o Otear OS e peca em linguagem natural:
+Abra o Otear OS e peça em linguagem natural:
 
 ```text
 Otear OS, use o Otear Videos para transcrever este link:
 
-[cole aqui o link do video]
+[cole aqui o link do vídeo]
 
-Depois transforme a transcricao em:
+Depois transforme a transcrição em:
 - resumo;
-- diagnostico do roteiro;
-- ideias de proximos videos.
+- diagnóstico do roteiro;
+- ideias de próximos vídeos.
 ```
 
 ## O que existe aqui
 
-- `scripts/transcrever_video.py`: ferramenta simples para baixar/transcrever um video.
-- `requirements.txt`: dependencias tecnicas para aluno avancado ou operador.
-- `outputs/`: pasta onde as transcricoes geradas podem ser salvas.
+- `scripts/transcrever_video.py`: ferramenta simples para baixar/transcrever um vídeo.
+- `requirements.txt`: dependências técnicas para aluno avançado ou operador.
+- `outputs/`: pasta onde as transcrições geradas podem ser salvas.
 
 ## Quando usar
 
 Use Otear Videos quando o pedido envolver:
 
-- transcrever video;
+- transcrever vídeo;
 - pegar a fala de um link;
-- analisar video de referencia;
-- melhorar roteiro com base em um video;
-- transformar video em post, carrossel, email ou novos roteiros.
+- analisar vídeo de referência;
+- melhorar roteiro com base em um vídeo;
+- transformar vídeo em post, carrossel, e-mail ou novos roteiros.
 
-## Observacao importante
+## Observação importante
 
-Alguns links de redes sociais podem bloquear download automatico. Se isso acontecer, baixe o arquivo de video manualmente e envie o arquivo para o Otear OS analisar.
-
+Alguns links de redes sociais podem bloquear o download automático. Se isso acontecer, baixe o arquivo de vídeo manualmente e envie o arquivo para o Otear OS analisar.

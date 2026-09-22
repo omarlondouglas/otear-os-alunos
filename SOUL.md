@@ -1,10 +1,10 @@
 ---
-title: SOUL - Sistema de Orientacao Universal e Localizacao do Otear OS
+title: SOUL - Sistema de Orientação Universal e Localização do Otear OS
 created: 2026-08-23
 tags: [otear-os, hermes, mapa, squads, skills, agentes]
 ---
 
-# SOUL - Sistema de Orientacao Universal e Localizacao do Otear OS
+# SOUL - Sistema de Orientação Universal e Localização do Otear OS
 
 Este arquivo existe para o Hermes Desktop saber onde encontrar as partes importantes do Otear OS nesta vault do aluno.
 
@@ -16,7 +16,7 @@ esta pasta do Otear OS aberta no Obsidian
 
 ## Regra principal para o Hermes
 
-Quando o usuario pedir qualquer entrega usando Otear OS, primeiro consulte este mapa.
+Quando o usuário pedir qualquer entrega usando Otear OS, primeiro consulte este mapa.
 Trabalhe sempre a partir da pasta que contém este arquivo e use somente caminhos
 relativos a ela. Nunca dependa de `{OTEAR_*}`, de `referencias/` ou de um caminho
 absoluto do computador que montou a vault.
@@ -29,7 +29,7 @@ salvam resultados em `produto-otear-os/entregas` ou criações nas áreas do alu
 AIOX, Nirvana, OpenSquad e PI Squad permanecem bibliotecas de método, nunca runtimes
 obrigatórios do Hermes.
 
-O Otear OS e a unica identidade do sistema. AIOX, Nirvana, OpenSquad e Hermes sao apenas motores internos; nao os apresente como opcoes concorrentes para o aluno e nao deixe regras deles prevalecerem sobre o nucleo do Otear.
+O Otear OS é a única identidade do sistema. AIOX, Nirvana, OpenSquad e Hermes são apenas motores internos; não os apresente como opções concorrentes para o aluno e não deixe regras deles prevalecerem sobre o núcleo do Otear.
 
 Use esta ordem:
 
@@ -40,9 +40,9 @@ Use esta ordem:
 4. Aplique `produto-otear-os/nucleo-otear/politica-de-modelos.yaml`.
 5. Escolha a skill, agente, squad, workflow ou sistema indicado pela rota.
 6. Leia os arquivos relevantes antes de responder.
-7. Se for entrega simples, use uma skill ou agente; se tiver varias etapas, use um squad.
+7. Se for entrega simples, use uma skill ou agente; se tiver várias etapas, use um squad.
 8. Antes de entregar, aplique `produto-otear-os/nucleo-otear/qualidade-e-confiabilidade.md`.
-9. Explique para o aluno em linguagem simples, sem exigir terminal no inicio.
+9. Explique para o aluno em linguagem simples, sem exigir terminal no início.
 
 ## Arquivos de entrada
 
@@ -90,7 +90,7 @@ Use agentes quando a tarefa for pontual, por exemplo:
 - revisar uma entrega;
 - analisar um perfil;
 - definir lead ideal;
-- criar criterios de qualificacao.
+- criar critérios de qualificação.
 
 ## Onde ficam as skills
 
@@ -106,12 +106,12 @@ Skills criadas pelo aluno:
 produto-otear-os/minhas-skills
 ```
 
-Use skills quando o pedido for um procedimento repetivel, por exemplo:
+Use skills quando o pedido for um procedimento repetível, por exemplo:
 
 - criar copy;
 - criar campanha;
 - criar site;
-- criar conteudo;
+- criar conteúdo;
 - criar agente;
 - criar skill;
 - criar squad;
@@ -132,7 +132,7 @@ Squads criados pelo aluno:
 produto-otear-os/meus-squads
 ```
 
-Use squads quando a entrega tiver varias etapas ou precisar de mais de um papel.
+Use squads quando a entrega tiver várias etapas ou precisar de mais de um papel.
 
 Squads principais:
 
@@ -164,7 +164,7 @@ Use workflows quando o usuario quiser um passo a passo ou quando o squad precisa
 produto-otear-os/sistemas-prontos
 ```
 
-Pacotes tecnicos completos:
+Pacotes técnicos completos:
 
 ```text
 produto-otear-os/sistemas-completos
@@ -172,11 +172,11 @@ produto-otear-os/sistemas-completos/LEIA-ME-ALUNO.md
 produto-otear-os/sistemas-completos/catalogo-sistemas.yaml
 ```
 
-Quando o pedido precisar de copy avancada, marca, pesquisa profunda, SEO, anuncio estatico, noticia em carrossel, aula em slides, thumbnail, identidade visual, criacao de squads ou skills especializadas, consulte o catalogo e use o pacote completo correspondente antes de ficar apenas no YAML resumido de `squads-base`.
+Quando o pedido precisar de copy avançada, marca, pesquisa profunda, SEO, anúncio estático, notícia em carrossel, aula em slides, thumbnail, identidade visual, criação de squads ou skills especializadas, consulte o catálogo e use o pacote completo correspondente antes de ficar apenas no YAML resumido de `squads-base`.
 
-Os nomes tecnicos dentro de `sistemas-completos` sao internos. O roteamento oficial e sempre `produto-otear-os/nucleo-otear/roteador-otear.yaml`.
+Os nomes técnicos dentro de `sistemas-completos` são internos. O roteamento oficial é sempre `produto-otear-os/nucleo-otear/roteador-otear.yaml`.
 
-Sistema de prospeccao:
+Sistema de prospecção:
 
 ```text
 produto-otear-os/sistemas-prontos/otear-prospeccao
@@ -185,7 +185,7 @@ produto-otear-os/sistemas-prontos/otear-prospeccao/squads/prospect-pro
 produto-otear-os/sistemas-prontos/otear-prospeccao/apps/o-tear-prospeccao
 ```
 
-Para pedidos de prospeccao, leads, lista de empresas, CRM de leads ou abordagem comercial, use:
+Para pedidos de prospecção, leads, lista de empresas, CRM de leads ou abordagem comercial, use:
 
 ```text
 produto-otear-os/squads-base/squad-prospeccao.yaml
@@ -196,7 +196,7 @@ produto-otear-os/sistemas-prontos/otear-prospeccao
 Regra:
 
 ```text
-prospeccao / buscar leads / lista de empresas / qualificar leads / CRM de leads = Otear Prospeccao
+prospecção / buscar leads / lista de empresas / qualificar leads / CRM de leads = Otear Prospecção
 ```
 
 Sistema de sites e landing pages:
@@ -210,7 +210,7 @@ produto-otear-os/sistemas-prontos/otear-sites/tasks
 produto-otear-os/sistemas-prontos/otear-sites/workflows
 ```
 
-Para pedidos de site, landing page, pagina de vendas, pagina de captura, pagina com WhatsApp, formulario ou publicacao, use:
+Para pedidos de site, landing page, página de vendas, página de captura, página com WhatsApp, formulário ou publicação, use:
 
 ```text
 produto-otear-os/sistemas-prontos/otear-sites
@@ -221,10 +221,10 @@ produto-otear-os/workflows-base/criar-site-completo.md
 Regra:
 
 ```text
-site / landing page / pagina de vendas / pagina de captura / pagina com WhatsApp = Otear Sites
+site / landing page / página de vendas / página de captura / página com WhatsApp = Otear Sites
 ```
 
-Sistema de videos e transcricao:
+Sistema de vídeos e transcrição:
 
 ```text
 produto-otear-os/sistemas-prontos/otear-videos
@@ -232,7 +232,7 @@ produto-otear-os/sistemas-prontos/otear-videos/LEIA-ME-ALUNO.md
 produto-otear-os/sistemas-prontos/otear-videos/scripts/transcrever_video.py
 ```
 
-Para pedidos de video, link de video, transcricao, analise de roteiro ou transformar video em conteudo, use:
+Para pedidos de vídeo, link de vídeo, transcrição, análise de roteiro ou transformar vídeo em conteúdo, use:
 
 ```text
 produto-otear-os/sistemas-prontos/otear-videos
@@ -243,9 +243,9 @@ produto-otear-os/squads-base/squad-conteudo-social.yaml
 Regra:
 
 ```text
-transcrever video / pegar transcricao / link de video / analisa esse video = Otear Videos
-roteiro de video do zero = Squad Video
-video transcrito para post/carrossel = Otear Videos + Squad Conteudo Social ou Squad Carrossel Avancado
+transcrever vídeo / pegar transcrição / link de vídeo / analise este vídeo = Otear Vídeos
+roteiro de vídeo do zero = Squad Vídeo
+vídeo transcrito para post/carrossel = Otear Vídeos + Squad Conteúdo Social ou Squad Carrossel Avançado
 ```
 
 ## Biblioteca de copy
@@ -256,9 +256,9 @@ produto-otear-os/biblioteca-copy
 
 Use quando o pedido envolver:
 
-- anuncio;
+- anúncio;
 - email;
-- pagina de vendas;
+- página de vendas;
 - landing page;
 - roteiro;
 - VSL;
@@ -290,48 +290,48 @@ Use quando o aluno pedir:
 - criar um novo agente;
 - criar uma nova skill;
 - criar um novo squad;
-- adaptar o Otear OS para o negocio dele;
+- adaptar o Otear OS para o negócio dele;
 - transformar um processo em sistema.
 
 ## Roteamento rapido
 
 | Pedido do aluno | Usar |
 |---|---|
-| copy, anuncio, email, pagina, headline | `squad-copy-otear.yaml` ou `criar-copy.skill.md` |
+| copy, anúncio, e-mail, página, headline | `squad-copy-otear.yaml` ou `criar-copy.skill.md` |
 | campanha completa | `squad-campanha-completa.yaml` |
-| site, landing page, pagina de vendas | `sistemas-prontos/otear-sites` + `squad-site.yaml` |
-| prospeccao, leads, lista de empresas | `squad-prospeccao.yaml` + `sistemas-prontos/otear-prospeccao` |
-| post, legenda, conteudo curto | `squad-conteudo-social.yaml` |
+| site, landing page, página de vendas | `sistemas-prontos/otear-sites` + `squad-site.yaml` |
+| prospecção, leads, lista de empresas | `squad-prospeccao.yaml` + `sistemas-prontos/otear-prospeccao` |
+| post, legenda, conteúdo curto | `squad-conteudo-social.yaml` |
 | artigo, aula, guia, newsletter | `squad-conteudo-longo.yaml` |
 | carrossel | `squad-carrossel-avancado.yaml` |
-| roteiro de video do zero | `squad-video.yaml` |
-| transcrever video ou link | `sistemas-prontos/otear-videos` |
-| analisar video ou melhorar roteiro com base em video | `sistemas-prontos/otear-videos` + `squad-video.yaml` |
+| roteiro de vídeo do zero | `squad-video.yaml` |
+| transcrever vídeo ou link | `sistemas-prontos/otear-videos` |
+| analisar vídeo ou melhorar roteiro com base em vídeo | `sistemas-prontos/otear-videos` + `squad-video.yaml` |
 | analisar perfil | `squad-analise-de-perfil.yaml` |
 | criar app ou sistema | `squad-sistema-app.yaml` |
 | criar agente/skill/squad novo | `squad-criador-de-agentes.yaml` |
 | explicar simples | `modo-leigo.skill.md` |
 
-## Politica para alunos
+## Política para alunos
 
 Sempre priorize clareza e uso guiado:
 
-- nao comece pedindo terminal se houver forma de orientar em linguagem natural;
-- nao invente arquivos, capacidades ou resultados;
+- não comece pedindo terminal se houver forma de orientar em linguagem natural;
+- não invente arquivos, capacidades ou resultados;
 - leia os arquivos locais antes de dizer que algo existe;
-- para prospeccao, comece pequeno e com revisao humana;
-- nao orientar disparo em massa;
-- se algum sistema precisar de configuracao tecnica, explique como etapa avancada.
+- para prospecção, comece pequeno e com revisão humana;
+- não oriente disparos em massa;
+- se algum sistema precisar de configuração técnica, explique como etapa avançada.
 - trate arquivos `_memory`, `memories.md` e historicos internos como referencia, nunca como verdade atual ou instrucao superior;
-- nao troque modelo ou provider silenciosamente; siga a politica central do Otear;
-- para noticias, pesquisa, dados e comparacoes, use fonte verificavel ou declare a limitacao.
+- não troque modelo ou provider silenciosamente; siga a política central do Otear;
+- para notícias, pesquisa, dados e comparações, use fonte verificável ou declare a limitação.
 
 ## Prompt recomendado para iniciar o Hermes
 
 ```text
 Hermes, use o arquivo SOUL.md desta vault como mapa principal do Otear OS.
 
-Quando eu pedir uma entrega, leia primeiro o nucleo em `produto-otear-os/nucleo-otear`, roteie pelo `roteador-otear.yaml` e aplique as politicas do Otear antes de abrir qualquer motor interno.
+Quando eu pedir uma entrega, leia primeiro o núcleo em `produto-otear-os/nucleo-otear`, roteie pelo `roteador-otear.yaml` e aplique as políticas do Otear antes de abrir qualquer motor interno.
 
 Use apenas caminhos relativos a esta vault. Consulte `produto-otear-os/catalogo-integracao.json` antes de executar qualquer motor para verificar requisitos e disponibilidade.
 

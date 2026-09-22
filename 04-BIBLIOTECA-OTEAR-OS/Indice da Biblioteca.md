@@ -1,10 +1,10 @@
 ---
-title: Indice da Biblioteca
+title: Índice da Biblioteca
 created: 2026-08-22
 tags: [otear-os, biblioteca]
 ---
 
-# Indice da Biblioteca
+# Índice da Biblioteca
 
 ## Principais Pastas
 

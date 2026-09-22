@@ -26,20 +26,20 @@ Você aprenderá a usar o Hermes junto com esta vault. Ao longo das conversas, r
 10. [[MAPA DO OTEAR OS]]
 11. [[02-COMO-USAR/Atalhos de Pedido do Otear OS]]
 12. [[02-COMO-USAR/Modo Leigo]]
-13. [[03-AJUSTAR-O-SISTEMA/Como Ajustar Para Seu Negocio]]
+13. [[03-AJUSTAR-O-SISTEMA/Como Ajustar Para Seu Negocio|Como Ajustar Para Seu Negócio]]
 
 ## Atalhos
 
 - [[05-EXEMPLOS/Exemplo - Criar Landing Page]]
 - [[05-EXEMPLOS/Exemplo - Criar Campanha]]
-- [[05-EXEMPLOS/Exemplo - Criar Agente Proprio]]
+- [[05-EXEMPLOS/Exemplo - Criar Agente Proprio|Exemplo - Criar Agente Próprio]]
 - [[02-COMO-USAR/Atalhos de Pedido do Otear OS]]
 - [[INDICE-DA-VAULT|Índice completo da vault]]
 - [[ATIVAR-HERMES|Ativar o Hermes]]
 - [[produto-otear-os/sistemas-prontos/otear-sites/LEIA-ME-ALUNO|Otear Sites - criar landing page ou site]]
-- [[produto-otear-os/sistemas-prontos/otear-videos/LEIA-ME-ALUNO|Otear Videos - transcrever video ou link]]
-- [[produto-otear-os/nucleo-otear/CONTRATO-OPERACIONAL|Nucleo do Otear OS - roteamento e regras unificadas]]
-- [[06-SUPORTE-E-DIAGNOSTICO/Se Algo Nao Funcionar]]
+- [[produto-otear-os/sistemas-prontos/otear-videos/LEIA-ME-ALUNO|Otear Videos - transcrever vídeo ou link]]
+- [[produto-otear-os/nucleo-otear/CONTRATO-OPERACIONAL|Núcleo do Otear OS - roteamento e regras unificadas]]
+- [[06-SUPORTE-E-DIAGNOSTICO/Se Algo Nao Funcionar|Se Algo Não Funcionar]]
 
 ## Pastas Importantes
 

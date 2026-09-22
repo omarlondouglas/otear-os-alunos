@@ -1,49 +1,48 @@
-# Otear Sites - Sistema Incluido
+# Otear Sites - Sistema Incluído
 
-Esta pasta contem o sistema completo para criar landing pages, paginas de venda, paginas institucionais e paginas de captura.
+Esta pasta contém o sistema completo para criar landing pages, páginas de venda, páginas institucionais e páginas de captura.
 
-## Para usar sem mexer em codigo
+## Para usar sem mexer em código
 
-Abra o Otear OS e peca em linguagem natural:
+Abra o Otear OS e peça em linguagem natural:
 
 ```text
-Otear OS, use o Otear Sites para criar uma pagina.
+Otear OS, use o Otear Sites para criar uma página.
 
-Negocio:
-Produto ou servico:
-Publico:
-Objetivo da pagina:
+Negócio:
+Produto ou serviço:
+Público:
+Objetivo da página:
 Oferta:
 CTA:
-Referencia visual:
-Integracoes:
+Referência visual:
+Integrações:
 ```
 
-Se voce nao souber preencher tudo, envie apenas o que tiver. O Otear Sites deve fazer perguntas simples antes de montar a pagina.
+Se você não souber preencher tudo, envie apenas o que tiver. O Otear Sites deve fazer perguntas simples antes de montar a página.
 
 ## O que existe aqui
 
-- `agents/`: especialistas do sistema, como estrategia, pesquisa, copy, design, imagens, frontend, backend, integracoes, revisao, deploy e versionamento.
+- `agents/`: especialistas do sistema, como estratégia, pesquisa, copy, design, imagens, frontend, backend, integrações, revisão, deploy e versionamento.
 - `tasks/`: tarefas detalhadas que cada agente executa.
 - `workflows/`: fluxos completos para descoberta, copy/design, build, QA, deploy e pipeline completo.
-- `squad.yaml`: manifesto tecnico do sistema.
+- `squad.yaml`: manifesto técnico do sistema.
 
 ## Quando usar
 
 Use Otear Sites quando o pedido envolver:
 
 - landing page;
-- pagina de vendas;
+- página de vendas;
 - site institucional;
-- pagina de captura;
-- pagina com WhatsApp;
-- pagina com formulario;
-- pagina com checkout ou agenda;
-- revisar ou melhorar uma pagina existente.
+- página de captura;
+- página com WhatsApp;
+- página com formulário;
+- página com checkout ou agenda;
+- revisar ou melhorar uma página existente.
 
 ## Nome correto
 
-Para aluno e cliente, o nome e **Otear Sites**.
+Para aluno e cliente, o nome é **Otear Sites**.
 
-Se aparecer algum termo antigo em material tecnico, trate apenas como compatibilidade interna. Na conversa com aluno, use Otear Sites.
-
+Se aparecer algum termo antigo em material técnico, trate apenas como compatibilidade interna. Na conversa com aluno, use Otear Sites.

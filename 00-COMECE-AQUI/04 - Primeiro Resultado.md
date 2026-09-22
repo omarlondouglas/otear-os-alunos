@@ -6,14 +6,14 @@ tags: [otear-os, inicio, primeiro-resultado]
 
 # Primeiro Resultado em 10 Minutos
 
-Seu primeiro objetivo nao e aprender todas as ferramentas. E gerar uma entrega util para o seu negocio.
+Seu primeiro objetivo não é aprender todas as ferramentas. É gerar uma entrega útil para o seu negócio.
 
-## Escolha Uma Opcao
+## Escolha Uma Opção
 
 1. Cinco ideias de posts para a sua marca.
 2. Uma landing page para sua oferta.
-3. Um diagnostico do seu perfil ou negocio.
-4. Um plano de campanha de trafego sem publicar nada.
+3. Um diagnóstico do seu perfil ou negócio.
+4. Um plano de campanha de tráfego sem publicar nada.
 5. Uma auditoria SEO do seu site.
 
 ## Copie e Cole no Chat do Otear OS
@@ -21,18 +21,18 @@ Seu primeiro objetivo nao e aprender todas as ferramentas. E gerar uma entrega u
 ```text
 Otear OS, quero meu primeiro resultado.
 
-Meu negocio: [nome e nicho]
-Minha oferta: [produto ou servico]
-Meu publico: [quem voce quer atrair]
-Meu objetivo agora: [escolha uma das opcoes acima]
+Meu negócio: [nome e nicho]
+Minha oferta: [produto ou serviço]
+Meu público: [quem você quer atrair]
+Meu objetivo agora: [escolha uma das opções acima]
 
-Faca as perguntas que faltarem e me entregue um rascunho para eu aprovar.
-Nao publique, nao envie e nao altere contas externas sem minha confirmacao.
+Faça as perguntas que faltarem e me entregue um rascunho para eu aprovar.
+Não publique, não envie e não altere contas externas sem minha confirmação.
 ```
 
 ## Ao Receber a Entrega
 
-- confira se o publico, oferta e tom estao corretos;
+- confira se o público, a oferta e o tom estão corretos;
 - diga o que deseja ajustar;
 - aprove somente o que estiver pronto para uso;
 - salve a entrega na pasta do seu projeto.

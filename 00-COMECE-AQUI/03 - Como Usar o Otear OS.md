@@ -23,12 +23,12 @@ Depois de uma entrega aprovada, peça ao Hermes para registrar o que deve ser le
 ## Exemplo
 
 ```text
-Otear OS, crie uma landing page para meu servico.
+Otear OS, crie uma landing page para meu serviço.
 
-Meu servico:
+Meu serviço:
 [descreva aqui]
 
-Meu publico:
+Meu público:
 [descreva aqui]
 
 Objetivo:
@@ -41,8 +41,8 @@ Objetivo:
 |---|---|
 | Criar uma campanha | Squad Campanha Completa |
 | Criar copy | Squad Copy Otear |
-| Criar uma pagina | Squad Site Completo |
-| Criar posts e carrosseis | Squad Conteudo Social ou Squad Carrossel Avancado |
+| Criar uma página | Squad Site Completo |
+| Criar posts e carrosséis | Squad Conteúdo Social ou Squad Carrossel Avançado |
 | Criar sistema/app | Squad Sistema e App |
 | Criar um agente novo | Squad Criador de Agentes |
 | Melhorar processo | Squad Melhoria de Processos |
@@ -57,6 +57,6 @@ Sempre informe:
 - qual resultado espera;
 - exemplos, se tiver.
 
-## Regra de Aprovacao
+## Regra de Aprovação
 
 O Otear OS pode preparar o plano, a copy, os criativos e a configuração sugerida. Antes de enviar, publicar ou ativar campanhas, ele deve mostrar um resumo para sua aprovação explícita.

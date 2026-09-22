@@ -16,7 +16,7 @@ MAPA DO OTEAR OS.md
 02-COMO-USAR/Escolher o Squad Certo.md
 ```
 
-Se o pedido envolver video, link de video ou transcricao, use primeiro:
+Se o pedido envolver vídeo, link de vídeo ou transcrição, use primeiro:
 
 ```text
 produto-otear-os/sistemas-prontos/otear-videos
@@ -38,25 +38,25 @@ Copie e preencha:
 ```text
 Otear OS, ative o Modo Leigo e me explique isso:
 
-[cole aqui o tema, texto, erro, processo ou duvida]
+[cole aqui o tema, texto, erro, processo ou dúvida]
 ```
 
 ## O Que O Otear OS Deve Fazer
 
 | Regra | O que acontece |
 |---|---|
-| Analogia | Comeca comparando com algo do mundo real |
-| Traducao | Explica palavras tecnicas na hora |
+| Analogia | Começa comparando com algo do mundo real |
+| Tradução | Explica palavras técnicas na hora |
 | Visual | Usa tabela, lista ou passo a passo |
 | Fechamento | Diz "O que isso significa" |
-| Decisao | Mostra opcoes com vantagens e desvantagens |
+| Decisão | Mostra opções com vantagens e desvantagens |
 
 ## Exemplo
 
 Pedido:
 
 ```text
-Otear OS, ative o Modo Leigo e me explique o que e um squad.
+Otear OS, ative o Modo Leigo e me explique o que é um squad.
 ```
 
 Resposta esperada:
@@ -75,6 +75,6 @@ O que isso significa: quando uma tarefa tem várias partes, você usa um squad e
 - Para explicar um squad.
 - Para explicar uma skill.
 - Para entender um processo.
-- Para traduzir um termo tecnico.
+- Para traduzir um termo técnico.
 - Para estudar um tema novo.
-- Para explicar o resultado de uma transcricao ou analise de video sem termos tecnicos.
+- Para explicar o resultado de uma transcrição ou análise de vídeo sem termos técnicos.

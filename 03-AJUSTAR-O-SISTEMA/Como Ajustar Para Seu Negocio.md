@@ -1,17 +1,17 @@
 ---
-title: Como Ajustar Para Seu Negocio
+title: Como Ajustar Para Seu Negócio
 created: 2026-08-22
 tags: [otear-os, personalizacao]
 ---
 
-# Como Ajustar Para Seu Negocio
+# Como Ajustar Para Seu Negócio
 
-Otear OS fica melhor quando voce adapta os agentes, skills e squads para seu mercado.
+Otear OS fica melhor quando você adapta os agentes, skills e squads para seu mercado.
 
 ## O Que Personalizar
 
 - Seu nicho.
-- Seu publico.
+- Seu público.
 - Seu tom de voz.
 - Seus produtos.
 - Suas ofertas.
@@ -20,7 +20,7 @@ Otear OS fica melhor quando voce adapta os agentes, skills e squads para seu mer
 
 ## Onde Salvar
 
-| O que voce criar | Pasta |
+| O que você criar | Pasta |
 |---|---|
 | Agente novo | `produto-otear-os/meus-agentes` |
 | Skill nova | `produto-otear-os/minhas-skills` |
@@ -33,12 +33,11 @@ Copie um arquivo parecido da pasta `agentes-base`, `skills-base` ou `squads-base
 Depois peça:
 
 ```text
-Otear OS, adapte este agente para meu negocio.
+Otear OS, adapte este agente para meu negócio.
 
-Meu negocio:
+Meu negócio:
 [descreva]
 
 Minha necessidade:
 [descreva]
 ```
-

@@ -1,19 +1,19 @@
 ---
-title: Se Algo Nao Funcionar
+title: Se Algo Não Funcionar
 created: 2026-08-22
 tags: [otear-os, suporte]
 ---
 
-# Se Algo Nao Funcionar
+# Se Algo Não Funcionar
 
-## Nao Consigo Entrar
+## Não Consigo Entrar
 
 1. Verifique o e-mail usado na compra e procure o convite oficial, inclusive no spam.
-2. Abra o link em uma janela anonima se a pagina entrar na conta errada.
-3. Se o convite expirou ou nao chegou, solicite um novo acesso ao suporte.
+2. Abra o link em uma janela anônima se a página entrar na conta errada.
+3. Se o convite expirou ou não chegou, solicite um novo acesso ao suporte.
 4. Nunca envie senha, token ou chave de API pelo chat de suporte.
 
-## Nao Sei Por Onde Comecar
+## Não Sei Por Onde Começar
 
 Abra:
 
@@ -21,7 +21,7 @@ Abra:
 00-COMECE-AQUI/00 - Leia Primeiro.md
 ```
 
-## Nao Sei Qual Squad Usar
+## Não Sei Qual Squad Usar
 
 Abra:
 
@@ -29,7 +29,7 @@ Abra:
 02-COMO-USAR/Atalhos de Pedido do Otear OS.md
 ```
 
-## A IA Respondeu Generico
+## A IA Respondeu de Forma Genérica
 
 Use o prompt mestre:
 
@@ -37,16 +37,16 @@ Use o prompt mestre:
 02-COMO-USAR/Prompt Mestre.md
 ```
 
-E forneca mais contexto:
+E forneça mais contexto:
 
-- publico;
+- público;
 - produto;
 - objetivo;
 - canal;
-- exemplo do que voce gosta;
-- exemplo do que voce nao quer.
+- exemplo do que você gosta;
+- exemplo do que você não quer.
 
-## Quero Adaptar Para Meu Negocio
+## Quero Adaptar Para Meu Negócio
 
 Abra:
 

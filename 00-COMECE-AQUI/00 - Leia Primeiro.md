@@ -10,14 +10,14 @@ Esta vault é o manual operacional do Otear OS.
 
 Ela foi feita para você usar no Obsidian como uma biblioteca viva de agentes, skills, squads, workflows e exemplos.
 
-## O Que E O Otear OS
+## O Que É O Otear OS
 
 O Otear OS é o sistema único para organizar o trabalho com IA. Você não precisa decidir entre AIOX, OpenSquad, Hermes ou outros sistemas técnicos: eles funcionam como motores internos.
 
 Em vez de pedir tudo do zero, você usa peças prontas:
 
-- **Agente**: uma funcao especializada.
-- **Skill**: um procedimento reutilizavel.
+- **Agente**: uma função especializada.
+- **Skill**: um procedimento reutilizável.
 - **Squad**: um conjunto de agentes trabalhando em etapas.
 - **Workflow**: o passo a passo de uma entrega.
 

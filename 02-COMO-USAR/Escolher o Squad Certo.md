@@ -13,19 +13,19 @@ tags: [otear-os, squads]
 | Campanha completa | Squad Campanha Completa |
 | Copy de venda | Squad Copy Otear |
 | Prospecção | Squad Prospecção |
-| Landing page, pagina de venda ou site | Otear Sites + Squad Site Completo |
+| Landing page, página de venda ou site | Otear Sites + Squad Site Completo |
 
-## Conteudo
+## Conteúdo
 
 | Objetivo | Squad |
 |---|---|
-| Posts e legendas | Squad Conteudo Social |
-| Carrossel completo | Squad Carrossel Avancado |
-| Roteiro de video do zero | Squad Video |
-| Transcrever link ou arquivo de video | Otear Videos |
-| Analisar video e melhorar roteiro | Otear Videos + Squad Video |
-| Artigo, aula ou guia | Squad Conteudo Longo |
-| Calendario editorial | Squad Calendario Editorial |
+| Posts e legendas | Squad Conteúdo Social |
+| Carrossel completo | Squad Carrossel Avançado |
+| Roteiro de vídeo do zero | Squad Vídeo |
+| Transcrever link ou arquivo de vídeo | Otear Vídeos |
+| Analisar vídeo e melhorar roteiro | Otear Vídeos + Squad Vídeo |
+| Artigo, aula ou guia | Squad Conteúdo Longo |
+| Calendário editorial | Squad Calendário Editorial |
 
 ## Marca e Visual
 
@@ -33,7 +33,7 @@ tags: [otear-os, squads]
 |---|---|
 | Posicionamento de marca | Squad Marca |
 | Identidade visual | Squad Identidade Visual |
-| Anuncio estatico | Squad Anuncio Estatico |
+| Anúncio estático | Squad Anúncio Estático |
 | Capa ou thumbnail | Squad Capas e Thumbnails |
 
 ## Sistemas

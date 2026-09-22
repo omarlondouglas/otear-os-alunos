@@ -8,12 +8,12 @@ tags: [otear-os, criar]
 
 ## Criar Agente
 
-Use quando precisar de uma funcao especializada.
+Use quando precisar de uma função especializada.
 
 Exemplo:
 
 ```text
-Otear OS, crie um agente para responder leads de clinica estetica.
+Otear OS, crie um agente para responder leads de clínica estética.
 ```
 
 Salve em:
@@ -40,7 +40,7 @@ produto-otear-os/minhas-skills
 
 ## Criar Squad
 
-Use quando a entrega tiver varias etapas.
+Use quando a entrega tiver várias etapas.
 
 Exemplo:
 
@@ -53,4 +53,3 @@ Salve em:
 ```text
 produto-otear-os/meus-squads
 ```
-

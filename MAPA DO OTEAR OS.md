@@ -15,11 +15,11 @@ created: 2026-09-20
 ---
 
 ## 🧠 Orquestrador (Ponto de Entrada)
-Este mapa mostra as capacidades prontas do Otear OS. Para o aluno, existe uma unica entrada: o Otear OS. AIOX, OpenSquad, Hermes e os sistemas prontos sao motores internos chamados conforme a tarefa.
+Este mapa mostra as capacidades prontas do Otear OS. Para o aluno, existe uma única entrada: o Otear OS. AIOX, OpenSquad, Hermes e os sistemas prontos são motores internos chamados conforme a tarefa.
 
-## Entrada Unica
+## Entrada Única
 
-Use `produto-otear-os/nucleo-otear/roteador-otear.yaml` como catalogo e roteador. Nao escolha um sistema completo manualmente.
+Use `produto-otear-os/nucleo-otear/roteador-otear.yaml` como catálogo e roteador. Não escolha um sistema completo manualmente.
 
 O **Orquestrador** é sempre o primeiro a ser chamado quando você não sabe qual agente usar. Ele interpreta o pedido, escolhe o caminho certo e garante que o resultado chegue completo.
 
@@ -101,7 +101,7 @@ Squads são combinações de agentes que trabalham juntos em uma tarefa. Chame o
 |---|---|---|
 | [[squad-prospeccao]] | Definir ICP, criar abordagem e mensagem de primeiro contato | prospector + estrategista-oferta + copywriter + revisor |
 | [[squad-campanha-completa]] | Criar uma campanha de anúncios do zero (oferta, copy, criativo) | estrategista + copywriter + especialista-ads + gestor-trafego + revisor |
-| [[squad-carrossel-avancado]] | Criar carrosseis com profundidade de copy e design | diretor-copy + copywriter + designer-carrossel + diretor-capa + revisor |
+| [[squad-carrossel-avancado]] | Criar carrosséis com profundidade de copy e design | diretor-copy + copywriter + designer-carrossel + diretor-capa + revisor |
 | [[squad-conteudo-social]] | Calendário + posts + distribuição para redes sociais | planejador + copywriter + social-media + agendador |
 | [[squad-conteudo-longo]] | Artigos, roteiros de aula, newsletters e vídeos longos | redator-longform + roteirista + revisor-copy + agendador |
 | [[squad-site]] | Criar landing page ou site completo do zero | arquiteto-site + especialista-landing + construtor + publicador-site + auditor-seo |
@@ -125,11 +125,11 @@ Squads são combinações de agentes que trabalham juntos em uma tarefa. Chame o
 
 | Capacidade | O que entrega | Motor interno |
 |---|---|---|
-| SEO | auditoria 0-100, otimizacao on-page, tecnico, schema, performance e visibilidade em IA | AIOX SEO |
-| Trafego Pago | plano de midia, campanhas Meta/Google, UTMs, metricas e otimizacao | Skills de Trafego + Hermes |
-| Relatorio de Trafego | leitura de campanhas, indicadores, diagnostico e plano de acao | Hermes Marketing Reports |
+| SEO | auditoria 0–100, otimização on-page, técnica, schema, performance e visibilidade em IA | AIOX SEO |
+| Tráfego Pago | plano de mídia, campanhas Meta/Google, UTMs, métricas e otimização | Skills de Tráfego + Hermes |
+| Relatório de Tráfego | leitura de campanhas, indicadores, diagnóstico e plano de ação | Hermes Marketing Reports |
 
-## Nucleo Unificado
+## Núcleo Unificado
 
 ## 🛠️ Skills
 
@@ -155,14 +155,14 @@ Skills são guias de como executar algo. O agente carrega a skill antes de agir.
 | [[criar-squad.skill]] | Criar um squad personalizado com múltiplos agentes |
 | [[criar-skill.skill]] | Criar uma skill reutilizável para qualquer tarefa |
 | [[revisar-entrega.skill]] | Checklist final antes de entregar qualquer trabalho |
-| Otear Copy, Marca e Pesquisa | copy, marca, pesquisa profunda, SEO e criacao de squads |
-| Otear Trafego | planejamento, operacao e relatorios de campanhas Meta e Google |
-| Otear Anuncios, Noticias e Thumbnails | anuncios, carrosseis com fontes, aulas, identidade visual e thumbnails |
-| Otear Sistemas | apps, automacoes, processos e skills especializadas |
+| Otear Copy, Marca e Pesquisa | copy, marca, pesquisa profunda, SEO e criação de squads |
+| Otear Tráfego | planejamento, operação e relatórios de campanhas Meta e Google |
+| Otear Anúncios, Notícias e Thumbnails | anúncios, carrosséis com fontes, aulas, identidade visual e thumbnails |
+| Otear Sistemas | apps, automações, processos e skills especializadas |
 
 ---
 
-## ⚠️ Agentes que Faltam (Gaps Identificados)
+## ⚠️ Agentes que Faltam (Lacunas Identificadas)
 
 Estes papéis não têm agente dedicado ainda e precisam ser criados:
 
@@ -175,7 +175,7 @@ Estes papéis não têm agente dedicado ainda e precisam ser criados:
 | **agente-de-follow-up.agent** | Sem agente dedicado a follow-ups comerciais com cadência, lembretes e sequência de mensagens |
 | **agente-de-relacionamento.agent** | Sem agente para retenção de clientes, NPS e reativação de inativos |
 | **agente-fiscal.agent** | Sem agente para emissão de notas fiscais, controle de DAS e obrigações fiscais |
-| **agente-de-metricas.agent** | Sem agente para consolidar e interpretar dados de múltiplas plataformas em um report único |
+| **agente-de-metricas.agent** | Sem agente para consolidar e interpretar dados de múltiplas plataformas em um relatório único |
 | **agente-de-recrutamento.agent** | Sem agente para triagem de currículos, entrevistas e processo seletivo simplificado |
 | **agente-de-entrega.agent** | Agente de logística e controle de entregáveis por projeto/cliente |
 

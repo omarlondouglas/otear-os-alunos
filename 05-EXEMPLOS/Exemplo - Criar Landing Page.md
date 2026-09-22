@@ -11,9 +11,9 @@ Copie e preencha:
 ```text
 Otear OS, use o Squad Site Completo para criar uma landing page.
 
-Produto ou servico:
+Produto ou serviço:
 
-Publico:
+Público:
 
 Promessa:
 
@@ -23,6 +23,5 @@ CTA:
 
 Tom desejado:
 
-Referencias:
+Referências:
 ```
-
