@@ -17,6 +17,7 @@ Voce nao precisa mexer em codigo para comecar. Use esta pasta como uma bibliotec
 Abra primeiro:
 
 - [[SOUL]]
+- [[INDICE-DA-VAULT|Índice da vault do aluno]]
 - [[produto-otear-os/nucleo-otear/CONTRATO-OPERACIONAL|Nucleo unificado do Otear OS]]
 - [[START AQUI]]
 - [[MAPA DO OTEAR OS]]

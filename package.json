@@ -1,0 +1,11 @@
+{
+  "name": "otear-os-aluno",
+  "version": "0.1.0",
+  "description": "CLI portátil de diagnóstico e validação da vault Otear OS.",
+  "license": "UNLICENSED",
+  "private": true,
+  "bin": { "otear-os": "bin/otear-os.js" },
+  "files": ["bin/", "ATIVAR-HERMES.md", "VALIDAR-ALUNO.md", "SOUL.md", "OTEAR-BOOTSTRAP.md", "produto-otear-os/catalogo-integracao.json", "produto-otear-os/perfis-dependencias.json", "produto-otear-os/nucleo-otear/scripts/Validar-OtearOS.ps1"],
+  "scripts": { "doctor": "node bin/otear-os.js doctor", "validate": "node bin/otear-os.js validate", "profiles": "node bin/otear-os.js profiles" },
+  "engines": { "node": ">=18" }
+}

@@ -8,15 +8,22 @@ tags: [otear-os, checklist]
 
 Antes de usar o Otear OS, confira:
 
+- [ ] Recebi o convite oficial por e-mail e consegui entrar na minha conta.
 - [ ] Baixei a pasta `otear-os-aluno`.
-- [ ] Abri a pasta no Obsidian.
+- [ ] Abri a pasta como vault no Obsidian.
 - [ ] Encontrei o arquivo `START AQUI.md`.
 - [ ] Li o `MAPA DO OTEAR OS.md`.
 - [ ] Sei qual entrega quero criar primeiro.
-- [ ] Tenho uma IA aberta para conversar.
-- [ ] Tenho meu briefing basico.
+- [ ] Tenho o Hermes aberto para conversar.
+- [ ] Tenho meu briefing básico.
 
-## Briefing Basico
+## Se O Acesso Nao Funcionar
+
+1. Procure o convite na caixa de entrada, no spam e na aba Promoções.
+2. Solicite um novo convite ao suporte se o link tiver expirado.
+3. Não crie outra conta com e-mail diferente sem orientação: o acesso é vinculado ao e-mail da compra.
+
+## Briefing básico
 
 Preencha:
 
@@ -29,4 +36,3 @@ Onde vou usar:
 Tom desejado:
 Referencias:
 ```
-

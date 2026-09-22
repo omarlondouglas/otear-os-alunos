@@ -4,13 +4,22 @@ tags: [otear-os, mapa, grafo, agentes, squads, skills]
 created: 2026-09-20
 ---
 
-# 🗺️ Mapa do Otear OS
+# Mapa do Otear OS
+
+> A entrada do aluno é o Hermes pelo Otear OS. Esta vault reúne a memória, os processos e as capacidades que o Hermes usa para orientar e executar as tarefas com você.
+
+> Para navegar por todas as notas do aluno sem procurar pastas, abra [[INDICE-DA-VAULT|Índice da Vault do Aluno]]. Para começar, use [[START AQUI]].
 
 > Use este arquivo no Obsidian com o plugin **Graph View** para enxergar o sistema completo em formato de grafo. Todos os agentes, squads e skills estão linkados.
 
 ---
 
 ## 🧠 Orquestrador (Ponto de Entrada)
+Este mapa mostra as capacidades prontas do Otear OS. Para o aluno, existe uma unica entrada: o Otear OS. AIOX, OpenSquad, Hermes e os sistemas prontos sao motores internos chamados conforme a tarefa.
+
+## Entrada Unica
+
+Use `produto-otear-os/nucleo-otear/roteador-otear.yaml` como catalogo e roteador. Nao escolha um sistema completo manualmente.
 
 O **Orquestrador** é sempre o primeiro a ser chamado quando você não sabe qual agente usar. Ele interpreta o pedido, escolhe o caminho certo e garante que o resultado chegue completo.
 
@@ -112,6 +121,15 @@ Squads são combinações de agentes que trabalham juntos em uma tarefa. Chame o
 | [[squad-criador-de-agentes]] | Criar novos agentes e squads personalizados | orquestrador + analista-negocio + arquiteto-sistema |
 
 ---
+## Capacidades Profissionais
+
+| Capacidade | O que entrega | Motor interno |
+|---|---|---|
+| SEO | auditoria 0-100, otimizacao on-page, tecnico, schema, performance e visibilidade em IA | AIOX SEO |
+| Trafego Pago | plano de midia, campanhas Meta/Google, UTMs, metricas e otimizacao | Skills de Trafego + Hermes |
+| Relatorio de Trafego | leitura de campanhas, indicadores, diagnostico e plano de acao | Hermes Marketing Reports |
+
+## Nucleo Unificado
 
 ## 🛠️ Skills
 
@@ -137,6 +155,10 @@ Skills são guias de como executar algo. O agente carrega a skill antes de agir.
 | [[criar-squad.skill]] | Criar um squad personalizado com múltiplos agentes |
 | [[criar-skill.skill]] | Criar uma skill reutilizável para qualquer tarefa |
 | [[revisar-entrega.skill]] | Checklist final antes de entregar qualquer trabalho |
+| Otear Copy, Marca e Pesquisa | copy, marca, pesquisa profunda, SEO e criacao de squads |
+| Otear Trafego | planejamento, operacao e relatorios de campanhas Meta e Google |
+| Otear Anuncios, Noticias e Thumbnails | anuncios, carrosseis com fontes, aulas, identidade visual e thumbnails |
+| Otear Sistemas | apps, automacoes, processos e skills especializadas |
 
 ---
 

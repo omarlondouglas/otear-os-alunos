@@ -200,7 +200,6 @@ slides-aula
 cover-director
 instagram-scraper
 yt-thumbnails
-vyve-identidade-visual
 ```
 
 PI Squad is an `ultimate-landingpage` squad with 14 agents covering strategy, research, copy, design architecture, image creation, frontend, backend, integrations, review, deploy, versioning, scraping, orchestration and storage.

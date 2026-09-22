@@ -27,7 +27,6 @@ packages:
       - instagram-scraper
       - noticias-carrossel-ia
       - slides-aula
-      - vyve-identidade-visual
       - yt-thumbnails
   - id: nirvana-agi-agentes
     path: nirvana-agi-agentes

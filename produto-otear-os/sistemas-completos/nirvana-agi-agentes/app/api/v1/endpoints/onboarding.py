@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field
 
 from app.agents.onboarding_agent import create_onboarding_agent
 from app.core.security import verify_supabase_token
-from app.models.user_profile import get_user_profile, upsert_user_profile
+from app.services.user_memory import is_onboarding_pending
 
 router = APIRouter()
 logger = logging.getLogger(__name__)
@@ -64,11 +64,12 @@ class StructuredOnboardingRequest(BaseModel):
 @router.get("/status")
 async def onboarding_status(user_data: dict = Depends(verify_supabase_token)):
     """Verifica se o onboarding do usuario esta completo."""
-    profile = get_user_profile(user_data["user_id"])
+    pending = is_onboarding_pending()
     return {
-        "onboarding_completed": profile.onboarding_completed if profile else False,
-        "has_profile": profile is not None,
-        "should_show_onboarding": not profile or not profile.onboarding_completed,
+        "onboarding_completed": not pending,
+        "has_profile": not pending,
+        "should_show_onboarding": pending,
+        "storage": "local_vault",
     }
 
 
@@ -171,24 +172,21 @@ async def complete_structured_onboarding(
     if not any(value for key, value in profile_data.items() if key != "onboarding_completed"):
         raise HTTPException(status_code=400, detail="Informe pelo menos um campo de perfil")
 
-    profile_data["onboarding_completed"] = True
-    profile = upsert_user_profile(user_id, profile_data)
     _sync_profile_to_vault(profile_data, _structured_strategy_data(raw))
     _enqueue_creator_extraction(profile_data)
-    background_tasks.add_task(_dispatch_onboarding_webhook, user_id, user_data.get("email"), raw, profile_data)
 
     return {
         "message": "Onboarding concluido com sucesso",
-        "onboarding_completed": profile.onboarding_completed,
+        "onboarding_completed": True,
         "profile": {
-            "empresa": profile.empresa,
-            "nicho": profile.nicho,
-            "publico_texto": profile.publico_texto,
-            "tom_de_voz": profile.tom_de_voz,
-            "social_handle": profile.social_handle,
-            "social_platform": profile.social_platform,
-            "nicho_conteudo": profile.nicho_conteudo,
-            "inspiracoes": profile.inspiracoes,
+            "empresa": profile_data.get("empresa"),
+            "nicho": profile_data.get("nicho"),
+            "publico_texto": profile_data.get("publico_texto"),
+            "tom_de_voz": profile_data.get("tom_de_voz"),
+            "social_handle": profile_data.get("social_handle"),
+            "social_platform": profile_data.get("social_platform"),
+            "nicho_conteudo": profile_data.get("nicho_conteudo"),
+            "inspiracoes": profile_data.get("inspiracoes"),
         },
     }
 
@@ -232,7 +230,7 @@ async def onboarding_chat(
 
 
 async def _save_profile_from_history(user_id: str, session_id: str, agent, final_summary: str = ""):
-    """Extrai perfil da conversa, salva no Supabase e sincroniza USER.md."""
+    """Extrai perfil da conversa e sincroniza somente a vault local."""
     try:
         history_text = ""
         if hasattr(agent, "memory") and agent.memory:
@@ -246,7 +244,7 @@ async def _save_profile_from_history(user_id: str, session_id: str, agent, final
         source_text = final_summary or history_text
         if not source_text:
             logger.warning("Sem texto para extracao de perfil user_id=%s", user_id)
-            upsert_user_profile(user_id, {"onboarding_completed": True})
+            _sync_profile_to_vault({})
             return
 
         from agno.agent import Agent as AgnoAgent
@@ -285,24 +283,19 @@ async def _save_profile_from_history(user_id: str, session_id: str, agent, final
             try:
                 raw = json.loads(json_match.group())
                 profile_data = _normalize_profile(raw)
-                profile_data["onboarding_completed"] = True
-                upsert_user_profile(user_id, profile_data)
-                logger.info("Perfil salvo para user_id=%s: campos=%s", user_id, list(profile_data.keys()))
+                logger.info("Perfil salvo na vault local: campos=%s", list(profile_data.keys()))
                 _sync_profile_to_vault(profile_data, raw)
                 _enqueue_creator_extraction(profile_data)
                 return
             except json.JSONDecodeError as exc:
                 logger.warning("JSON invalido na extracao de perfil: %s | texto=%s", exc, result_text[:200])
 
-        upsert_user_profile(user_id, {"onboarding_completed": True})
+        _sync_profile_to_vault({})
         logger.warning("Perfil salvo sem dados de campo para user_id=%s", user_id)
 
     except Exception as exc:
         logger.error("Erro ao salvar perfil do onboarding: %s", exc, exc_info=True)
-        try:
-            upsert_user_profile(user_id, {"onboarding_completed": True})
-        except Exception:
-            pass
+        _sync_profile_to_vault({})
 
 
 _PRODUCT_DEFAULTS_TECNICAS = (
@@ -442,6 +435,10 @@ async def _dispatch_onboarding_webhook(
     raw_answers: Dict[str, Any],
     profile_data: Dict[str, Any],
 ) -> None:
+    if os.getenv("LOCAL_FIRST_MEMORY", "true").strip().lower() in {"1", "true", "yes", "on"}:
+        logger.info("Webhook de onboarding bloqueado: modo local-first ativo")
+        return
+
     url = _get_onboarding_webhook_url()
     if not url:
         return

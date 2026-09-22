@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "purpose": "Mapa verificável das rotas públicas do Otear OS para skills nativas do Hermes.",
+  "routes": [
+    { "route": "Otear Prospeccao", "skill": "otear-prospeccao" },
+    { "route": "Otear Sites", "skill": "otear-sites" },
+    { "route": "Otear Videos", "skill": "otear-videos" },
+    { "route": "Otear Copy", "skill": "otear-copy" },
+    { "route": "Otear Marca", "skill": "otear-marca" },
+    { "route": "Otear Pesquisa", "skill": "otear-pesquisa" },
+    { "route": "Otear SEO", "skill": "otear-seo" },
+    { "route": "Otear Trafego", "skill": "otear-trafego" },
+    { "route": "Otear Sistemas", "skill": "otear-sistemas" },
+    { "route": "Otear Processos", "skill": "otear-processos" },
+    { "route": "Otear Criador", "skill": "otear-criador" },
+    { "route": "Otear Anuncios", "skill": "otear-anuncios" },
+    { "route": "Otear Noticias", "skill": "otear-noticias" },
+    { "route": "Otear Perfil", "skill": "otear-perfil" },
+    { "route": "Otear Aulas", "skill": "otear-aulas" },
+    { "route": "Otear Thumbnails", "skill": "otear-thumbnails" },
+    { "route": "Otear Identidade Visual", "skill": "otear-identidade-visual" },
+    { "route": "Otear Trafego Pago", "skill": "otear-trafego", "alias_of": "Otear Trafego" },
+    { "route": "Otear Relatorios de Trafego", "skill": "otear-relatorios-trafego" }
+  ],
+  "support_capabilities": [
+    { "capability": "Apuracao de fontes", "skill": "otear-apuracao-fontes", "used_by": ["Otear Noticias"] },
+    { "capability": "Pesquisa de noticias", "skill": "otear-pesquisa-noticias", "used_by": ["Otear Noticias", "Otear Aulas"] },
+    { "capability": "Redacao jornalistica", "skill": "otear-redacao-jornalistica", "used_by": ["Otear Noticias"] },
+    { "capability": "Verificacao factual", "skill": "otear-verificacao-factual", "used_by": ["Otear Noticias", "Otear Anuncios"] },
+    { "capability": "Criacao de imagens HTML/CSS", "skill": "otear-criador-imagens", "used_by": ["Otear Noticias", "Otear Anuncios", "Otear Thumbnails"] },
+    { "capability": "Busca e organizacao de imagens", "skill": "otear-buscador-imagens", "used_by": ["Otear Noticias", "Otear Aulas", "Otear Thumbnails"] },
+    { "capability": "Canva", "skill": "otear-canva", "used_by": ["Otear Aulas", "Otear Anuncios", "Otear Identidade Visual"] },
+    { "capability": "Publicacao de carrossel no Instagram", "skill": "otear-publicador-instagram", "used_by": ["Otear Noticias", "Otear Anuncios"] },
+    { "capability": "Modo Leigo", "skill": "otear-modo-leigo", "used_by": ["Todas as rotas publicas"] }
+  ]
+}

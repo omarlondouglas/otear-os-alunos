@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "identity": "Otear OS",
+  "base_path": "produto-otear-os",
+  "purpose": "Índice portátil e verificável dos componentes entregues ao aluno.",
+  "read_order": [
+    "SOUL.md",
+    "MAPA DO OTEAR OS.md",
+    "produto-otear-os/nucleo-otear/CONTRATO-OPERACIONAL.md",
+    "produto-otear-os/nucleo-otear/roteador-otear.yaml",
+    "produto-otear-os/catalogo-integracao.json",
+    ".system/USER.md",
+    ".system/MEMORY.md"
+  ],
+  "components": [
+    { "id": "nucleo", "name": "Núcleo Otear", "path": "produto-otear-os/nucleo-otear", "purpose": "Contrato, roteamento, política de modelos e qualidade.", "activation": "Leitura obrigatória", "requirements": [] },
+    { "id": "hermes-native", "name": "Camada Hermes-native", "path": "produto-otear-os/hermes-native", "related_paths": ["produto-otear-os/hermes-native/route-skill-map.json", "produto-otear-os/hermes-native/scripts/Instalar-HermesNative.ps1", "produto-otear-os/hermes-native/scripts/Validar-HermesNative.ps1", "produto-otear-os/entregas/README.md"], "purpose": "31 skills portáteis: núcleo, orientação Hermes-native por sistema público e capacidades complementares, incluindo Modo Leigo.", "activation": "Instalação opcional no Hermes escolhido pelo aluno", "requirements": ["Hermes instalado", "delegate_task somente quando a sessão oferecer delegação"] },
+    { "id": "bases", "name": "Agentes, skills, squads e workflows base", "path": "produto-otear-os/agentes-base", "related_paths": ["produto-otear-os/skills-base", "produto-otear-os/squads-base", "produto-otear-os/workflows-base"], "purpose": "Capacidades declarativas usadas pelo roteador.", "activation": "Leitura e orquestração pelo Hermes", "requirements": ["Modelo LLM compatível no Hermes"] },
+    { "id": "prospeccao", "name": "Otear Prospecção", "path": "produto-otear-os/sistemas-prontos/otear-prospeccao", "purpose": "Leads, qualificação, CRM e enriquecimento.", "activation": "Aplicação técnica opcional", "requirements": ["Docker ou ambiente Python/Node", "Playwright", "Supabase e variáveis de ambiente quando aplicável", "Revisão humana e uso responsável de dados"] },
+    { "id": "sites", "name": "Otear Sites", "path": "produto-otear-os/sistemas-prontos/otear-sites", "purpose": "Sites, landing pages e páginas de venda.", "activation": "Workflow/artefatos locais; runtime depende do projeto", "requirements": ["Runtime ou ferramentas indicadas pelo workflow escolhido", "Publicação e credenciais quando aplicável"] },
+    { "id": "videos", "name": "Otear Vídeos", "path": "produto-otear-os/sistemas-prontos/otear-videos", "purpose": "Transcrição, análise de vídeo e roteiros.", "activation": "Script técnico opcional", "requirements": ["Python", "Dependências do projeto", "Acesso ao vídeo/áudio e, quando necessário, API"] },
+    { "id": "aiox", "name": "Motores AIOX", "path": "produto-otear-os/sistemas-completos/aiox", "purpose": "Copy, marca, pesquisa, SEO, apps, processos e criação de squads.", "activation": "Selecionado pelo roteador; requer runtime do motor para execução automatizada", "requirements": ["LLM/provider compatível", "Dependências específicas do squad escolhido"] },
+    { "id": "opensquad", "name": "Motores OpenSquad", "path": "produto-otear-os/sistemas-completos/opensquad", "purpose": "Anúncios, notícias, carrosséis, slides, thumbnails e identidade visual.", "activation": "Selecionado pelo roteador; execução varia por squad", "requirements": ["Node e dependências quando o squad exigir", "Fontes verificáveis para notícias", "Serviços de imagem/modelos quando aplicável"] },
+    { "id": "nirvana", "name": "Nirvana AGI Agentes", "path": "produto-otear-os/sistemas-completos/nirvana-agi-agentes", "purpose": "Runtime e skills de apoio internos.", "activation": "Motor interno; não é rota pública", "requirements": ["Configuração do ambiente", "Variáveis de ambiente", "Integrações opcionais conforme o módulo"] },
+    { "id": "hermes-profile", "name": "Perfil Hermes", "path": "produto-otear-os/sistemas-completos/hermes-profile-agenciasemesforco", "purpose": "Perfil e skills complementares para Hermes.", "activation": "Importação opcional no Hermes; sempre usar esta vault como diretório de trabalho", "requirements": ["Hermes instalado e autenticado", "Modelo/provider configurado no Hermes"] },
+    { "id": "aluno", "name": "Área do aluno", "path": "produto-otear-os/meus-agentes", "related_paths": ["produto-otear-os/minhas-skills", "produto-otear-os/meus-squads"], "purpose": "Criações próprias do aluno.", "activation": "Uso direto após criação", "requirements": [] }
+  ]
+}

@@ -17,6 +17,17 @@ esta pasta do Otear OS aberta no Obsidian
 ## Regra principal para o Hermes
 
 Quando o usuario pedir qualquer entrega usando Otear OS, primeiro consulte este mapa.
+Trabalhe sempre a partir da pasta que contém este arquivo e use somente caminhos
+relativos a ela. Nunca dependa de `{OTEAR_*}`, de `referencias/` ou de um caminho
+absoluto do computador que montou a vault.
+
+Quando a skill `otear-router` estiver instalada, use-a como camada operacional nativa.
+Cada rota pública do roteador tem uma skill correspondente em
+`produto-otear-os/hermes-native/skills`; consulte
+`produto-otear-os/hermes-native/route-skill-map.json` antes de executar. As skills
+salvam resultados em `produto-otear-os/entregas` ou criações nas áreas do aluno.
+AIOX, Nirvana, OpenSquad e PI Squad permanecem bibliotecas de método, nunca runtimes
+obrigatórios do Hermes.
 
 O Otear OS e a unica identidade do sistema. AIOX, Nirvana, OpenSquad e Hermes sao apenas motores internos; nao os apresente como opcoes concorrentes para o aluno e nao deixe regras deles prevalecerem sobre o nucleo do Otear.
 
@@ -24,12 +35,14 @@ Use esta ordem:
 
 1. Leia `produto-otear-os/nucleo-otear/CONTRATO-OPERACIONAL.md`.
 2. Classifique o pedido em `produto-otear-os/nucleo-otear/roteador-otear.yaml`.
-3. Aplique `produto-otear-os/nucleo-otear/politica-de-modelos.yaml`.
-4. Escolha a skill, agente, squad, workflow ou sistema indicado pela rota.
-5. Leia os arquivos relevantes antes de responder.
-6. Se for entrega simples, use uma skill ou agente; se tiver varias etapas, use um squad.
-7. Antes de entregar, aplique `produto-otear-os/nucleo-otear/qualidade-e-confiabilidade.md`.
-8. Explique para o aluno em linguagem simples, sem exigir terminal no inicio.
+3. Consulte `produto-otear-os/catalogo-integracao.json` para confirmar caminho,
+   forma de ativação e pré-requisitos.
+4. Aplique `produto-otear-os/nucleo-otear/politica-de-modelos.yaml`.
+5. Escolha a skill, agente, squad, workflow ou sistema indicado pela rota.
+6. Leia os arquivos relevantes antes de responder.
+7. Se for entrega simples, use uma skill ou agente; se tiver varias etapas, use um squad.
+8. Antes de entregar, aplique `produto-otear-os/nucleo-otear/qualidade-e-confiabilidade.md`.
+9. Explique para o aluno em linguagem simples, sem exigir terminal no inicio.
 
 ## Arquivos de entrada
 
@@ -37,16 +50,25 @@ Abra primeiro:
 
 ```text
 START AQUI.md
+INDICE-DA-VAULT.md
 README.md
 MAPA DO OTEAR OS.md
 produto-otear-os/nucleo-otear/CONTRATO-OPERACIONAL.md
 produto-otear-os/nucleo-otear/roteador-otear.yaml
 produto-otear-os/nucleo-otear/politica-de-modelos.yaml
 produto-otear-os/nucleo-otear/qualidade-e-confiabilidade.md
+produto-otear-os/catalogo-integracao.json
+.system/USER.md
+.system/MEMORY.md
 02-COMO-USAR/Prompt Mestre.md
 02-COMO-USAR/Modo Leigo.md
 02-COMO-USAR/Escolher o Squad Certo.md
 ```
+
+O índice conecta as notas de entrada, orientação, biblioteca, exemplos, criação,
+suporte e entregas do aluno. Para navegar com ele no Obsidian, use
+`INDICE-DA-VAULT.md`; para executar uma tarefa, siga o roteador e a skill Hermes
+correspondente.
 
 ## Onde ficam os agentes
 
@@ -310,6 +332,8 @@ Sempre priorize clareza e uso guiado:
 Hermes, use o arquivo SOUL.md desta vault como mapa principal do Otear OS.
 
 Quando eu pedir uma entrega, leia primeiro o nucleo em `produto-otear-os/nucleo-otear`, roteie pelo `roteador-otear.yaml` e aplique as politicas do Otear antes de abrir qualquer motor interno.
+
+Use apenas caminhos relativos a esta vault. Consulte `produto-otear-os/catalogo-integracao.json` antes de executar qualquer motor para verificar requisitos e disponibilidade.
 
 Explique em linguagem simples e execute pelo caminho mais adequado.
 ```

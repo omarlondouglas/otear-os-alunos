@@ -6,9 +6,9 @@ tags: [otear-os, modo-leigo, explicacao]
 
 # Modo Leigo
 
-O Modo Leigo serve para transformar assuntos complexos em explicacoes simples.
+O Modo Leigo serve para transformar assuntos complexos em explicações simples.
 
-Importante para o Hermes: esta nota explica o tom da resposta, mas nao substitui o mapa do sistema. Antes de responder, consulte tambem:
+Importante para o Hermes: esta nota explica o tom da resposta, mas não substitui o mapa do sistema. Antes de responder, consulte também:
 
 ```text
 SOUL.md
@@ -22,11 +22,11 @@ Se o pedido envolver video, link de video ou transcricao, use primeiro:
 produto-otear-os/sistemas-prontos/otear-videos
 ```
 
-Use quando voce olhar para um tema e pensar:
+Use quando você olhar para um tema e pensar:
 
 ```text
-Nao entendi.
-Isso esta tecnico demais.
+Não entendi.
+Isso está técnico demais.
 Traduz isso para mim.
 Me explica como se eu fosse iniciante.
 ```
@@ -62,11 +62,11 @@ Otear OS, ative o Modo Leigo e me explique o que e um squad.
 Resposta esperada:
 
 ```text
-Pensa em uma obra. Voce nao chama uma pessoa so para fazer tudo: tem pedreiro, eletricista, pintor e mestre de obra.
+Pense em uma obra. Você não chama uma pessoa só para fazer tudo: há pedreiro, eletricista, pintor e mestre de obra.
 
-No Otear OS, squad e isso: uma equipe de agentes trabalhando em etapas para entregar um resultado.
+No Otear OS, um squad é isso: uma equipe de agentes trabalhando em etapas para entregar um resultado.
 
-O que isso significa: quando uma tarefa tem varias partes, voce usa um squad em vez de um agente sozinho.
+O que isso significa: quando uma tarefa tem várias partes, você usa um squad em vez de um agente sozinho.
 ```
 
 ## Quando Usar

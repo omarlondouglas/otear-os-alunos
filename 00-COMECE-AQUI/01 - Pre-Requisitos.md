@@ -8,34 +8,40 @@ tags: [otear-os, requisitos]
 
 ## Obrigatorio
 
+- Ter recebido o convite de acesso do Otear OS por e-mail e concluído o login.
 - Ter a pasta `otear-os-aluno` baixada no computador.
-- Ter um aplicativo de IA para conversar e colar os prompts.
+- Ter acesso ao Hermes para conversar e executar os prompts.
 - Ter acesso aos arquivos desta vault.
 
 ## Recomendado
 
 - Instalar o Obsidian.
 - Abrir esta pasta como uma vault no Obsidian.
-- Manter uma copia de backup da pasta original.
+- Manter uma cópia de backup da pasta original.
 
 ## Para Usar Bem
 
-Tenha em maos:
+Tenha em mãos:
 
-- nome do seu negocio;
-- produto ou servico;
-- publico-alvo;
+- nome do seu negócio;
+- produto ou serviço;
+- público-alvo;
 - cidade ou nicho;
 - objetivo da entrega;
-- exemplos ou referencias, se tiver.
+- exemplos ou referências, se tiver.
+
+## Acesso e Seguranca
+
+- Use o link de acesso enviado para o seu e-mail. Se ele expirar ou não chegar, acione o suporte.
+- Não compartilhe seu link de acesso, senha, chave de API ou arquivos `.env`.
+- O Otear OS pode criar planos, rascunhos e análises. Publicações, despesas com anúncios e alterações em contas externas exigem sua aprovação.
 
 ## O Que Voce Nao Precisa Saber
 
-- Programacao.
+- Programação.
 - Terminal.
 - Git.
-- Automacao avancada.
-- Configuracao tecnica.
+- Automação avançada.
+- Configuração técnica.
 
-Voce pode usar esta vault apenas copiando prompts, abrindo arquivos e pedindo para a IA seguir o Otear OS.
-
+Você pode usar esta vault conversando com o Hermes, abrindo arquivos e pedindo que ele siga o Otear OS.

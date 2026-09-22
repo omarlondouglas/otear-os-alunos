@@ -6,6 +6,13 @@ tags: [otear-os, suporte]
 
 # Se Algo Nao Funcionar
 
+## Nao Consigo Entrar
+
+1. Verifique o e-mail usado na compra e procure o convite oficial, inclusive no spam.
+2. Abra o link em uma janela anonima se a pagina entrar na conta errada.
+3. Se o convite expirou ou nao chegou, solicite um novo acesso ao suporte.
+4. Nunca envie senha, token ou chave de API pelo chat de suporte.
+
 ## Nao Sei Por Onde Comecar
 
 Abra:
@@ -19,7 +26,7 @@ Abra:
 Abra:
 
 ```text
-02-COMO-USAR/Escolher o Squad Certo.md
+02-COMO-USAR/Atalhos de Pedido do Otear OS.md
 ```
 
 ## A IA Respondeu Generico
@@ -46,4 +53,3 @@ Abra:
 ```text
 03-AJUSTAR-O-SISTEMA/Como Ajustar Para Seu Negocio.md
 ```
-

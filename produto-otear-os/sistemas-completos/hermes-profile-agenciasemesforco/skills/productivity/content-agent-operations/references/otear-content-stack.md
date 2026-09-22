@@ -78,7 +78,6 @@ Role: explicit squad pipelines for content creation. Typical pipeline: theme -> 
 | `cover-director` | Neurovisual cover analysis. | Neuro-Estrategista. |
 | `instagram-scraper` | Instagram carousel/profile collection and analysis. | Scraper. |
 | `yt-thumbnails` | YouTube thumbnail concepts/prompts. | Researcher, Conceptor, Prompt Engineer, Reviewer. |
-| `vyve-identidade-visual` | Visual identity/branding. | Brand Designer. |
 
 ### Important OpenSquad User Rules
 

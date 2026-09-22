@@ -8,16 +8,22 @@ tags: [otear-os, uso]
 
 ## Jeito Mais Simples
 
-1. Escolha o que voce quer criar.
-2. Abra o squad correspondente.
-3. Copie o conteudo do squad.
-4. Cole na IA junto com seu pedido.
-5. Peça para a IA executar seguindo o Otear OS.
+1. Diga ao Hermes o resultado que você quer no chat do Otear OS.
+2. Informe negócio, público, oferta e objetivo.
+3. O Otear OS escolhe o procedimento, agente e squad adequados.
+4. Revise o rascunho e responda as perguntas que faltarem.
+5. Aprove antes de publicar, gastar verba ou alterar qualquer conta externa.
+
+Não escolha nem abra os motores internos. Use [[../02-COMO-USAR/Atalhos de Pedido do Otear OS|Atalhos de Pedido do Otear OS]] se quiser exemplos prontos.
+
+## Aprendizado contínuo com o Hermes
+
+Depois de uma entrega aprovada, peça ao Hermes para registrar o que deve ser lembrado: tom de voz, público, oferta, preferências, critérios de qualidade e decisões do processo. Revise o registro antes de salvar. Essa memória é do seu negócio e fica na sua vault local.
 
 ## Exemplo
 
 ```text
-Otear OS, use o Squad Site Completo para criar uma landing page para meu servico.
+Otear OS, crie uma landing page para meu servico.
 
 Meu servico:
 [descreva aqui]
@@ -31,7 +37,7 @@ Objetivo:
 
 ## Quando Usar Cada Coisa
 
-| Se voce quer... | Use |
+| Se você quer... | Use |
 |---|---|
 | Criar uma campanha | Squad Campanha Completa |
 | Criar copy | Squad Copy Otear |
@@ -45,9 +51,12 @@ Objetivo:
 
 Sempre informe:
 
-- o que voce quer;
-- para quem e;
+- o que você quer;
+- para quem é;
 - onde vai usar;
 - qual resultado espera;
 - exemplos, se tiver.
 
+## Regra de Aprovacao
+
+O Otear OS pode preparar o plano, a copy, os criativos e a configuração sugerida. Antes de enviar, publicar ou ativar campanhas, ele deve mostrar um resumo para sua aprovação explícita.
