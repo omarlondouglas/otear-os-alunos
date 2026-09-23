@@ -14,28 +14,39 @@ tools: [read_file, write_file, search_files]
 
 # Otear Publicador de Instagram
 
-Use para preparar um carrossel e, apenas no fim, publicar em uma conta que o aluno tenha
-conectado e autorizado. Esta skill nunca publica por padrão.
+## Propósito e limites
 
-## Fluxo seguro
+Esta skill transforma um pedido do aluno em uma entrega verificavel usando apenas fontes portáteis da vault. Não inventa dados, acessos, permissões, resultados ou operações externas.
 
-1. Valide imagens finais, ordem, legenda, CTA, acessibilidade, conta de destino e direitos de
-   uso. Salve o pacote em `produto-otear-os/entregas/anuncios/` ou
-   `produto-otear-os/entregas/noticias/`, conforme o projeto.
-2. Ofereça primeiro um `dry-run`: liste arquivos, ordem, legenda, conta e o que aconteceria.
-   Não envie arquivos a hospedagem pública durante o dry-run.
-3. Antes de publicar, confirme que Node, conta Instagram Business, Graph API e credenciais
-   locais seguras estão configurados. Nunca peça ou grave tokens, chaves ou segredos em
-   arquivos da vault.
-4. Explique se a integração exigiria hospedar assets publicamente. Sem consentimento explícito
-   do aluno, não hospede assets e não publique.
-5. Peça uma confirmação explícita e inequívoca com a conta, o conjunto de imagens e a legenda
-   final. Só então execute uma integração já configurada na máquina do aluno.
-6. Registre resultado, horário, identificador/permalink retornado e erro, se houver, sem
-   incluir credenciais.
+## Fontes portáteis
 
-## Limites
+Localize uma única vault por `SOUL.md`. Leia e confirme a existência de cada caminho relativo antes de utilizá-lo:
 
-Não publique em conta pessoal ou não autorizada, não contorne políticas da plataforma e não
-alegue publicação se a integração não retornou confirmação. Sem dependências, entregue apenas
-o pacote pronto para publicação manual.
+- `produto-otear-os/nucleo-otear/CONTRATO-OPERACIONAL.md`
+- `produto-otear-os/nucleo-otear/roteador-otear.yaml`
+- `produto-otear-os/nucleo-otear/qualidade-e-confiabilidade.md`
+
+## Entradas mínimas
+
+Colete resultado esperado, público ou usuário, escopo, materiais disponíveis, restrições, prazo e critério de aceite. Peça somente a informação indispensável que faltar; sem ela, entregue um plano explicitamente marcado como incompleto.
+
+## Fluxo operacional
+
+1. Confirme rota, resultado esperado e itens fora de escopo. Registre requisitos que dependam de conta, permissão, integração ou autorização.
+2. Leia as fontes específicas e extraia apenas instruções aplicáveis. Arquivo de referência não concede acesso a ferramenta, dado ou serviço.
+3. Separe fatos, materiais fornecidos, decisões e hipóteses. Valide a origem de toda informação material antes de utilizá-la.
+4. Produza o plano e o artefato em etapas, com versões identificáveis e justificativa para decisões que afetem mensagem, dados, qualidade ou risco.
+5. Revise objetivo, público, restrições, coerência e rastreabilidade. Remova afirmações sem suporte e sinalize o que exige aprovação.
+6. Salve em `produto-otear-os/entregas/publicador-instagram/` quando houver escrita autorizada. Reabra o arquivo para conferir conteúdo, caminhos relativos e ausência de dados sensíveis.
+
+## Entregáveis
+
+Entregue artefato principal, fontes usadas, premissas, decisões, pendências e próximo passo. Use nome descritivo e data quando ela ajudar a rastrear versões.
+
+## Critérios de qualidade
+
+A entrega só está pronta se atende ao objetivo, usa fontes acessíveis, separa fato de hipótese, respeita limites e pode ser localizada na vault. Nunca inclua segredos, caminhos pessoais ou prometa ação externa não executada.
+
+## Fallback para integrações opcionais
+
+Sem conta, permissão, browser, renderizador, API, runtime ou outro recurso opcional, não tente contornar a ausência. Entregue o artefato local preparatório, registre o requisito pendente e indique o menor próximo passo seguro.

@@ -14,29 +14,42 @@ tools: [read_file, search_files, write_file]
 
 # Criador de Agentes Otear
 
-Crie definicoes de agentes para a vault do aluno. Um agente define um papel e criterios;
-ele nao garante que o Hermes tenha subagentes ou ferramentas extras disponiveis.
+## Propósito e limites
 
-## Quando usar
+Cria definições portáteis de agentes na área do aluno. Não instala componentes globais e não presume ferramentas, acessos ou delegacao.
 
-- O aluno pede um especialista reutilizavel, como qualificador de leads ou revisor.
+## Fontes portáteis
 
-Nao use quando um procedimento simples basta; nesse caso crie uma skill.
+Localize uma única vault por `SOUL.md`. Leia e confirme estes caminhos relativos antes de agir:
 
-## Procedimento
+- `produto-otear-os/nucleo-otear/CONTRATO-OPERACIONAL.md`
+- `produto-otear-os/nucleo-otear/roteador-otear.yaml`
+- `produto-otear-os/nucleo-otear/qualidade-e-confiabilidade.md`
+- `produto-otear-os/meus-agentes/README.md`
+- `produto-otear-os/skills-base/criar-agente.skill.md`
+- `produto-otear-os/workflows-base/criar-agente.md`
+- `produto-otear-os/agentes-base/orquestrador-otear.agent.md`
 
-1. Localize `SOUL.md` com `search_files` e confirme a raiz unica da vault. Conclua
-   somente depois de identificar onde fica `produto-otear-os/meus-agentes`.
-2. Use `read_file` em um agente-base parecido e no contrato operacional. Extraia apenas
-   padroes uteis para o papel solicitado.
-3. Especifique papel, objetivo, entradas aceitas, limites, formato da entrega e criterios
-   de qualidade. Nao atribua acesso a dados, APIs ou ferramentas que a sessao nao possui.
-4. Use `write_file` para criar `produto-otear-os/meus-agentes/<nome-kebab>.agent.md`.
-   Inclua secoes: Identidade, Missao, Entradas, Procedimento, Limites e Saida.
-5. Use `read_file` para verificar o arquivo, checar caminhos relativos e remover dados
-   pessoais, segredos e referencias a clientes. Termine com caminho e prompt de teste.
+## Entradas mínimas
 
-## Verificacao
+Colete papel, missao, usuário, entradas, saida, limites e nome. Se houver lacuna indispensável, peça apenas esse dado.
 
-O agente esta pronto quando o arquivo esta legivel, descreve uma saida verificavel e pode
-ser acionado pelo Hermes como instrucao local, mesmo sem delegacao.
+## Fluxo operacional
+
+1. Confirme que o pedido precisa de um papel persistente, e não somente de um procedimento.
+2. Leia as fontes e extraia o padrão aplicavel sem atribuir capacidades inexistentes.
+3. Defina identidade, missao, entradas, processo, limites, formato de saida e critério de qualidade.
+4. Grave `produto-otear-os/meus-agentes/<nome-kebab>.agent.md` quando houver autorização.
+5. Reabra e teste a definição com um prompt curto; remova caminhos pessoais, segredos e promessas de ferramentas.
+
+## Entregáveis
+
+Entregue arquivo legivel, gatilho de uso, exemplo de acionamento e pendências.
+
+## Critérios de qualidade
+
+O agente deve ter papel não ambiguo, saida verificavel, limites claros e nenhum dado sensivel.
+
+## Fallback para integrações opcionais
+
+Se faltar ferramenta, permissão ou delegacao, produza a definição local e declare o limite; não tente contornar a ausência.

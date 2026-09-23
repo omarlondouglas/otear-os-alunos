@@ -14,27 +14,39 @@ tools: [read_file, write_file, search_files]
 
 # Otear Canva
 
-Use para preparar, buscar, preencher ou exportar designs apenas quando a integração Canva da
-sessão estiver conectada e autorizada pelo aluno.
+## Propósito e limites
 
-## Processo
+Esta skill transforma um pedido do aluno em uma entrega verificavel usando apenas fontes portáteis da vault. Não inventa dados, acessos, permissões, resultados ou operações externas.
 
-1. Confirme objetivo, formato, conteúdo aprovado, identidade visual e se o aluno quer criar,
-   alterar, exportar ou apenas preparar a peça.
-2. Verifique se o MCP/integração Canva e OAuth estão disponíveis. Se não estiverem, pare com
-   uma instrução simples de conectar a conta; nunca peça, copie ou salve tokens na vault.
-3. Com autorização ativa, trabalhe apenas no design ou template indicado pelo aluno. Apresente
-   o que será criado ou alterado antes de ações que modifiquem um design existente.
-4. Salve na vault um brief e referências em `produto-otear-os/entregas/<sistema>/`; registre
-   somente o link/ID que o aluno autorizar compartilhar, sem credenciais.
-5. Exporte o formato solicitado somente após checar conteúdo, marca e finalidade de uso.
+## Fontes portáteis
 
-## Sem integração
+Localize uma única vault por `SOUL.md`. Leia e confirme a existência de cada caminho relativo antes de utilizá-lo:
 
-Produza um brief de Canva com textos, dimensões, paleta, assets autorizados e instruções de
-montagem. Isso permite que o aluno conclua a peça manualmente sem expor a conta.
+- `produto-otear-os/nucleo-otear/CONTRATO-OPERACIONAL.md`
+- `produto-otear-os/nucleo-otear/roteador-otear.yaml`
+- `produto-otear-os/nucleo-otear/qualidade-e-confiabilidade.md`
 
-## Verificação
+## Entradas mínimas
 
-Informe se a entrega ficou `preparada`, `criada no Canva` ou `exportada`, além de formato,
-dimensões e origem dos assets.
+Colete resultado esperado, público ou usuário, escopo, materiais disponíveis, restrições, prazo e critério de aceite. Peça somente a informação indispensável que faltar; sem ela, entregue um plano explicitamente marcado como incompleto.
+
+## Fluxo operacional
+
+1. Confirme rota, resultado esperado e itens fora de escopo. Registre requisitos que dependam de conta, permissão, integração ou autorização.
+2. Leia as fontes específicas e extraia apenas instruções aplicáveis. Arquivo de referência não concede acesso a ferramenta, dado ou serviço.
+3. Separe fatos, materiais fornecidos, decisões e hipóteses. Valide a origem de toda informação material antes de utilizá-la.
+4. Produza o plano e o artefato em etapas, com versões identificáveis e justificativa para decisões que afetem mensagem, dados, qualidade ou risco.
+5. Revise objetivo, público, restrições, coerência e rastreabilidade. Remova afirmações sem suporte e sinalize o que exige aprovação.
+6. Salve em `produto-otear-os/entregas/canva/` quando houver escrita autorizada. Reabra o arquivo para conferir conteúdo, caminhos relativos e ausência de dados sensíveis.
+
+## Entregáveis
+
+Entregue artefato principal, fontes usadas, premissas, decisões, pendências e próximo passo. Use nome descritivo e data quando ela ajudar a rastrear versões.
+
+## Critérios de qualidade
+
+A entrega só está pronta se atende ao objetivo, usa fontes acessíveis, separa fato de hipótese, respeita limites e pode ser localizada na vault. Nunca inclua segredos, caminhos pessoais ou prometa ação externa não executada.
+
+## Fallback para integrações opcionais
+
+Sem conta, permissão, browser, renderizador, API, runtime ou outro recurso opcional, não tente contornar a ausência. Entregue o artefato local preparatório, registre o requisito pendente e indique o menor próximo passo seguro.

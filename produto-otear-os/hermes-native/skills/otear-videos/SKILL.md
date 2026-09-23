@@ -14,25 +14,41 @@ tools: [read_file, write_file, search_files]
 
 # Otear Vídeos
 
-## Fontes e saída
+## Propósito e limites
 
-Leia `produto-otear-os/sistemas-prontos/otear-videos/LEIA-ME-ALUNO.md` e
-`produto-otear-os/squads-base/squad-video.yaml`. Salve roteiro, análise ou transcrição
-em `produto-otear-os/entregas/videos/`.
+Esta skill transforma um pedido do aluno em uma entrega verificavel usando apenas fontes portáteis da vault. Não inventa dados, acessos, permissões, resultados ou operações externas.
 
-## Procedimento
+## Fontes portáteis
 
-1. Confirme objetivo, plataforma, público, duração, material autorizado e formato final.
-2. Para roteiro, entregue gancho, estrutura, falas, cenas e CTA adequados ao canal.
-3. Para vídeo fornecido, trabalhe somente com transcrição ou material que o usuário
-   disponibilizar; marque trechos incertos.
-4. Revise precisão, direitos de uso, ritmo e CTA antes da entrega.
+Localize uma única vault por `SOUL.md`. Leia e confirme a existência de cada caminho relativo antes de utilizá-lo:
 
-## Requisitos técnicos
+- `produto-otear-os/nucleo-otear/CONTRATO-OPERACIONAL.md`
+- `produto-otear-os/nucleo-otear/roteador-otear.yaml`
+- `produto-otear-os/nucleo-otear/qualidade-e-confiabilidade.md`
+- `produto-otear-os/sistemas-prontos/otear-videos/LEIA-ME-ALUNO.md`
+- `produto-otear-os/squads-base/squad-video.yaml`
 
-Transcrição automática requer Python, dependências do projeto e acesso autorizado ao
-vídeo/áudio. Hermes não executa esse script sem preparação explícita.
+## Entradas mínimas
 
-## Verificação
+Colete resultado esperado, público ou usuário, escopo, materiais disponíveis, restrições, prazo e critério de aceite. Peça somente a informação indispensável que faltar; sem ela, entregue um plano explicitamente marcado como incompleto.
 
-Identifique a fonte, o formato e os próximos passos de edição/publicação.
+## Fluxo operacional
+
+1. Confirme rota, resultado esperado e itens fora de escopo. Registre requisitos que dependam de conta, permissão, integração ou autorização.
+2. Leia as fontes específicas e extraia apenas instruções aplicáveis. Arquivo de referência não concede acesso a ferramenta, dado ou serviço.
+3. Separe fatos, materiais fornecidos, decisões e hipóteses. Valide a origem de toda informação material antes de utilizá-la.
+4. Produza o plano e o artefato em etapas, com versões identificáveis e justificativa para decisões que afetem mensagem, dados, qualidade ou risco.
+5. Revise objetivo, público, restrições, coerência e rastreabilidade. Remova afirmações sem suporte e sinalize o que exige aprovação.
+6. Salve em `produto-otear-os/entregas/videos/` quando houver escrita autorizada. Reabra o arquivo para conferir conteúdo, caminhos relativos e ausência de dados sensíveis.
+
+## Entregáveis
+
+Entregue artefato principal, fontes usadas, premissas, decisões, pendências e próximo passo. Use nome descritivo e data quando ela ajudar a rastrear versões.
+
+## Critérios de qualidade
+
+A entrega só está pronta se atende ao objetivo, usa fontes acessíveis, separa fato de hipótese, respeita limites e pode ser localizada na vault. Nunca inclua segredos, caminhos pessoais ou prometa ação externa não executada.
+
+## Fallback para integrações opcionais
+
+Sem conta, permissão, browser, renderizador, API, runtime ou outro recurso opcional, não tente contornar a ausência. Entregue o artefato local preparatório, registre o requisito pendente e indique o menor próximo passo seguro.

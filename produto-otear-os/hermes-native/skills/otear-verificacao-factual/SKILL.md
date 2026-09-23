@@ -14,26 +14,39 @@ tools: [read_file, write_file, search_files]
 
 # Otear Verificação Factual
 
-Use para revisar um dossiê ou rascunho antes de ele circular como conteúdo factual. A skill
-não dá certeza artificial: ausência de evidência deve continuar visível no resultado.
+## Propósito e limites
 
-## Processo
+Esta skill transforma um pedido do aluno em uma entrega verificavel usando apenas fontes portáteis da vault. Não inventa dados, acessos, permissões, resultados ou operações externas.
 
-1. Liste cada alegação verificável, incluindo números, datas, nomes, cargos e citações.
-2. Compare a alegação com fontes primárias ou independentes que estejam acessíveis na sessão.
-3. Marque cada item como `confirmado`, `disputado`, `não verificado` ou `fora de escopo`, e
-   explique o critério e as fontes usadas.
-4. Registre contradições, buscas que não resolveram a dúvida e o que não deve ser publicado
-   sem confirmação adicional.
-5. Salve o relatório em `produto-otear-os/entregas/noticias/`.
+## Fontes portáteis
 
-## Saída exigida
+Localize uma única vault por `SOUL.md`. Leia e confirme a existência de cada caminho relativo antes de utilizá-lo:
 
-Entregue `Fatos confirmados`, `Fatos disputados`, `Fatos não verificados`, `Lacunas`,
-`Alerta ao redator` e `Fontes consultadas`. Mantenha URL e data de consulta para cada fonte.
+- `produto-otear-os/nucleo-otear/CONTRATO-OPERACIONAL.md`
+- `produto-otear-os/nucleo-otear/roteador-otear.yaml`
+- `produto-otear-os/nucleo-otear/qualidade-e-confiabilidade.md`
 
-## Limites
+## Entradas mínimas
 
-Não invente busca, fonte ou veredito. Assuntos médicos, jurídicos, financeiros, eleitorais ou
-de segurança exigem cuidado extra, fontes primárias quando possível e revisão humana antes de
-publicação.
+Colete resultado esperado, público ou usuário, escopo, materiais disponíveis, restrições, prazo e critério de aceite. Peça somente a informação indispensável que faltar; sem ela, entregue um plano explicitamente marcado como incompleto.
+
+## Fluxo operacional
+
+1. Confirme rota, resultado esperado e itens fora de escopo. Registre requisitos que dependam de conta, permissão, integração ou autorização.
+2. Leia as fontes específicas e extraia apenas instruções aplicáveis. Arquivo de referência não concede acesso a ferramenta, dado ou serviço.
+3. Separe fatos, materiais fornecidos, decisões e hipóteses. Valide a origem de toda informação material antes de utilizá-la.
+4. Produza o plano e o artefato em etapas, com versões identificáveis e justificativa para decisões que afetem mensagem, dados, qualidade ou risco.
+5. Revise objetivo, público, restrições, coerência e rastreabilidade. Remova afirmações sem suporte e sinalize o que exige aprovação.
+6. Salve em `produto-otear-os/entregas/verificação-factual/` quando houver escrita autorizada. Reabra o arquivo para conferir conteúdo, caminhos relativos e ausência de dados sensíveis.
+
+## Entregáveis
+
+Entregue artefato principal, fontes usadas, premissas, decisões, pendências e próximo passo. Use nome descritivo e data quando ela ajudar a rastrear versões.
+
+## Critérios de qualidade
+
+A entrega só está pronta se atende ao objetivo, usa fontes acessíveis, separa fato de hipótese, respeita limites e pode ser localizada na vault. Nunca inclua segredos, caminhos pessoais ou prometa ação externa não executada.
+
+## Fallback para integrações opcionais
+
+Sem conta, permissão, browser, renderizador, API, runtime ou outro recurso opcional, não tente contornar a ausência. Entregue o artefato local preparatório, registre o requisito pendente e indique o menor próximo passo seguro.

@@ -1,6 +1,6 @@
 ---
 name: client-facing-ad-reports
-description: Use when making client-facing ad performance reports.
+description: Use when making client-facing advertising performance reports.
 version: 1.0.0
 author: Hermes Agent
 license: MIT
@@ -20,180 +20,86 @@ metadata:
 
 ## When to Use
 
-Use this skill when preparing a simple advertising performance report for a business owner or client, especially from Meta Ads data, screenshots, CSVs, or API insights.
+Use this skill when preparing an advertising performance report for a business owner or client from ad-platform data, screenshots, CSV files, or API insights.
 
 ## Core Principle
 
-The artifact is for an entrepreneur/client, not for a technical ads operator. Show what matters for a decision:
+Write for the entrepreneur receiving the report, not for a technical ads operator. Make clear what was invested, what result came back, how much each result cost, and which product or objective performed best. Do not expose implementation details unless the user asks for a technical audit.
 
-- what was invested;
-- what result came back;
-- how much each result cost;
-- which product/objective performed better.
+## Client-Facing Language
 
-Do **not** expose implementation language unless the user asks for a technical/debug report.
+Prefer clear labels such as:
 
-## Client-facing language
+- Mensagens recebidas
+- Cliques na pagina or acessos
+- Contatos no site
+- Compras no site
+- Custo por resultado
+- Total investido
+- Custo medio por mensagem, clique, contato, or compra
 
-Prefer:
+Avoid technical terms such as `API`, `link_click`, `action_type`, `custom action`, permission details, and raw campaign names that are confusing to a business owner. Translate technical source metrics according to the campaign destination and the user's clarification.
 
-- **Mensagens recebidas**
-- **Cliques na página** or **acessos** for page/live traffic
-- **Contatos no site** when the ad sends people to a page/site before a WhatsApp/group action
-- **Compras no site**
-- **Custo por resultado**
-- **Total investido**
-- **Custo médio por mensagem**
-- **Custo médio por clique/contato**
+## Choose the Right Result Metric
 
-Avoid in the final client PDF/message:
+- Messaging or WhatsApp campaigns: report messages or conversations started when that is the configured objective/result.
+- Traffic, page, live, group, or link campaigns: report the relevant link/page clicks, not all ad clicks and not messages.
+- Sales or ecommerce campaigns: report purchases or another explicit sales result when available.
+- If the source metric is ambiguous, ask the user before presenting it as a business outcome.
+- User corrections override assumptions based on campaign names. Recalculate totals after changing a metric mapping.
 
-- `API`
-- `link_click`
-- `action_type`
-- `custom action`
-- `ação personalizada`
-- permission/token details
-- raw internal campaign names when they look operational or messy
+## Grouping and Campaign Names
 
-If the source metric is technical, translate it silently into a business label. For example, Meta `link_click` might become **Cliques na página**, **Acessos**, or **Contatos no site** depending on the campaign destination and the user's clarification.
+Group campaigns by business, product, offer, or objective in a way the client understands. If one ad account contains multiple businesses or product lines, separate them in the report. Use neutral placeholders in examples (for example, Loja A, Produto A, Oferta B); never reuse another client's actual names, campaign labels, or performance figures.
 
-## Choose the right result metric
+Convert operational campaign names into concise commercial labels. Example: `MSG - WhatsApp - produto-a` can become `Produto A - WhatsApp`. Keep dates or geography only when they help distinguish campaigns. Confirm uncertain campaign-to-product mappings with the user instead of guessing.
 
-Match the metric to the campaign objective or user clarification:
+## Recommended Report Shape
 
-- Message/WhatsApp campaigns → report **Mensagens recebidas**.
-- Traffic/live/group/link campaigns → report **Cliques no link**, not all ad clicks and not messages.
-- Sales/ecommerce campaigns → report **Compras no site** or another explicit sales result if available.
-
-If a campaign name says “Mensagem” but the user clarifies the objective was traffic, use traffic results. User clarification overrides naive name parsing.
-
-## Grouping rules
-
-Group for business understanding, not raw export order.
-
-Typical hierarchy:
-
-1. Account or brand, when it maps cleanly to the client.
-2. Product/client/objective sections.
-3. Campaign rows under each section.
-4. Final consolidated summary.
-
-Examples:
-
-- Casa Biju can be separated by objective:
-  - **Campanhas de Mensagens**
-  - **Campanhas para Live / Grupo**
-- A food/pizzeria account with several offers should be separated by offer/product:
-  - **Feijoada**
-  - **Sua Pizza**
-  - **Pizzaburguer**
-  - **Campanhas de Mensagens Pizzas Mistas**
-  - **Sua Marmita**
-  - **Cardápio**
-
-If the ad account has an internal account name that is not useful to the client, do not headline every section with that account name. Use the public-facing product/client labels.
-
-## Rename internal campaign names
-
-Before final delivery, convert operational names into clean commercial labels.
-
-Examples:
-
-| Internal/source name | Client-facing name |
-|---|---|
-| `MSG - WhatsApp — pizzaburguer` | `Pizzaburguer — WhatsApp` |
-| `MSG - WhatsApp — menos terça` | `Pizzas Mistas — WhatsApp` if user says it belongs to Pizzas Mistas |
-| `8Km - MSG - WhatsApp` | `Pizzas Mistas — WhatsApp` if user says it belongs to Pizzas Mistas |
-| `Mensagem - tatuqura - 18-08` | `Sua Pizza — Tatuquara 18/08` |
-| `MENSAGENS - 3km - SUA PIZZA` | `Sua Pizza — WhatsApp 3km` |
-| `tráfego para feijoada — Grupo whatsapp` | `Feijoada — Grupo WhatsApp` |
-
-Keep dates only when they help distinguish campaigns. Fix obvious typos in labels.
-
-## Recommended report shape
-
-### WhatsApp-ready text
-
-Use this compact pattern:
+### WhatsApp-Ready Text
 
 ```text
-Relatório Campanhas <Cliente/Produto>
-Período: últimos 30 dias
+Relatorio de campanhas - <Cliente ou produto>
+Periodo: <periodo>
 
-Campanha: <Nome limpo>
-Mensagens recebidas: <n>
-Custo por mensagem: R$ <valor>
+Campanha: <nome claro>
+Resultados: <quantidade e tipo>
+Custo por resultado: R$ <valor>
 Total investido: R$ <valor>
 
----
-
-Campanha: <Nome limpo>
-Cliques no link: <n>
-Custo por clique: R$ <valor>
-Total investido: R$ <valor>
-
-----------------------------------------
-
-Total investido no período: R$ <valor>
-Total de mensagens recebidas: <n>
-Total de cliques no link: <n>
+Total investido no periodo: R$ <valor>
+Total de resultados: <quantidade>
 ```
 
-### PDF report
+### PDF
 
-Use:
+1. Cover or header with the reporting period and high-level totals.
+2. Summary cards for investment, result volume, and average cost.
+3. Clear sections for each business, product, or objective.
+4. Tables with campaign, results, cost, and total invested.
+5. Consolidated summary and a concise decision note when useful.
 
-1. Cover/hero with period and high-level totals.
-2. Summary cards.
-3. Strong section separators per account/product/objective.
-4. Tables with columns:
-   - Campanha
-   - Resultados
-   - Custo
-   - Total investido
-5. Final summary by group/product.
-6. Short decision note.
+## PDF Layout and Calculations
 
-## Layout rules for PDFs
+- Align numeric columns and their headers consistently, usually right-aligned.
+- Keep section headings, summary cards, table headers, and rows together across page breaks.
+- Avoid dense technical footnotes in client-facing reports.
+- Cost per result = total invested / result count. When combining rows, recompute group totals and average cost from totals; do not average campaign costs directly.
+- Format BRL as `R$ 1.234,56` and counts with Brazilian separators when appropriate.
 
-- Align numeric columns and their headers consistently, usually right-aligned:
-  - Resultados
-  - Custo
-  - Total investido
-- Do not let table headers drift away from numeric columns.
-- Add summary cards under every major client/product section: result count, average cost, and total invested.
-- Avoid dense technical footnotes in client PDFs.
-- If using a design system from an HTML file, reuse its typography, spacing, cards, chips, section bands, tables, and print CSS, but rewrite content in client language.
-- Use black section bands/tarjas to separate major groups when the user asks for visually clear separation.
-- Prevent awkward page breaks: keep black bands, cards, table headers, and table rows together. Start dense product/objective sections on a fresh page rather than letting a heading sit at the bottom of one page and its content on the next.
-
-## Calculations
-
-- Cost per result = `total invested / result count`.
-- Keep currency in Brazilian format when working in BRL: `R$ 1.234,56`.
-- Keep counts with Brazilian thousands separator when helpful: `16.327`.
-- If combining two rows into the same product group, recompute group totals and average cost from totals, not by averaging the campaign costs.
-
-## Verification checklist
+## Verification Checklist
 
 Before delivery:
 
-1. Verify all totals and costs with a calculator/script.
-2. Verify the final PDF exists, has expected page count, and text is extractable.
-3. Search extracted text for forbidden technical terms: `API`, `link_click`, `action_type`, `ação personalizada`.
-4. Search extracted text for internal names/typos the user rejected.
-5. Confirm the requested public labels are present.
-6. Confirm column headers align with their data.
-
-## References
-
-- `references/meta-client-report-notes.md` — concrete examples of metric corrections, client-facing labels, grouping corrections, and PDF page-break/layout checks from a Meta Ads reporting session.
+1. Verify totals and costs with a calculator or script.
+2. Confirm the generated PDF exists, has the expected page count, and contains extractable text.
+3. Search the final text for technical terms, internal campaign names, and labels the user rejected.
+4. Confirm that public-facing labels and metric definitions match the user's instructions.
+5. Check alignment, page breaks, and that no client's data has been carried over from another report.
 
 ## Pitfalls
 
-- Do not assume every campaign with “Mensagem” in the name should be reported as messages; the objective may be traffic.
-- Do not show general ad clicks when the user asked for page clicks, site contacts, or objective-specific clicks.
-- Do not group every campaign under the ad account name if the account contains several clients or products.
-- Do not leak internal taxonomy into a client-facing report.
-- Do not present a technical explanation when the user asks for a PDF/report for a business owner.
+- Do not assume every campaign containing "message" in its name should be reported as messages; verify the objective and result.
+- Do not substitute general ad clicks for page clicks, site contacts, or another objective-specific result.
+- Do not group multiple businesses under one account label when the client needs them separated.
+- Do not reuse client-specific examples, data, or report notes across accounts.

@@ -1,6 +1,6 @@
 ---
 name: marketing-performance-reports
-description: Use when creating client ad performance reports.
+description: Use when creating client-facing reports for paid media and advertising campaigns.
 version: 1.0.0
 author: Hermes Agent
 license: MIT
@@ -20,131 +20,70 @@ metadata:
 
 ## When to Use
 
-Use this skill when creating simple client-facing reports for paid media/ad campaigns, especially WhatsApp/PDF reports for business owners.
+Use this skill to create simple client-facing reports for paid media and ad campaigns, especially WhatsApp-ready summaries and PDFs for business owners.
 
 ## Core Principle
 
-Write for the entrepreneur receiving the report, not for the media buyer or API operator. The report should answer:
-
-- How much was invested?
-- What result came back?
-- What was the cost per result?
-- Which product/client/objective performed best?
-
-Avoid technical platform language unless the user explicitly asks for an audit.
+Answer four questions in plain language: how much was invested, what result came back, what was the cost per result, and which product or objective performed best. Avoid platform jargon unless the user requests a technical audit.
 
 ## Client-Facing Language
 
-Do **not** expose terms such as:
-
-- `link_click`
-- `actions`
-- API / endpoint / level / breakdown
-- custom action / ação personalizada
-- raw campaign-object jargon
-
-Translate to plain business terms:
+Translate platform terms into business labels. Depending on the campaign and destination, examples include:
 
 | Technical idea | Client-facing label |
 |---|---|
-| messaging conversation started | Mensagens recebidas / Conversas iniciadas |
-| link click to page | Cliques na página |
-| click that leads to WhatsApp/group after landing page | Contatos no site |
-| purchase event | Compra no site |
-| spend | Total investido |
-| cost per result | Custo por resultado / Custo por mensagem |
+| Messaging conversation started | Mensagens recebidas / Conversas iniciadas |
+| Link click to a page | Cliques na pagina / Acessos |
+| Landing page leading to a contact action | Contatos no site |
+| Purchase event | Compras no site |
+| Spend | Total investido |
+| Cost per result | Custo por resultado |
 
-## Grouping Rules
+Do not expose terms such as `link_click`, `actions`, API endpoints, raw breakdowns, or internal campaign-object jargon in a business-owner report.
 
-Group by what the client understands:
+## Grouping and Campaign Name Cleanup
 
-1. **Account** only when it maps cleanly to a client/business.
-2. **Product / business line / objective** when one ad account contains multiple fronts.
-3. **Separate businesses sharing one ad account must appear as separate sections** in the summary.
+Group by the business, product, offer, or objective the client understands. Split separate businesses sharing an ad account into distinct report sections. Use generic placeholders in examples (for example, Loja A, Produto A, Produto B) and never put actual client names or session-derived campaign details in reusable instructions.
 
-Example preferred final summary labels:
-
-- Casa Biju
-- Feijoada
-- Sua Pizza
-- Marmitaria
-- Pizzas Mistas
-- Pizzaburguer
-- Cardápio
-
-Avoid repeated prefixes like `Pizzaria Dona Calabresa — Sua Pizza` in final summary rows if the row itself is the business/product.
-
-## Campaign Name Cleanup
-
-Before delivering, rename internal campaign names into clean labels.
-
-Examples:
-
-| Internal/raw name | Client-facing name |
-|---|---|
-| `MSG - WhatsApp — pizzaburguer` | Pizzaburguer — WhatsApp |
-| `MSG - WhatsApp — menos terça` | Pizzas Mistas — WhatsApp |
-| `8Km - MSG - WhatsApp` | Pizzas Mistas — WhatsApp |
-| `Mensagem - tatuqura - 18-08` | Sua Pizza — Tatuquara 18/08 |
-| `tráfego para feijoada — Grupo whatsapp` | Feijoada — Grupo WhatsApp |
-| `MENSAGENS - SUA Marmita — seg a sáb` | Marmitas — WhatsApp |
-
-Fix obvious typos in labels, but keep meaningful dates only when they help distinguish campaigns.
+Rename internal campaign labels into clean commercial names. For example, `MSG - WhatsApp - produto-a` can become `Produto A - WhatsApp`. Keep meaningful dates or locations only when needed to distinguish campaigns. Confirm uncertain mappings with the user.
 
 ## Metric Selection
 
-Do not use generic ad clicks by default. Pick the metric that reflects the objective and any user correction.
+- Messaging objective: report messages or conversations started when supported by the data.
+- Traffic/page objective: report the relevant page or link clicks, not generic ad clicks.
+- Landing page to a contact/group action: report contacts only when that event is measured and its meaning is clear.
+- Sales objective: report purchases when available and correctly attributed.
+- Trust explicit user corrections over assumptions from campaign names. Recalculate row and grouped totals whenever mappings change.
 
-- Messaging objective: report `Mensagens recebidas` and `Custo por mensagem`.
-- Traffic/page objective: report `Cliques na página` and `Custo por clique`.
-- Landing page to WhatsApp/group: report `Contatos no site` and `Custo por contato`.
-- Sales/cardápio objective: report `Compras no site` and `Custo por compra` when available.
+## PDF Layout
 
-If the user corrects a metric mapping, trust the correction and update the report. Example: “Grupo da Live is 650 page clicks” means do not keep a larger generic click number for that row.
+Recommended structure:
 
-## PDF Layout for This User
+1. Cover or header with reporting period and relevant business/product names.
+2. A short, plain-language introduction.
+3. Summary cards for total invested, results, and average cost.
+4. Clear visual sections for each business, product, or objective.
+5. Tables with campaign, results, cost, and total invested.
+6. A consolidated summary using concise labels.
 
-Preferred structure:
-
-1. Cover/hero with business names as chips.
-2. One sentence in plain language, e.g. `Essa foi a performance dos seus anúncios do mês de agosto.`
-3. Top summary cards: total invested, total messages, total accesses/contacts, average cost.
-4. Section with black band/tarja for each major business or product.
-5. Immediately under each major section title, include cards: result volume, average cost, total invested.
-6. Tables with columns:
-   - Campanha
-   - Resultados
-   - Custo
-   - Total investido
-7. Right-align numeric columns and their headers. Keep table header alignment consistent.
-8. Final summary table with clean business/product names.
-
-Use black section bands/tarjas between client/product sections; this matches the user's preferred design direction.
-
-## Reference Notes
-
-- See `references/meta-ads-report-lessons.md` for concrete Meta Ads report corrections and naming examples from a client-facing PDF iteration.
+Keep numeric headers aligned with their values. Use consistent visual separators and avoid splitting section headings, cards, table headers, or rows across pages. Do not include subjective recommendations unless requested or supported by the data.
 
 ## Quality Checklist
 
-Before final delivery:
-
-- No technical strings such as `link_click`, `API`, `actions`, or `ação personalizada` remain.
-- No raw/internal campaign names remain unless intentionally kept.
-- Numeric columns and headers are aligned.
-- Major sections have summary cards before detailed tables.
-- One ad account containing multiple businesses is split into those businesses.
-- Final summary rows use clean labels.
-- Recalculate totals after changing metric mappings.
-- Verify the PDF was actually generated and text extraction includes expected labels.
+- No technical strings or raw campaign labels remain in client-facing copy unless intentionally requested.
+- Separate businesses within a shared ad account.
+- Use clean labels and objective-appropriate metrics.
+- Recalculate grouped totals and costs after corrections.
+- Verify the generated PDF and extractable text, expected labels, page count, and numeric alignment.
+- Ensure no names, campaign details, or results from another client are included.
 
 ## Workflow
 
-1. Pull/export campaign data.
-2. Map each campaign to a client/product/objective.
-3. Select the business metric per row.
-4. Rename campaign labels for client readability.
-5. Calculate per-row cost and grouped totals.
-6. Build WhatsApp/plain-text summary first if the user asks for simple copy.
-7. For PDF: create or update HTML using the chosen design system, then render to PDF with a browser engine.
-8. Verify generated PDF text for expected labels and absence of technical/internal terms.
+1. Export or receive campaign data.
+2. Map each campaign to the correct business, product, and objective.
+3. Select the business metric for each row; ask about ambiguous mappings.
+4. Rename campaign labels for readability.
+5. Calculate row-level costs and grouped totals.
+6. Draft a plain-text summary when requested.
+7. Build or update the PDF using the requested design system.
+8. Verify the generated artifact and check that client data is isolated to the correct report.

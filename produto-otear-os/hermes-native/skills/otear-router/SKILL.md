@@ -14,35 +14,40 @@ tools: [read_file, search_files]
 
 # Roteador Otear OS
 
-Use esta skill para localizar a vault do Otear OS e escolher uma rota antes de
-executar uma tarefa. Ela nao inicia runtimes AIOX, Nirvana, Docker ou servicos
-externos por conta propria.
+## Propósito e limites
 
-## Quando usar
+Esta skill transforma um pedido do aluno em uma entrega verificavel usando apenas fontes portáteis da vault. Não inventa dados, acessos, permissões, resultados ou operações externas.
 
-- O aluno pede qualquer entrega pelo Otear OS.
-- A tarefa menciona agentes, skills, squads ou um sistema do Otear.
+## Fontes portáteis
 
-Nao use para operar um projeto externo que nao esteja na vault.
+Localize uma única vault por `SOUL.md`. Leia e confirme a existência de cada caminho relativo antes de utilizá-lo:
 
-## Procedimento
+- `produto-otear-os/nucleo-otear/CONTRATO-OPERACIONAL.md`
+- `produto-otear-os/nucleo-otear/roteador-otear.yaml`
+- `produto-otear-os/nucleo-otear/qualidade-e-confiabilidade.md`
+- `produto-otear-os/catalogo-integração.json`
 
-1. Use `search_files` para localizar `SOUL.md` a partir do diretorio de trabalho. Se
-   houver mais de um resultado, peca ao aluno a raiz correta. Conclua somente com uma
-   raiz de vault identificada.
-2. Use `read_file` nesta ordem: `SOUL.md`,
-   `produto-otear-os/nucleo-otear/CONTRATO-OPERACIONAL.md`,
-   `produto-otear-os/nucleo-otear/roteador-otear.yaml` e
-   `produto-otear-os/catalogo-integracao.json`. Todos os caminhos sao relativos a raiz.
-3. Compare o pedido com uma rota e confirme que os arquivos declarados existem antes de
-   citar a rota. Conclua com o nome da rota e os arquivos que serao usados.
-4. Leia os materiais da rota. AIOX e Nirvana sao referencia de metodo; nao diga que
-   foram executados como runtime Hermes.
-5. Antes de iniciar um componente tecnico, informe requisitos indicados no catalogo e
-   solicite configuracao quando ela for indispensavel. Conclua sem prometer uma acao
-   externa que nao foi executada.
+## Entradas mínimas
 
-## Verificacao
+Colete resultado esperado, público ou usuário, escopo, materiais disponíveis, restrições, prazo e critério de aceite. Peça somente a informação indispensável que faltar; sem ela, entregue um plano explicitamente marcado como incompleto.
 
-Informe: raiz identificada, rota escolhida, fontes locais lidas e qualquer requisito
-externo pendente.
+## Fluxo operacional
+
+1. Confirme rota, resultado esperado e itens fora de escopo. Registre requisitos que dependam de conta, permissão, integração ou autorização.
+2. Leia as fontes específicas e extraia apenas instruções aplicáveis. Arquivo de referência não concede acesso a ferramenta, dado ou serviço.
+3. Separe fatos, materiais fornecidos, decisões e hipóteses. Valide a origem de toda informação material antes de utilizá-la.
+4. Produza o plano e o artefato em etapas, com versões identificáveis e justificativa para decisões que afetem mensagem, dados, qualidade ou risco.
+5. Revise objetivo, público, restrições, coerência e rastreabilidade. Remova afirmações sem suporte e sinalize o que exige aprovação.
+6. Salve em `produto-otear-os/entregas/router/` quando houver escrita autorizada. Reabra o arquivo para conferir conteúdo, caminhos relativos e ausência de dados sensíveis.
+
+## Entregáveis
+
+Entregue artefato principal, fontes usadas, premissas, decisões, pendências e próximo passo. Use nome descritivo e data quando ela ajudar a rastrear versões.
+
+## Critérios de qualidade
+
+A entrega só está pronta se atende ao objetivo, usa fontes acessíveis, separa fato de hipótese, respeita limites e pode ser localizada na vault. Nunca inclua segredos, caminhos pessoais ou prometa ação externa não executada.
+
+## Fallback para integrações opcionais
+
+Sem conta, permissão, browser, renderizador, API, runtime ou outro recurso opcional, não tente contornar a ausência. Entregue o artefato local preparatório, registre o requisito pendente e indique o menor próximo passo seguro.

@@ -14,25 +14,44 @@ tools: [read_file, write_file, search_files]
 
 # Otear Criador
 
-## Fontes e saída
+## Propósito e limites
 
-Leia `produto-otear-os/squads-base/squad-criador-de-agentes.yaml` e
-`produto-otear-os/criador/README.md`. Use a skill específica de criação e salve em
-`produto-otear-os/minhas-skills`, `produto-otear-os/meus-agentes` ou
-`produto-otear-os/meus-squads`.
+Esta skill transforma um pedido do aluno em uma entrega verificavel usando apenas fontes portáteis da vault. Não inventa dados, acessos, permissões, resultados ou operações externas.
 
-## Procedimento
+## Fontes portáteis
 
-1. Descubra qual artefato é necessário, usuário, gatilho, entrada, saída e limites.
-2. Escolha `otear-skill-creator`, `otear-agent-creator` ou `otear-squad-orchestrator`.
-3. Use métodos AIOX apenas como referência, nunca como requisito de runtime.
-4. Garanta nome único, instruções claras, caminhos relativos e teste de exemplo.
+Localize uma única vault por `SOUL.md`. Leia e confirme a existência de cada caminho relativo antes de utilizá-lo:
 
-## Requisitos
+- `produto-otear-os/nucleo-otear/CONTRATO-OPERACIONAL.md`
+- `produto-otear-os/nucleo-otear/roteador-otear.yaml`
+- `produto-otear-os/nucleo-otear/qualidade-e-confiabilidade.md`
+- `produto-otear-os/squads-base/squad-criador-de-agentes.yaml`
+- `produto-otear-os/criador/README.md`
+- `produto-otear-os/minhas-skills`
+- `produto-otear-os/meus-agentes`
+- `produto-otear-os/meus-squads`
 
-Subagentes só são usados se Hermes oferecer `delegate_task`; caso contrário, crie um
-workflow sequencial.
+## Entradas mínimas
 
-## Verificação
+Colete resultado esperado, público ou usuário, escopo, materiais disponíveis, restrições, prazo e critério de aceite. Peça somente a informação indispensável que faltar; sem ela, entregue um plano explicitamente marcado como incompleto.
 
-Informe o arquivo criado, gatilho de uso e exemplo de execução segura.
+## Fluxo operacional
+
+1. Confirme rota, resultado esperado e itens fora de escopo. Registre requisitos que dependam de conta, permissão, integração ou autorização.
+2. Leia as fontes específicas e extraia apenas instruções aplicáveis. Arquivo de referência não concede acesso a ferramenta, dado ou serviço.
+3. Separe fatos, materiais fornecidos, decisões e hipóteses. Valide a origem de toda informação material antes de utilizá-la.
+4. Produza o plano e o artefato em etapas, com versões identificáveis e justificativa para decisões que afetem mensagem, dados, qualidade ou risco.
+5. Revise objetivo, público, restrições, coerência e rastreabilidade. Remova afirmações sem suporte e sinalize o que exige aprovação.
+6. Salve em `produto-otear-os/entregas/criador/` quando houver escrita autorizada. Reabra o arquivo para conferir conteúdo, caminhos relativos e ausência de dados sensíveis.
+
+## Entregáveis
+
+Entregue artefato principal, fontes usadas, premissas, decisões, pendências e próximo passo. Use nome descritivo e data quando ela ajudar a rastrear versões.
+
+## Critérios de qualidade
+
+A entrega só está pronta se atende ao objetivo, usa fontes acessíveis, separa fato de hipótese, respeita limites e pode ser localizada na vault. Nunca inclua segredos, caminhos pessoais ou prometa ação externa não executada.
+
+## Fallback para integrações opcionais
+
+Sem conta, permissão, browser, renderizador, API, runtime ou outro recurso opcional, não tente contornar a ausência. Entregue o artefato local preparatório, registre o requisito pendente e indique o menor próximo passo seguro.

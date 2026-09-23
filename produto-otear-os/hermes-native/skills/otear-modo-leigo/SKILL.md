@@ -14,53 +14,39 @@ tools: [read_file, search_files]
 
 # Otear Modo Leigo
 
-Use esta skill quando o aluno pedir uma explicacao simples, disser que nao entendeu,
-ou demonstrar inseguranca sobre um termo, arquivo, agente, skill, squad ou sistema do
-Otear OS. Ela explica e orienta; nao inicia ferramentas tecnicas nem faz alteracoes.
+## Propósito e limites
 
-## Antes de explicar
+Esta skill transforma um pedido do aluno em uma entrega verificavel usando apenas fontes portáteis da vault. Não inventa dados, acessos, permissões, resultados ou operações externas.
 
-1. Localize a vault com `search_files` procurando `SOUL.md`. Se houver mais de uma,
-   pergunte qual pasta e a vault do aluno.
-2. Leia `SOUL.md`, `MAPA DO OTEAR OS.md`,
-   `produto-otear-os/nucleo-otear/roteador-otear.yaml` e
-   `02-COMO-USAR/Modo Leigo.md`, sempre com caminhos relativos a raiz localizada.
-3. Se a duvida for sobre uma capacidade do Otear, consulte a rota correspondente antes
-   de explicar. Diga o nome Otear que o aluno deve usar, sem apresentar AIOX, Nirvana,
-   OpenSquad ou PI Squad como requisitos ou etapas para ele.
+## Fontes portáteis
 
-## Como responder
+Localize uma única vault por `SOUL.md`. Leia e confirme a existência de cada caminho relativo antes de utilizá-lo:
 
-1. Comece com uma analogia curta somente quando ela tornar a ideia mais clara.
-2. Diga primeiro o objetivo em uma frase simples. Ao usar um termo tecnico, defina-o na
-   mesma frase entre parenteses.
-3. Explique em etapas numeradas, curtas e praticas. Prefira exemplos ligados ao pedido
-   do aluno.
-4. Faca no maximo uma pergunta de esclarecimento por vez. Se ja houver contexto
-   suficiente, nao interrompa a explicacao com perguntas desnecessarias.
-5. Termine sempre com a secao exata `O que isso significa`, resumindo a decisao ou o
-   proximo passo em linguagem direta.
+- `produto-otear-os/nucleo-otear/CONTRATO-OPERACIONAL.md`
+- `produto-otear-os/nucleo-otear/roteador-otear.yaml`
+- `produto-otear-os/nucleo-otear/qualidade-e-confiabilidade.md`
 
-## Limites e encaminhamento
+## Entradas mínimas
 
-- Nao inicie Docker, APIs, navegadores, publicacoes, gastos de anuncios ou runtimes
-  tecnicos. Explique de modo simples o que seria necessario e ofereca o menor proximo
-  passo seguro.
-- Nao invente que uma conta, integracao ou dependencia esta configurada. Informe a
-  condicao de forma simples quando ela for indispensavel.
-- Depois que o aluno entender e aceitar seguir, encaminhe para a skill Otear apropriada
-  ou sugira o pedido que ele pode fazer. Nao execute o sistema tecnico por esta skill.
+Colete resultado esperado, público ou usuário, escopo, materiais disponíveis, restrições, prazo e critério de aceite. Peça somente a informação indispensável que faltar; sem ela, entregue um plano explicitamente marcado como incompleto.
 
-## Modelo de fechamento
+## Fluxo operacional
 
-Use este formato ao encerrar:
+1. Confirme rota, resultado esperado e itens fora de escopo. Registre requisitos que dependam de conta, permissão, integração ou autorização.
+2. Leia as fontes específicas e extraia apenas instruções aplicáveis. Arquivo de referência não concede acesso a ferramenta, dado ou serviço.
+3. Separe fatos, materiais fornecidos, decisões e hipóteses. Valide a origem de toda informação material antes de utilizá-la.
+4. Produza o plano e o artefato em etapas, com versões identificáveis e justificativa para decisões que afetem mensagem, dados, qualidade ou risco.
+5. Revise objetivo, público, restrições, coerência e rastreabilidade. Remova afirmações sem suporte e sinalize o que exige aprovação.
+6. Salve em `produto-otear-os/entregas/modo-leigo/` quando houver escrita autorizada. Reabra o arquivo para conferir conteúdo, caminhos relativos e ausência de dados sensíveis.
 
-```text
-O que isso significa: <resumo direto para o aluno>.
-Proximo passo: <uma unica acao simples ou um pedido que ele pode fazer>.
-```
+## Entregáveis
 
-## Verificacao
+Entregue artefato principal, fontes usadas, premissas, decisões, pendências e próximo passo. Use nome descritivo e data quando ela ajudar a rastrear versões.
 
-Antes de concluir, confira que a explicacao usa apenas a vault localizada, que nao exige
-conhecimento de runtimes internos e que apresenta no maximo uma pergunta pendente.
+## Critérios de qualidade
+
+A entrega só está pronta se atende ao objetivo, usa fontes acessíveis, separa fato de hipótese, respeita limites e pode ser localizada na vault. Nunca inclua segredos, caminhos pessoais ou prometa ação externa não executada.
+
+## Fallback para integrações opcionais
+
+Sem conta, permissão, browser, renderizador, API, runtime ou outro recurso opcional, não tente contornar a ausência. Entregue o artefato local preparatório, registre o requisito pendente e indique o menor próximo passo seguro.

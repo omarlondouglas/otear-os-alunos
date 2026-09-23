@@ -14,34 +14,40 @@ tools: [read_file, search_files, write_file, delegate_task]
 
 # Orquestrador de Squads Otear
 
-Modele squads multi-etapa e, quando disponivel, use subagentes Hermes. A definicao do
-squad sempre e salva na vault; `delegate_task` e opcional e nunca deve ser presumido.
+## Propósito e limites
 
-## Quando usar
+Esta skill transforma um pedido do aluno em uma entrega verificavel usando apenas fontes portáteis da vault. Não inventa dados, acessos, permissões, resultados ou operações externas.
 
-- O aluno pede uma entrega com varias etapas ou papeis.
-- O aluno pede para criar ou executar um squad.
+## Fontes portáteis
 
-Nao use para uma tarefa de papel unico que um agente ou skill resolve.
+Localize uma única vault por `SOUL.md`. Leia e confirme a existência de cada caminho relativo antes de utilizá-lo:
 
-## Procedimento
+- `produto-otear-os/nucleo-otear/CONTRATO-OPERACIONAL.md`
+- `produto-otear-os/nucleo-otear/roteador-otear.yaml`
+- `produto-otear-os/nucleo-otear/qualidade-e-confiabilidade.md`
+- `produto-otear-os/meus-squads/`
 
-1. Localize e leia `SOUL.md`, o contrato e o roteador com `search_files` e `read_file`.
-   Conclua com a raiz e a rota identificadas.
-2. Defina objetivo, entregavel final, etapas, dependencia entre etapas, revisao e criterio
-   de aceite. Reaproveite um squad-base apenas como referencia.
-3. Use `write_file` para salvar `produto-otear-os/meus-squads/<nome-kebab>.yaml` com
-   `nome`, `objetivo`, `entrega_final`, `etapas`, `responsaveis`, `entradas`, `saidas` e
-   `criterios_de_aceite`. Cada etapa precisa declarar uma saida que a proxima recebe.
-4. Verifique com `read_file` se o YAML esta legivel e se toda dependencia aponta para uma
-   etapa existente. Termine com o caminho do squad e a sequencia de execucao.
-5. Se `delegate_task` estiver presente nesta sessao e o aluno autorizar executar, delegue
-   apenas etapas independentes, fornecendo contexto minimo e exigindo saida estruturada.
-   Se a ferramenta nao existir, execute sequencialmente no Hermes e declare esse limite.
-6. Revise a entrega contra os criterios de aceite antes de reportar sucesso. Conclua com
-   entregavel, arquivos gravados e limitacoes encontradas.
+## Entradas mínimas
 
-## Verificacao
+Colete resultado esperado, público ou usuário, escopo, materiais disponíveis, restrições, prazo e critério de aceite. Peça somente a informação indispensável que faltar; sem ela, entregue um plano explicitamente marcado como incompleto.
 
-Nunca afirme que houve subagentes sem resultado retornado por `delegate_task`. A ausencia
-da ferramenta nao invalida o squad salvo; ela apenas exige execucao sequencial.
+## Fluxo operacional
+
+1. Confirme rota, resultado esperado e itens fora de escopo. Registre requisitos que dependam de conta, permissão, integração ou autorização.
+2. Leia as fontes específicas e extraia apenas instruções aplicáveis. Arquivo de referência não concede acesso a ferramenta, dado ou serviço.
+3. Separe fatos, materiais fornecidos, decisões e hipóteses. Valide a origem de toda informação material antes de utilizá-la.
+4. Produza o plano e o artefato em etapas, com versões identificáveis e justificativa para decisões que afetem mensagem, dados, qualidade ou risco.
+5. Revise objetivo, público, restrições, coerência e rastreabilidade. Remova afirmações sem suporte e sinalize o que exige aprovação.
+6. Salve em `produto-otear-os/meus-squads/` quando houver escrita autorizada. Reabra o arquivo para conferir conteúdo, caminhos relativos e ausência de dados sensíveis.
+
+## Entregáveis
+
+Entregue artefato principal, fontes usadas, premissas, decisões, pendências e próximo passo. Use nome descritivo e data quando ela ajudar a rastrear versões.
+
+## Critérios de qualidade
+
+A entrega só está pronta se atende ao objetivo, usa fontes acessíveis, separa fato de hipótese, respeita limites e pode ser localizada na vault. Nunca inclua segredos, caminhos pessoais ou prometa ação externa não executada.
+
+## Fallback para integrações opcionais
+
+Sem conta, permissão, browser, renderizador, API, runtime ou outro recurso opcional, não tente contornar a ausência. Entregue o artefato local preparatório, registre o requisito pendente e indique o menor próximo passo seguro.
